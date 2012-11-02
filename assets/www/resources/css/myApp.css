@@ -1,0 +1,218 @@
+/*
+	主页样式
+*/
+.mainContainer {
+	background : url(../images/mainBackground.png);
+}
+
+/*
+	天气样式
+*/
+.weatherImage {
+	padding-top : 3%;
+	padding-left : 3%;
+	max-height : 2em;
+	float : left;
+}
+.weatherTextLine {
+	text-align : center;
+	font-size : 1.1em;
+	padding-top : 3.5%;
+	color : white;
+}
+
+/*
+	广告栏样式
+*/
+.adCarousel .x-carousel-indicator-dark span {
+	background-image: none;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.adCarousel .x-carousel-indicator-dark span.x-carousel-indicator-active {
+	background-image: none;
+	background-color: rgba(0, 120, 200, 0.8);
+}
+.adImage {
+	height : 100%;
+	width : 100%;
+}
+
+/*
+	导航列表样式
+*/
+.categoryTitle {
+	float : bottom;
+   	text-align : center;
+	font-size : 0.9em;
+	padding-top : 0.5em;
+}
+.categoryIcon {
+	max-width : 67px;
+	display : block;
+	margin : auto;
+}
+
+/*
+	子频道页面样式
+*/
+.childCategoryList .x-list-item {
+	height : 4.4em;
+}
+.childCategoryList .x-list-item .x-list-item-label {
+	height : 4.4em;
+}
+.childCategoryList .x-list-disclosure {
+	padding-bottom : 2.4em;
+	margin-right : 0.5em;
+}
+.childCategoryIcon {
+	width : 3em;
+	height : 3em;
+	float : left;
+}
+.childCategoryTitle {
+	font-size : 1.2em;
+	padding-top : 0.7em;
+	padding-left : 1.5em;
+	overflow : hidden;
+}
+
+/*
+	信息列表样式
+*/
+.infoList .x-list-item {
+	height : 5.1em;
+}
+.infoList .x-list-item .x-list-item-label {
+	height : 5.1em;
+}
+.infoListImage {
+	width : 4em;
+	height : 4em;
+	float : left;
+}
+.infoListTitle {
+	text-align : center;
+	font-size : 0.9em;
+	line-height : 1.2em;
+	height : 2.4em;
+	padding-left : 0.9em;
+	overflow : hidden;
+}
+.infoListData {
+	text-align : center;
+	font-size : 0.6em;
+	margin-top : 0.5em;
+	color :  #808080;
+	padding-left : 1.2em;
+	overflow : hidden;
+}
+.infoListPubliser {
+	text-align : center;
+	font-size : 0.6em;
+	margin-top : 0.5em;
+	color :  #808080;
+	padding-left : 1.2em;
+	overflow : hidden;
+}
+
+/*
+	信息详细视图样式
+*/
+.infoDetailTitle {	
+   	text-align : center;
+	padding-left : 1.5em;
+	padding-right : 1.5em;
+   	font-size : 1.2em;
+}
+.infoDetailDataTime {
+	margin-top : 0.25em;
+	margin-bottom : 0.25em;
+   	text-align : center;
+   	font-size : 0.9em;
+}
+.infoDetailContentSmaller {
+    font-size : 0.8em;
+	margin-top : 0.5em;
+}
+.infoDetailContentSmall {
+    font-size : 1.0em;
+	margin-top : 0.5em;
+}
+.infoDetailContentNormal {
+    font-size : 1.2em;
+	margin-top : 0.5em;
+}
+.infoDetailContentBig {
+    font-size : 1.4em;
+	margin-top : 0.5em;
+}
+.infoDetailContentBigger {
+    font-size : 1.6em;
+	margin-top : 0.5em;
+}
+
+/*
+	视频播放按钮
+*/
+.palyVideo {
+	text-align : center;
+	width : 64px;
+	height : 64px;
+	background : url(../images/videoimg.png);
+}
+
+/*
+	信息发布页面样式
+*/
+.publishImageContainer {
+	background : #FFFFFF;
+}
+.publishImage {
+	max-width : 10em;
+	max-height : 4.5em;
+	display : block;
+	margin : auto;
+}
+.publishImageStatus {
+	text-align : center;
+    font-size : 0.8em;
+    color : #808080;
+}
+.publishTextField input::-webkit-input-placeholder {  
+	color : #2e4bc5;  
+}  
+
+/*
+	专家列表样式
+*/
+.expertList .x-list-item {
+	height : 8em;
+}
+.expertList .x-list-item .x-list-item-label {
+	height : 8em;
+}
+.expertListImage {
+	width : 4.8em;
+	height : 6.7em;
+	float : left;
+}
+.expertListTitle {
+	font-size : 0.8em;
+	padding-left : 0.5em;
+	overflow : hidden;
+}
+.expertListInfo {
+	font-size : 0.8em;
+	padding-top : 0.2em;
+	padding-left : 0.5em;
+	overflow : hidden;
+}
+.expertListIDescription {
+	font-size : 0.8em;
+	line-height : 1.1em;
+	height : 3.4em;
+	padding-top : 0.2em;
+	padding-left : 0.5em;
+	overflow : hidden;
+}
