@@ -1,0 +1,22 @@
+[{
+		"appId" : "01",
+		"appLocation" : "恩施",
+		"appName" : "烟草通",
+		"appIconUrl" : "resources/icons/defaultIcon.png",
+	}, {
+		"appId" : "02",
+		"appLocation" : "恩施",
+		"appName" : "畜牧通",
+		"appIconUrl" : "resources/icons/defaultIcon.png",
+	}, {
+		"appId" : "03",
+		"appLocation" : "黄冈",
+		"appName" : "水产通",
+		"appIconUrl" : "resources/icons/defaultIcon.png",
+	}, {
+		"appId" : "04",
+		"appLocation" : "松滋",
+		"appName" : "乐香田园",
+		"appIconUrl" : "resources/icons/defaultIcon.png",
+	},
+]

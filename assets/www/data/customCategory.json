@@ -1,0 +1,22 @@
+[{
+		"categoryId" : "1012",
+		"categoryName" : "1012",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "parentCategory",
+		"arg_1" : "1013",
+		"arg_2" : "1014",
+	}, {
+		"categoryId" : "1013",
+		"categoryName" : "1013",
+		"categoryLevel" : "2",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1014",
+		"categoryName" : "1014",
+		"categoryLevel" : "2",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	},
+]

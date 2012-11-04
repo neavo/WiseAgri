@@ -1,79 +1,79 @@
 /*
-	主页样式
+	主容器样式
 */
 .mainContainer {
 	background : url(../images/mainBackground.png);
 }
 
 /*
-	天气样式
+	九宫格图标样式
 */
-.weatherImage {
-	padding-top : 3%;
-	padding-left : 3%;
-	max-height : 2em;
-	float : left;
-}
-.weatherTextLine {
-	text-align : center;
-	font-size : 1.1em;
-	padding-top : 3.5%;
-	color : white;
-}
-
-/*
-	广告栏样式
-*/
-.adCarousel .x-carousel-indicator-dark span {
-	background-image: none;
-	background-color: rgba(255, 255, 255, 0.8);
-}
-.adCarousel .x-carousel-indicator-dark span.x-carousel-indicator-active {
-	background-image: none;
-	background-color: rgba(0, 120, 200, 0.8);
-}
-.adImage {
-	height : 100%;
-	width : 100%;
-}
-
-/*
-	导航列表样式
-*/
-.categoryTitle {
+.categoryName {
 	float : bottom;
    	text-align : center;
 	font-size : 0.9em;
 	padding-top : 0.5em;
 }
 .categoryIcon {
-	max-width : 67px;
+	max-width : 80px;
 	display : block;
 	margin : auto;
 }
 
 /*
-	子频道页面样式
+	客户端列表页面样式
 */
-.childCategoryList .x-list-item {
+.appList .x-list-item {
 	height : 4.4em;
 }
-.childCategoryList .x-list-item .x-list-item-label {
+.appList .x-list-item .x-list-item-label {
 	height : 4.4em;
 }
-.childCategoryList .x-list-disclosure {
+.appList .x-list-disclosure {
 	padding-bottom : 2.4em;
 	margin-right : 0.5em;
 }
-.childCategoryIcon {
+.appListIcon {
 	width : 3em;
 	height : 3em;
 	float : left;
 }
-.childCategoryTitle {
+.appListName {
 	font-size : 1.2em;
 	padding-top : 0.7em;
-	padding-left : 1.5em;
+	padding-left : 1em;
+	overflow : hidden;
+}
+
+/*
+	频道列表页面样式
+*/
+.categoryList .x-list-item {
+	height : 4.4em;
+}
+.categoryList .x-list-item .x-list-item-label {
+	height : 4.4em;
+}
+.categoryList .x-list-disclosure {
+	padding-bottom : 2.4em;
+	margin-right : 0.5em;
+}
+.categoryListIcon {
+	width : 3em;
+	height : 3em;
+	float : left;
+}
+.categoryListCheck {
+	margin-top : 0.8em;
+	margin-right : 0.1em;
+	width : 1.5em;
+	height : 1.5em;
+	float : right;
+}
+.categoryListName {
+	font-size : 1.2em;
+	padding-top : 0.7em;
+	padding-left : 1em;
 	overflow : hidden;
 }
 
@@ -150,16 +150,6 @@
 .infoDetailContentBigger {
     font-size : 1.6em;
 	margin-top : 0.5em;
-}
-
-/*
-	视频播放按钮
-*/
-.palyVideo {
-	text-align : center;
-	width : 64px;
-	height : 64px;
-	background : url(../images/videoimg.png);
 }
 
 /*

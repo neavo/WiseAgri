@@ -2,7 +2,7 @@ Ext.define("Project.view.homeView", {
 	extend : "Ext.Container",
 	xtype : "homeView",
 	config : {
-		layout : "vbox",
+		layout : "vbox",	
 		cls : "mainContainer",
 		defaults : {
 			flex : 1,
@@ -13,6 +13,7 @@ Ext.define("Project.view.homeView", {
 				xtype : "homeMain",
 			}, {
 				xtype : "homeBottom",
-			}, ],
+			},
+		],
 	},
 });

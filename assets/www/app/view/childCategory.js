@@ -3,7 +3,6 @@ Ext.define("Project.view.childCategory", {
 	xtype : "childCategory",
 	config : {
 		layout : "vbox",
-		cls : "mainContainer",
 		defaults : {
 			flex : 1,
 		},

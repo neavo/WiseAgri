@@ -1,0 +1,56 @@
+[{
+		"categoryId" : "1015",
+		"categoryName" : "1015",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1016",
+		"categoryName" : "1016",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1017",
+		"categoryName" : "1017",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1018",
+		"categoryName" : "1018",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1019",
+		"categoryName" : "1019",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1020",
+		"categoryName" : "1020",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1021",
+		"categoryName" : "1021",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1022",
+		"categoryName" : "1022",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	}, {
+		"categoryId" : "1023",
+		"categoryName" : "1023",
+		"categoryLevel" : "1",
+		"categoryIconUrl" : "resources/icons/defaultIcon.png",
+		"categoryStyle" : "childCategory",
+	},
+]

@@ -6,17 +6,12 @@ Ext.define("Project.view.mainContainer", {
 		items : [{
 				xtype : "homeView",
 			}, {
+				xtype : "appList",
+			}, {
+				xtype : "categoryList",
+			}, {
 				xtype : "childCategory",
-			}, {
-				xtype : "infoList",
-			}, {
-				xtype : "infoDetail",
-			}, {
-				xtype : "customHtml",
-			}, {
-				xtype : "publishView",
-			}, {
-				xtype : "expertView",
-			}, ],
+			},
+		],
 	},
 });

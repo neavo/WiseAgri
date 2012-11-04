@@ -6,11 +6,15 @@ Ext.define("Project.view.container.homeBottom", {
 		items : [{
 				xtype : "spacer",
 			}, {
-				xtype : "updateBtn",
+				xtype : "defaultCategoryBtn",
 			}, {
 				xtype : "spacer",
 			}, {
-				xtype : "aboutBtn",
+				xtype : "customCategoryBtn",
+			}, {
+				xtype : "spacer",
+			}, {
+				xtype : "addCategoryBtn",
 			}, {
 				xtype : "spacer",
 			}, {

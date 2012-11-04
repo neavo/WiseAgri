@@ -3,67 +3,21 @@ Ext.define("Project.controller.mainController", {
 	config : {
 		refs : {
 			mainContainer : "mainContainer",
-			homeView : "homeView",
-			homeTop : "homeTop",
-			homeMain : "homeBottom",
-			homeBottom : "homeBottom",
-			childCategory : "childCategory",
-			childCategoryTop : "childCategoryTop",
-			childCategoryMain : "childCategoryMain",
-			childCategoryBottom : "childCategoryBottom",
-			infoList : "infoList",
-			infoListTop : "infoListTop",
-			infoListMain : "infoListMain",
-			infoListBottom : "infoListBottom",
-			infoDetail : "infoDetail",
-			infoDetailTop : "infoDetailTop",
-			infoDetailMain : "infoDetailMain",
-			infoDetailBottom : "infoDetailBottom",
-			customHtml : "customHtml",
-			customHtmlTop : "customHtmlTop",
-			customHtmlMain : "customHtmlMain",
-			customHtmlBottom : "customHtmlBottom",
-			publishView : "publishView",
-			publishTop : "publishTop",
-			publishMain : "publishMain",
-			publishBottom : "publishBottom",
-			expertView : "expertView",
-			expertTop : "expertTop",
-			expertMain : "expertMain",
-			expertBottom : "expertBottom",
+			
+			homeView : "homeView", homeTop : "homeTop", homeMain : "homeMain",
+			childCategory : "childCategory", childCategoryTop : "childCategoryTop", childCategoryMain : "childCategoryMain", childCategoryBottom : "childCategoryBottom",
+			categoryList : "categoryList", categoryListTop : "categoryListTop", categoryListMain : "categoryListMain", categoryListBottom : "categoryListBottom",
+			appList : "appList", appListTop : "appListTop", appListMain : "appListMain", appListBottom : "appListBottom",
 		},
 		control : {},
 	},
 	launch : function () {
 		DB.mainController = this;
 		DB.mainContainer = this.getMainContainer();
-		DB.homeView = this.getHomeView();
-		DB.homeTop = this.getHomeTop();
-		DB.homeMain = this.getHomeMain();
-		DB.homeBottom = this.getHomeBottom();
-		DB.childCategory = this.getChildCategory();
-		DB.childCategoryTop = this.getChildCategoryTop();
-		DB.childCategoryMain = this.getChildCategoryMain();
-		DB.childCategoryBottom = this.getChildCategoryBottom();
-		DB.infoList = this.getInfoList();
-		DB.infoListTop = this.getInfoListTop();
-		DB.infoListMain = this.getInfoListMain();
-		DB.infoListBottom = this.getInfoListBottom();
-		DB.infoDetail = this.getInfoDetail();
-		DB.infoDetailTop = this.getInfoDetailTop();
-		DB.infoDetailMain = this.getInfoDetailMain();
-		DB.infoDetailBottom = this.getInfoDetailBottom();
-		DB.customHtml = this.getCustomHtml();
-		DB.customHtmlTop = this.getCustomHtmlTop();
-		DB.customHtmlMain = this.getCustomHtmlMain();
-		DB.customHtmlBottom = this.getCustomHtmlBottom();
-		DB.publishView = this.getPublishView();
-		DB.publishTop = this.getPublishTop();
-		DB.publishMain = this.getPublishMain();
-		DB.publishBottom = this.getPublishBottom();
-		DB.expertView = this.getExpertView();
-		DB.expertTop = this.getExpertTop();
-		DB.expertMain = this.getExpertMain();
-		DB.expertBottom = this.getExpertBottom();
+		
+		DB.homeView = this.getHomeView(); DB.homeTop = this.getHomeTop(); DB.homeMain = this.getHomeMain();
+		DB.childCategory = this.getChildCategory(); DB.childCategoryTop = this.getChildCategoryTop(); DB.childCategoryMain = this.getChildCategoryMain(); DB.childCategoryBottom = this.getChildCategoryBottom();
+		DB.categoryList = this.getCategoryList(); DB.categoryListTop = this.getCategoryListTop(); DB.categoryListMain = this.getCategoryListMain(); DB.categoryListBottom = this.getCategoryListBottom();
+		DB.appList = this.getAppList(); DB.appListTop = this.getAppListTop(); DB.appListMain = this.getAppListMain(); DB.appListBottom = this.getAppListBottom();
 	},
 });
