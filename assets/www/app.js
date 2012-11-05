@@ -13,6 +13,7 @@ Ext.application({
 		"customCategory",
 		"appListStore",
 		"webCategoryStore",
+		"categoryListStore",
 		"childCategoryStore",
 	],
 	
@@ -28,7 +29,7 @@ Ext.application({
 	],
 	
 	controllers : [
-		"widget.backBtn", "widget.addCategoryBtn",
+		"widget.backBtn", "widget.defaultCategoryBtn", "widget.customCategoryBtn", "widget.addCategoryBtn",
 		
 		"homeView", "container.homeMain",
 		"childCategory", "container.categoryListMain",

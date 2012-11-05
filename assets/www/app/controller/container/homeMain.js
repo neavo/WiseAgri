@@ -88,25 +88,26 @@ Ext.define("Project.controller.container.homeMain", {
 		};
 	},
 	launch : function () {
+		var self = this;
 		Ext.getStore("defaultCategory").load({
 			callback : function (records, operation, success) {
-				var defaultCategory = [];
-				for (var key in records) {
-					defaultCategory.push(records[key].getData());
+				if (success && records.lenght != 0) {
+					var defaultCategory = [];
+					for (var key in records) {
+						defaultCategory.push(records[key].getData());
+					};
+					this.loadCategory(defaultCategory, DB.homeMain);
 				};
-				this.loadCategory(defaultCategory, DB.homeMain);
 			},
 			scope : this,
 		});
-		Ext.getStore("customCategory").load({
-			callback : function (records, operation, success) {
-				var customCategory = [];
-				for (var key in records) {
-					customCategory.push(records[key].getData());
-				};
-				this.loadCategory(customCategory, DB.homeMain);
-			},
-			scope : this,
-		});
+		if (SQLite) {
+			SQLite.transaction(function (shell) {
+				shell.executeSql("SELECT * FROM customCategory ORDER BY categoryId", [], function (shell, results) {
+					DB.customCategory = SqlToJson(results);
+					self.loadCategory(DB.customCategory, DB.homeMain);
+				}, errorSQL);
+			}, errorSQL);
+		};
 	},
 });

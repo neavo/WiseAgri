@@ -15,7 +15,8 @@
 	padding-top : 0.5em;
 }
 .categoryIcon {
-	max-width : 80px;
+	width : 80px;
+	height : 80px;
 	display : block;
 	margin : auto;
 }
