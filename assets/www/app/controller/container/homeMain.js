@@ -51,7 +51,7 @@ Ext.define("Project.controller.container.homeMain", {
 											childCategory.push(category[k]);
 										};
 									};
-									this.config.setChildView(childCategory, this.config.data.categoryTitle);
+									this.config.setChildView(childCategory, this.config.data.categoryName);
 								};
 							},
 							element : "element",
@@ -82,7 +82,7 @@ Ext.define("Project.controller.container.homeMain", {
 			
 			hContainer.add(Ext.create("Ext.Container", {
 					html : "<img class = categoryIcon src = resources/icons/noIcon.png >"
-					 + "<div class = categoryTitle ><b>　　　　<b></div>",
+					 + "<div class = categoryName ><b>　　　　<b></div>",
 				}));
 			hContainer.add(Ext.create("Ext.Spacer"));
 		};
