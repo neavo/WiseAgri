@@ -1,4 +1,4 @@
-Ext.define("Project.store.defaultCategory", {
+Ext.define("Project.store.defaultCategoryStore", {
 	extend : "Ext.data.Store",
 	config : {
 		model : "Project.model.categoryModel",

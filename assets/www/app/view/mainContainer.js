@@ -14,6 +14,10 @@ Ext.define("Project.view.mainContainer", {
 				xtype : "categoryList",
 			}, {
 				xtype : "childCategory",
+			}, {
+				xtype : "newsList",
+			}, {
+				xtype : "newsDetail",
 			},
 		],
 	},

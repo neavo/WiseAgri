@@ -9,8 +9,8 @@ Ext.define("Project.controller.appList", {
 		var j = 0;
 		var vContainer = "";
 		var hContainer = "";
-		for (var key in category) {
-			if (category[key]["categoryLevel"] != "1") {
+		for (var KEY in category) {
+			if (category[KEY]["categoryLevel"] != "1") {
 				continue;
 			};
 			if (i == 9) {
@@ -33,25 +33,36 @@ Ext.define("Project.controller.appList", {
 			};
 			
 			hContainer.add(Ext.create("Ext.Container", {
-					html : "<img class = categoryIcon src = " + category[key]["categoryIconUrl"] + " >"
-					 + "<div class = categoryName ><b>" + category[key]["categoryName"] + "<b></div>",
-					data : category[key],
+					html : "<img class = categoryIcon src = " + category[KEY]["categoryIconUrl"] + " >"
+					 + "<div class = categoryName ><b>" + category[KEY]["categoryName"] + "<b></div>",
+					data : category[KEY],
 					setChildView : function (childCategory, title) {
 						DoSwitch("childCategory");
 						DB.childCategoryTop.setTitle(title);
 						DB.childCategoryMain.getStore().setData(childCategory);
+					},
+					setNewsView : function (title) {
+						DoSwitch("newsList");
+						DB.newsListTop.setTitle(title);
+						DB.newsListMain.getStore().load();
 					},
 					listeners : {
 						tap : {
 							fn : function () {
 								if (this.config.data.categoryStyle == "parentCategory") {
 									var childCategory = [];
-									for (var k in category) {
-										if (category[k]["categoryId"] == this.config.data.arg_1 || category[k]["categoryId"] == this.config.data.arg_2 || category[k]["categoryId"] == this.config.data.arg_3) {
-											childCategory.push(category[k]);
+									for (var key in category) {
+										var array = this.config.data.extraParam.split(";");
+										for (var k in array) {
+											if (category[key]["categoryId"] == array[k]) {
+												childCategory.push(category[key]);
+											};
 										};
 									};
 									this.config.setChildView(childCategory, this.config.data.categoryName);
+								};
+								if (this.config.data.categoryStyle == "newsCategory") {
+									this.config.setNewsView(this.config.data.categoryName);
 								};
 							},
 							element : "element",
@@ -90,7 +101,7 @@ Ext.define("Project.controller.appList", {
 	goBack : function () {
 		var self = this;
 		DB.homeMain.removeAll(true);
-		Ext.getStore("defaultCategory").load({
+		Ext.getStore("defaultCategoryStore").load({
 			callback : function (records, operation, success) {
 				if (success && records.lenght != 0) {
 					var defaultCategory = [];

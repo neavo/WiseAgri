@@ -1,6 +1,6 @@
 var defaultApp = {
-	appId : "01",
-	appLocation : "恩施",
-	appName : "烟草通",
+	appId : "001",
+	appLocation : "智慧",
+	appName : "农业",
 	appIconUrl : "resources/icons/defaultIcon.png",
 };

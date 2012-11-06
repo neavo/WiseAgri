@@ -1,20 +1,20 @@
-Ext.define("Project.view.container.homeBottom", {
+Ext.define("Project.view.container.newsDetailBottom", {
 	extend : "Ext.Toolbar",
-	xtype : "homeBottom",
+	xtype : "newsDetailBottom",
 	config : {
 		docked : "bottom",
 		items : [{
 				xtype : "spacer",
 			}, {
-				xtype : "defaultCategoryBtn",
+				xtype : "biggerBtn",
 			}, {
 				xtype : "spacer",
 			}, {
-				xtype : "customCategoryBtn",
+				xtype : "smallerBtn",
 			}, {
 				xtype : "spacer",
 			}, {
-				xtype : "addCategoryBtn",
+				xtype : "backBtn",
 			}, {
 				xtype : "spacer",
 			},

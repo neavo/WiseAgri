@@ -21,28 +21,27 @@ Ext.define("Project.controller.container.categoryListMain", {
 				};
 				if (buttonId == "yes") {
 					DoSQL("INSERT INTO customCategory"
-						 + " (appId, categoryId, categoryName, categoryLevel, categoryIconUrl, categoryStyle, arg_1, arg_2, arg_3)"
-						 + " VALUES"
-						 + " (\"" + data.appId + "\" ,\"" + data.categoryId + "\" ,\"" + data.categoryName + "\", \"" + data.categoryLevel + "\", \"" + data.categoryIconUrl + "\", \""
-						 + data.categoryStyle + "\", \"" + data.arg_1 + "\", \"" + data.arg_2 + "\", \"" + data.arg_3 + "\")");
+						 + " (appId, categoryId, categoryName, categoryLevel, categoryIconUrl, categoryStyle, extraParam)"
+						 + " VALUES" + " (\"" + data.appId + "\" ,\"" + data.categoryId + "\" ,\"" + data.categoryName + "\", \""
+						 + data.categoryLevel + "\", \"" + data.categoryIconUrl + "\", \"" + data.categoryStyle + "\", \"" + data.extraParam + "\")");
 					if (data.categoryStyle == "parentCategory") {
 						var store = Ext.getStore("webCategoryStore");
 						var count = store.getCount();
+						var array = data.extraParam.split(";");
 						for (var i = 0; i < count; i++) {
-							if (store.getAt(i).get("categoryId") == data.arg_1 ||
-								store.getAt(i).get("categoryId") == data.arg_2 ||
-								store.getAt(i).get("categoryId") == data.arg_3) {
-								var eData = store.getAt(i).getData();
-								for (var key in eData) {
-									if (!eData[key]) {
-										eData[key] = "";
+							for (var k in array) {
+								if (store.getAt(i).get("categoryId") == array[k]) {
+									var eData = store.getAt(i).getData();
+									for (var key in eData) {
+										if (!eData[key]) {
+											eData[key] = "";
+										};
 									};
+									DoSQL("INSERT INTO customCategory"
+										 + " (appId, categoryId, categoryName, categoryLevel, categoryIconUrl, categoryStyle, extraParam)"
+										 + " VALUES" + " (\"" + eData.appId + "\" ,\"" + eData.categoryId + "\" ,\"" + eData.categoryName + "\", \""
+										 + eData.categoryLevel + "\", \"" + eData.categoryIconUrl + "\", \"" + eData.categoryStyle + "\", \"" + eData.extraParam + "\")");
 								};
-								DoSQL("INSERT INTO customCategory"
-									 + " (appId, categoryId, categoryName, categoryLevel, categoryIconUrl, categoryStyle, arg_1, arg_2, arg_3)"
-									 + " VALUES"
-									 + " (\"" + eData.appId + "\" ,\"" + eData.categoryId + "\" ,\"" + eData.categoryName + "\", \"" + eData.categoryLevel + "\", \"" + eData.categoryIconUrl + "\", \""
-									 + eData.categoryStyle + "\", \"" + eData.arg_1 + "\", \"" + eData.arg_2 + "\", \"" + eData.arg_3 + "\")");
 							};
 						};
 					};
@@ -59,11 +58,12 @@ Ext.define("Project.controller.container.categoryListMain", {
 					if (data.categoryStyle == "parentCategory") {
 						var store = Ext.getStore("webCategoryStore");
 						var count = store.getCount();
+						var array = data.extraParam.split(";");
 						for (var i = 0; i < count; i++) {
-							if (store.getAt(i).get("categoryId") == data.arg_1 ||
-								store.getAt(i).get("categoryId") == data.arg_2 ||
-								store.getAt(i).get("categoryId") == data.arg_3) {
-								DoSQL("DELETE FROM customCategory WHERE categoryId = \"" + store.getAt(i).get("categoryId") + "\"");
+							for (var k in array) {
+								if (store.getAt(i).get("categoryId") == array[k]) {
+									DoSQL("DELETE FROM customCategory WHERE categoryId = \"" + store.getAt(i).get("categoryId") + "\"");
+								};
 							};
 						};
 					};

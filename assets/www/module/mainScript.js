@@ -9,6 +9,7 @@ var DB = {
 	customCategory : "",
 	activatedController : "",
 	activatedCategory : "",
+	scaleFlag : 0,
 };
 
 // 创建SQLite数据库对象
@@ -35,7 +36,7 @@ var SQLite = "";
 		DoSQL("CREATE TABLE IF NOT EXISTS customCategory"
 			 + " (appId VARCHAR(128), categoryId VARCHAR(128), categoryName VARCHAR(128),"
 			 + " categoryLevel VARCHAR(128), categoryIconUrl VARCHAR(1024), categoryStyle VARCHAR(128),"
-			 + " arg_1 VARCHAR(1024), arg_2 VARCHAR(1024), arg_3 VARCHAR(1024))");
+			 + " extraParam VARCHAR(1024))");
 	};
 };
 
