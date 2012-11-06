@@ -20,8 +20,8 @@ Ext.define("Project.controller.container.newsListMain", {
 			DB.activatedAlbum = data.imageUrl.split(";");
 			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml()
 				 + "<div>"
-				 + "<img class = newsDetailImage type = \"button\" onclick = \"DoShowAlbum();\" onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = " + data.iconUrl + ">"
-				 + "<img class = newsDetailImageOverlay src = resources/images/imageOverlay.png >"
+				 + "<img class = newsDetailImage onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = " + data.iconUrl + ">"
+				 + "<img class = newsDetailImageOverlay type = \"button\" onclick = \"DoShowAlbum();\" src = resources/images/imageOverlay.png >"
 				 + "</div>"
 				 + "<div style = \"margin-top : -2.1em;\" >" + "</div>");
 		};
