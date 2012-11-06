@@ -2,7 +2,7 @@ Ext.define("Project.view.container.albumViewMain", {
 	extend : "Ext.Container",
 	xtype : "albumViewMain",
 	config : {
-		scrollable : "both",
+		scrollable : false,
 		cls : "albumContainer",
 	},
 });

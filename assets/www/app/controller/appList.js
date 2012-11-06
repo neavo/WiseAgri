@@ -100,7 +100,7 @@ Ext.define("Project.controller.appList", {
 	},
 	goBack : function () {
 		var self = this;
-		DB.homeMain.removeAll(true);
+		DB.homeViewMain.removeAll(true);
 		Ext.getStore("defaultCategoryStore").load({
 			callback : function (records, operation, success) {
 				if (success && records.lenght != 0) {
@@ -119,7 +119,7 @@ Ext.define("Project.controller.appList", {
 					DB.customCategory = SqlToJson(results);
 					self.loadCategory(DB.customCategory, DB.homeViewMain);
 					DoSwitch("homeView");
-					DB.homeMain.setActiveItem(0);
+					DB.homeViewMain.setActiveItem(0);
 				}, errorSQL);
 			}, errorSQL);
 		};
