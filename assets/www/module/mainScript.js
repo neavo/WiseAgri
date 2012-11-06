@@ -9,6 +9,8 @@ var DB = {
 	customCategory : "",
 	activatedController : "",
 	activatedCategory : "",
+	activatedAlbum : "",
+	albumPage : 1,
 	scaleFlag : 0,
 };
 
@@ -66,9 +68,6 @@ function DoSQL(sql) {
 		}, errorSQL);
 	};
 };
-function DoClearSQL() {
-	DoSQL("DROP TABLE IF EXISTS customCategory");
-};
 
 // 设置正在使用的Object
 function setActivatedController(controller) {
@@ -90,4 +89,12 @@ function DoSwitch(view) {
 	for (var i = 0; i < length; i++) {
 		DB[view].getAt(i).show();
 	};
+};
+
+// 切换至相册页面
+function DoShowAlbum() {
+	DB.albumPage = 1;
+	DoSwitch("albumView");
+	DB.albumViewTop.setTitle(DB.albumPage + " / " + DB.activatedAlbum.length);
+	DB.albumViewMain.setHtml("<img class = albumImage src = " + DB.activatedAlbum[DB.albumPage - 1] + ">");
 };

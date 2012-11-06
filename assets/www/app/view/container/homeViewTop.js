@@ -1,6 +1,6 @@
-Ext.define("Project.view.container.homeTop", {
+Ext.define("Project.view.container.homeViewTop", {
 	extend : "Ext.Toolbar",
-	xtype : "homeTop",
+	xtype : "homeViewTop",
 	config : {
 		docked : "top",
 		title : defaultApp.appLocation + " • " + defaultApp.appName,

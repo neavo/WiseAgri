@@ -18,6 +18,8 @@ Ext.define("Project.view.mainContainer", {
 				xtype : "newsList",
 			}, {
 				xtype : "newsDetail",
+			}, {
+				xtype : "albumView",
 			},
 		],
 	},

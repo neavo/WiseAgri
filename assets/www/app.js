@@ -20,28 +20,30 @@ Ext.application({
 	
 	views : [
 		"widget.backBtn", "widget.defaultCategoryBtn", "widget.customCategoryBtn", "widget.addCategoryBtn",
-		"widget.smallerBtn", "widget.biggerBtn", 
+		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn", 
 		
-		"homeView", "container.homeTop", "container.homeMain", "container.homeBottom",
+		"homeView", "container.homeViewTop", "container.homeViewMain", "container.homeViewBottom",
 		"appList", "container.appListTop", "container.appListMain", "container.appListBottom",
 		"categoryList", "container.categoryListTop", "container.categoryListMain", "container.categoryListBottom",
 		"childCategory", "container.childCategoryTop", "container.childCategoryMain", "container.childCategoryBottom",
 		"newsList", "container.newsListTop", "container.newsListMain", "container.newsListBottom",
 		"newsDetail", "container.newsDetailTop", "container.newsDetailMain", "container.newsDetailBottom",
+		"albumView", "container.albumViewTop", "container.albumViewMain", "container.albumViewBottom",
 		
 		"mainContainer",
 	],
 	
 	controllers : [
 		"widget.backBtn", "widget.defaultCategoryBtn", "widget.customCategoryBtn", "widget.addCategoryBtn",
-		"widget.smallerBtn", "widget.biggerBtn", 
+		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn", 
 		
-		"homeView", "container.homeMain",
+		"homeView", "container.homeViewMain",
 		"appList", "container.appListMain",
 		"categoryList", "container.categoryListMain",
 		"childCategory", "container.childCategoryMain",
 		"newsList", "container.newsListMain",
 		"newsDetail",
+		"albumView",
 
 		"mainController",
 	],

@@ -1,4 +1,4 @@
-Ext.define("Project.controller.container.homeMain", {
+Ext.define("Project.controller.container.homeViewMain", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {},
@@ -107,7 +107,7 @@ Ext.define("Project.controller.container.homeMain", {
 					for (var key in records) {
 						defaultCategory.push(records[key].getData());
 					};
-					this.loadCategory(defaultCategory, DB.homeMain);
+					this.loadCategory(defaultCategory, DB.homeViewMain);
 				};
 			},
 			scope : this,
@@ -116,7 +116,7 @@ Ext.define("Project.controller.container.homeMain", {
 			SQLite.transaction(function (shell) {
 				shell.executeSql("SELECT * FROM customCategory ORDER BY categoryId", [], function (shell, results) {
 					DB.customCategory = SqlToJson(results);
-					self.loadCategory(DB.customCategory, DB.homeMain);
+					self.loadCategory(DB.customCategory, DB.homeViewMain);
 				}, errorSQL);
 			}, errorSQL);
 		};

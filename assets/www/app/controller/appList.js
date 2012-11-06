@@ -108,7 +108,7 @@ Ext.define("Project.controller.appList", {
 					for (var key in records) {
 						defaultCategory.push(records[key].getData());
 					};
-					this.loadCategory(defaultCategory, DB.homeMain);
+					this.loadCategory(defaultCategory, DB.homeViewMain);
 				};
 			},
 			scope : this,
@@ -117,7 +117,7 @@ Ext.define("Project.controller.appList", {
 			SQLite.transaction(function (shell) {
 				shell.executeSql("SELECT * FROM customCategory ORDER BY categoryId", [], function (shell, results) {
 					DB.customCategory = SqlToJson(results);
-					self.loadCategory(DB.customCategory, DB.homeMain);
+					self.loadCategory(DB.customCategory, DB.homeViewMain);
 					DoSwitch("homeView");
 					DB.homeMain.setActiveItem(0);
 				}, errorSQL);

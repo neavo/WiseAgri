@@ -1,6 +1,6 @@
-Ext.define("Project.view.container.homeBottom", {
+Ext.define("Project.view.container.homeViewBottom", {
 	extend : "Ext.Toolbar",
-	xtype : "homeBottom",
+	xtype : "homeViewBottom",
 	config : {
 		docked : "bottom",
 		items : [{

@@ -8,11 +8,11 @@ Ext.define("Project.view.homeView", {
 			flex : 1,
 		},
 		items : [{
-				xtype : "homeTop",
+				xtype : "homeViewTop",
 			}, {
-				xtype : "homeMain",
+				xtype : "homeViewMain",
 			}, {
-				xtype : "homeBottom",
+				xtype : "homeViewBottom",
 			},
 		],
 	},
