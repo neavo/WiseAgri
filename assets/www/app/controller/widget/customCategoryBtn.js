@@ -11,6 +11,6 @@ Ext.define("Project.controller.widget.customCategoryBtn", {
 		},
 	},
 	onCustomCategoryBtnTap : function () {
-		DB.homeMain.setActiveItem(1);
+		DB.homeViewMain.setActiveItem(1);
 	},
 });

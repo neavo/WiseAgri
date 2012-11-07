@@ -11,6 +11,6 @@ Ext.define("Project.controller.widget.defaultCategoryBtn", {
 		},
 	},
 	onDefaultCategoryBtnTap : function () {
-		DB.homeMain.setActiveItem(0);
+		DB.homeViewMain.setActiveItem(0);
 	},
 });
