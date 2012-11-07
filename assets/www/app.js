@@ -19,7 +19,7 @@ Ext.application({
 	],
 	
 	views : [
-		"widget.backBtn", "widget.defaultCategoryBtn", "widget.customCategoryBtn", "widget.addCategoryBtn",
+		"widget.backBtn", "widget.customCategoryBtn", "widget.switchAppBtn",
 		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn", 
 		
 		"homeView", "container.homeViewTop", "container.homeViewMain", "container.homeViewBottom",
@@ -29,12 +29,14 @@ Ext.application({
 		"newsList", "container.newsListTop", "container.newsListMain", "container.newsListBottom",
 		"newsDetail", "container.newsDetailTop", "container.newsDetailMain", "container.newsDetailBottom",
 		"albumView", "container.albumViewTop", "container.albumViewMain", "container.albumViewBottom",
+		"switchApp", "container.switchAppTop", "container.switchAppMain", "container.switchAppBottom",
+		"otherApp", "container.otherAppTop", "container.otherAppMain", "container.otherAppBottom",
 		
 		"mainContainer",
 	],
 	
 	controllers : [
-		"widget.backBtn", "widget.defaultCategoryBtn", "widget.customCategoryBtn", "widget.addCategoryBtn",
+		"widget.backBtn", "widget.customCategoryBtn", "widget.switchAppBtn",
 		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn", 
 		
 		"homeView", "container.homeViewMain",
@@ -44,6 +46,8 @@ Ext.application({
 		"newsList", "container.newsListMain",
 		"newsDetail",
 		"albumView",
+		"switchApp", "container.switchAppMain",
+		"otherApp", 
 
 		"mainController",
 	],

@@ -11,6 +11,7 @@ Ext.define("Project.controller.widget.customCategoryBtn", {
 		},
 	},
 	onCustomCategoryBtnTap : function () {
-		DB.homeViewMain.setActiveItem(1);
+		Ext.getStore("appListStore").load();
+		DoSwitch("appList");
 	},
 });

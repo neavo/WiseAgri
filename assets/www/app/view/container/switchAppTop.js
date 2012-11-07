@@ -1,11 +1,11 @@
-Ext.define("Project.view.container.categoryListTop", {
+Ext.define("Project.view.container.switchAppTop", {
 	extend : "Ext.Container",
-	xtype : "categoryListTop",
+	xtype : "switchAppTop",
 	config : {
 		docked : "top",
 		items : [{
 				xtype : "toolbar",
-				title : "订阅频道",
+				title : "其他客户端",
 			}, {
 				xtype : "toolbar",
 				items : [{

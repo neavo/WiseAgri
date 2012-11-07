@@ -20,6 +20,10 @@ Ext.define("Project.view.mainContainer", {
 				xtype : "newsDetail",
 			}, {
 				xtype : "albumView",
+			}, {
+				xtype : "switchApp",
+			}, {
+				xtype : "otherApp",
 			},
 		],
 	},

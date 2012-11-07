@@ -4,7 +4,8 @@ Ext.define("Project.view.widget.customCategoryBtn", {
 	config : {
 		xtype : "button",
 		ui : "plain",
-		iconCls : "more",
+		iconCls : "settings",
 		iconMask : true,
+		html : "　自定义频道",
 	},
 });

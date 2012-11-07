@@ -11,6 +11,8 @@ Ext.define("Project.controller.mainController", {
 			newsList : "newsList", newsListTop : "newsListTop", newsListMain : "newsListMain", newsListBottom : "newsListBottom",
 			newsDetail : "newsDetail", newsDetailTop : "newsDetailTop", newsDetailMain : "newsDetailMain", newsDetailBottom : "newsDetailBottom",
 			albumView : "albumView", albumViewTop : "albumViewTop", albumViewMain : "albumViewMain", albumViewBottom : "albumViewBottom",
+			switchApp : "switchApp", switchAppTop : "switchAppTop", switchAppMain : "switchAppMain", switchAppBottom : "switchAppBottom",
+			otherApp : "otherApp", otherAppTop : "otherAppTop", otherAppMain : "otherAppMain", otherAppBottom : "otherAppBottom",
 		},
 		control : {},
 	},
@@ -25,5 +27,7 @@ Ext.define("Project.controller.mainController", {
 		DB.newsList = this.getNewsList(); DB.newsListTop = this.getNewsListTop(); DB.newsListMain = this.getNewsListMain(); DB.newsListBottom = this.getNewsListBottom();
 		DB.newsDetail = this.getNewsDetail(); DB.newsDetailTop = this.getNewsDetailTop(); DB.newsDetailMain = this.getNewsDetailMain(); DB.newsDetailBottom = this.getNewsDetailBottom();
 		DB.albumView = this.getAlbumView(); DB.albumViewTop = this.getAlbumViewTop(); DB.albumViewMain = this.getAlbumViewMain(); DB.albumViewBottom = this.getAlbumViewBottom();
+		DB.switchApp = this.getSwitchApp(); DB.switchAppTop = this.getSwitchAppTop(); DB.switchAppMain = this.getSwitchAppMain(); DB.switchAppBottom = this.getSwitchAppBottom();
+		DB.otherApp = this.getOtherApp(); DB.otherAppTop = this.getOtherAppTop(); DB.otherAppMain = this.getOtherAppMain(); DB.otherAppBottom = this.getOtherAppBottom();
 	},
 });
