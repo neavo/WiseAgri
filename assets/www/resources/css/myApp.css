@@ -6,6 +6,22 @@
 }
 
 /*
+	主页图标样式
+*/
+.homeViewName {
+	font-size : 0.8em;
+	margin-left : 0.5em;
+	margin-bottom : 0.3em;
+	float : right;
+}
+.homeViewIcon {
+	width : 1em;
+	height : 1em;
+	margin-bottom : 0.3em;
+	float : left;
+}
+
+/*
 	九宫格图标样式
 */
 .categoryName {
@@ -88,12 +104,11 @@
 	height : 5.1em;
 }
 .newsListIcon {
-	width : 4em;
-	height : 4em;
+	width : 3.7em;
+	height : 3.7em;
 	float : left;
 }
 .newsListTitle {
-	text-align : center;
 	font-size : 0.9em;
 	line-height : 1.2em;
 	height : 2.4em;
@@ -101,7 +116,6 @@
 	overflow : hidden;
 }
 .newsListDate {
-	text-align : center;
 	font-size : 0.6em;
 	margin-top : 0.5em;
 	color :  #808080;
@@ -109,9 +123,8 @@
 	overflow : hidden;
 }
 .newsListPubliser {
-	text-align : center;
 	font-size : 0.6em;
-	margin-top : 0.5em;
+	margin-top : 0.3em;
 	color :  #808080;
 	padding-left : 1.2em;
 	overflow : hidden;

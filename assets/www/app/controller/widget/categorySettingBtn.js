@@ -1,17 +1,17 @@
-Ext.define("Project.controller.widget.switchAppBtn", {
+Ext.define("Project.controller.widget.categorySettingBtn", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {
-			switchAppBtn : "switchAppBtn",
+			categorySettingBtn : "categorySettingBtn",
 		},
 		control : {},
 	},
 	launch : function () {
-		this.getSwitchAppBtn().addListener({
+		this.getCategorySettingBtn().addListener({
 			tap : {
 				fn : function () {
 					Ext.getStore("appListStore").load();
-					DoSwitch("switchApp");
+					DoSwitch("appList");
 				},
 				element : "element",
 			},

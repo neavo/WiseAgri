@@ -10,7 +10,7 @@ Ext.define("Project.controller.container.switchAppMain", {
 			},
 		},
 	},
-	loadCategory : function (category, carousel) {
+	loadCategory : function (category, container) {
 		var i = 0;
 		var j = 0;
 		var vContainer = "";
@@ -20,14 +20,14 @@ Ext.define("Project.controller.container.switchAppMain", {
 				continue;
 			};
 			if (i == 9) {
-				i = 0;
+				break;
 			};
 			if (i == 0) {
 				vContainer = Ext.create("Ext.Container", {
 						layout : "vbox",
 					});
 				vContainer.add(Ext.create("Ext.Spacer"));
-				carousel.add(vContainer);
+				container.add(vContainer);
 			};
 			if (i == 0 || i == 3 || i == 6) {
 				hContainer = Ext.create("Ext.Container", {
@@ -86,7 +86,7 @@ Ext.define("Project.controller.container.switchAppMain", {
 						layout : "vbox",
 					});
 				vContainer.add(Ext.create("Ext.Spacer"));
-				carousel.add(vContainer);
+				container.add(vContainer);
 			};
 			if (i == 0 || i == 3 || i == 6) {
 				hContainer = Ext.create("Ext.Container", {

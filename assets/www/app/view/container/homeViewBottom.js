@@ -9,11 +9,15 @@ Ext.define("Project.view.container.homeViewBottom", {
 				items : [{
 						xtype : "spacer",
 					}, {
-						xtype : "customCategoryBtn",
+						xtype : "categorySettingBtn",
 					}, {
 						xtype : "spacer",
 					}, {
 						xtype : "switchAppBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "myStationBtn",
 					}, {
 						xtype : "spacer",
 					},

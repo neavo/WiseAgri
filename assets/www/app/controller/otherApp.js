@@ -5,6 +5,6 @@ Ext.define("Project.controller.otherApp", {
 		control : {},
 	},
 	goBack : function () {
-		DoSwitch("homeView");
+		DoSwitch("switchApp");
 	},
 });

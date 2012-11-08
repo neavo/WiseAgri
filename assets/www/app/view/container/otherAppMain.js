@@ -1,7 +1,10 @@
 Ext.define("Project.view.container.otherAppMain", {
-	extend : "Ext.carousel.Carousel",
+	extend : "Ext.Container",
 	xtype : "otherAppMain",
 	config : {
 		layout : "vbox",
+		defaults : {
+			flex : 1,
+		},
 	},
 });

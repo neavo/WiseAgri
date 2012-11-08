@@ -1,11 +1,8 @@
 Ext.define("Project.view.widget.switchAppBtn", {
-	extend : "Ext.Button",
+	extend : "Ext.Container",
 	xtype : "switchAppBtn",
 	config : {
-		xtype : "button",
-		ui : "plain",
-		iconCls : "action",
-		iconMask : true,
-		html : "　其他客户端",
+		html : "<img class = homeViewIcon src = resources/icons/otherAppBtn.png >"
+		+ "<div class = homeViewName ><b>其他客户端<b></div>",
 	},
 });

@@ -19,7 +19,7 @@ Ext.application({
 	],
 	
 	views : [
-		"widget.backBtn", "widget.customCategoryBtn", "widget.switchAppBtn",
+		"widget.backBtn", "widget.categorySettingBtn", "widget.switchAppBtn", "widget.myStationBtn",
 		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn", 
 		
 		"homeView", "container.homeViewTop", "container.homeViewMain", "container.homeViewBottom",
@@ -36,7 +36,7 @@ Ext.application({
 	],
 	
 	controllers : [
-		"widget.backBtn", "widget.customCategoryBtn", "widget.switchAppBtn",
+		"widget.backBtn", "widget.categorySettingBtn", "widget.switchAppBtn",
 		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn", 
 		
 		"homeView", "container.homeViewMain",
