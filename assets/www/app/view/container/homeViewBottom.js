@@ -1,30 +1,24 @@
 Ext.define("Project.view.container.homeViewBottom", {
-	extend : "Ext.Container",
+	extend : "Ext.Toolbar",
 	xtype : "homeViewBottom",
 	config : {
 		docked : "bottom",
 		items : [{
-				xtype : "container",
-				layout : "hbox",
-				items : [{
-						xtype : "spacer",
-					}, {
-						xtype : "categorySettingBtn",
-					}, {
-						xtype : "spacer",
-					}, {
-						xtype : "switchAppBtn",
-					}, {
-						xtype : "spacer",
-					}, {
-						xtype : "myStationBtn",
-					}, {
-						xtype : "spacer",
-					},
-				],
+				xtype : "spacer",
 			}, {
-				xtype : "toolbar",
-				title : "中国电信湖北分公司",
+				xtype : "customCategoryBtn",
+			}, {
+				xtype : "container",
+				html : "<div class = homeViewName ><b>订阅新频道<b></div>",
+			}, {
+				xtype : "spacer",
+			}, {
+				xtype : "myAccountBtn",
+			}, {
+				xtype : "container",
+				html : "<div class = homeViewName ><b>我的工作台<b></div>",
+			}, {
+				xtype : "spacer",
 			},
 		],
 	},

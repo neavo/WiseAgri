@@ -1,13 +1,13 @@
-Ext.define("Project.controller.widget.categorySettingBtn", {
+Ext.define("Project.controller.widget.customCategoryBtn", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {
-			categorySettingBtn : "categorySettingBtn",
+			customCategoryBtn : "customCategoryBtn",
 		},
 		control : {},
 	},
 	launch : function () {
-		this.getCategorySettingBtn().addListener({
+		this.getCustomCategoryBtn().addListener({
 			tap : {
 				fn : function () {
 					Ext.getStore("appListStore").load();

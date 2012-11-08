@@ -9,15 +9,15 @@
 	主页图标样式
 */
 .homeViewName {
+	color : white;
 	font-size : 0.8em;
 	margin-left : 0.5em;
-	margin-bottom : 0.3em;
-	float : right;
+	margin-top : 0em;
 }
 .homeViewIcon {
-	width : 1em;
-	height : 1em;
-	margin-bottom : 0.3em;
+	max-width : 1.2em;
+	max-height : 1.2em;
+	margin-bottom : 0em;
 	float : left;
 }
 
