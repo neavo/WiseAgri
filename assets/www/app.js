@@ -1,7 +1,10 @@
 Ext.application({
 	name : "Project",
 	
-	requires : [],
+	requires : [
+		"Ext.field.Search",
+		"Ext.MessageBox",
+	],
 	
 	models : [
 		"appModel",
@@ -19,8 +22,8 @@ Ext.application({
 	],
 	
 	views : [
-		"widget.backBtn", "widget.customCategoryBtn","widget.myAccountBtn",
-		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn", 
+		"widget.backBtn", "widget.customCategoryBtn", "widget.myAccountBtn",
+		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn",
 		
 		"homeView", "container.homeViewTop", "container.homeViewMain", "container.homeViewBottom",
 		"appList", "container.appListTop", "container.appListMain", "container.appListBottom",
@@ -35,7 +38,7 @@ Ext.application({
 	
 	controllers : [
 		"widget.backBtn", "widget.customCategoryBtn",
-		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn", 
+		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn",
 		
 		"homeView", "container.homeViewMain",
 		"appList", "container.appListMain",
@@ -44,7 +47,7 @@ Ext.application({
 		"newsList", "container.newsListMain",
 		"newsDetail",
 		"albumView",
-
+		
 		"mainController",
 	],
 	

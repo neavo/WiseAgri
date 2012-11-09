@@ -40,24 +40,15 @@
 /*
 	客户端列表页面样式
 */
-.appList .x-list-item {
-	height : 4.4em;
-}
-.appList .x-list-item .x-list-item-label {
-	height : 4.4em;
-}
-.appList .x-list-disclosure {
-	padding-bottom : 2.4em;
-	margin-right : 0.5em;
-}
 .appListIcon {
-	width : 3em;
-	height : 3em;
+	width : 2.5em;
+	height : 2.5em;
 	float : left;
+	margin-bottom : 0.5em;
 }
 .appListName {
 	font-size : 1.2em;
-	padding-top : 0.7em;
+	padding-top : 0.5em;
 	padding-left : 1em;
 	overflow : hidden;
 }
