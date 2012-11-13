@@ -4,102 +4,55 @@ Ext.define("Project.controller.container.homeViewMain", {
 		refs : {},
 		control : {},
 	},
-	loadCategory : function (category, carousel) {
+	setGrid : function (category, carousel) {
 		var i = 0;
 		var j = 0;
+		var k = 0;
 		var vContainer = "";
 		var hContainer = "";
-		for (var KEY in category) {
-			if (category[KEY]["categoryLevel"] != "1") {
-				continue;
-			};
-			if (i == 9) {
-				i = 0;
-			};
-			if (i == 0) {
+		for (i = 0; i < 3; i++) {
+			if (i == 0 && j == 0) {
 				vContainer = Ext.create("Ext.Container", {
 						layout : "vbox",
 					});
-				vContainer.add(Ext.create("Ext.Spacer"));
-				carousel.add(vContainer);
 			};
-			if (i == 0 || i == 3 || i == 6) {
-				hContainer = Ext.create("Ext.Container", {
-						layout : "hbox",
-					});
+			hContainer = Ext.create("Ext.Container", {
+					layout : "hbox",
+				});
+			for (j = 0; j < 3; j++) {
 				hContainer.add(Ext.create("Ext.Spacer"));
-				vContainer.add(hContainer);
-				vContainer.add(Ext.create("Ext.Spacer"));
+				if (category[k]) {
+					if (category[k]["categoryName"]) {
+						hContainer.add(Ext.create("Ext.Container", {
+								html : "<img class = categoryIcon src = " + category[k]["categoryIconUrl"] + " >"
+								 + "<div class = categoryName > " + category[k]["categoryName"] + "</div>",
+							}));
+					};
+					if (category[k]["appName"]) {
+						hContainer.add(Ext.create("Ext.Container", {
+								html : "<img class = categoryIcon src = " + category[k]["appIconUrl"] + " >"
+								 + "<div class = categoryName > " + category[k]["appName"] + "</div>",
+							}));
+					};
+				} else {
+					hContainer.add(Ext.create("Ext.Container", {
+							html : "<img class = categoryIcon src = resources/icons/noIcon.png >"
+							 + "<div class = categoryName >　　　　</div>",
+						}));
+				};
+				k = k + 1;
 			};
-			
-			hContainer.add(Ext.create("Ext.Container", {
-					html : "<img class = categoryIcon src = " + category[KEY]["categoryIconUrl"] + " >"
-					 + "<div class = categoryName ><b>" + category[KEY]["categoryName"] + "<b></div>",
-					data : category[KEY],
-					setChildView : function (childCategory, title) {
-						DoSwitch("childCategory");
-						DB.childCategoryTop.setTitle(title);
-						DB.childCategoryMain.getStore().setData(childCategory);
-					},
-					setNewsView : function (title) {
-						DoSwitch("newsList");
-						DB.newsListTop.setTitle(title);
-						DB.newsListMain.getStore().load();
-					},
-					listeners : {
-						tap : {
-							fn : function () {
-								if (this.config.data.categoryStyle == "parentCategory") {
-									var childCategory = [];
-									for (var key in category) {
-										var array = this.config.data.extraParam.split(";");
-										for (var k in array) {
-											if (category[key]["categoryId"] == array[k]) {
-												childCategory.push(category[key]);
-											};
-										};
-									};
-									this.config.setChildView(childCategory, this.config.data.categoryName);
-								};
-								if (this.config.data.categoryStyle == "newsCategory") {
-									this.config.setNewsView(this.config.data.categoryName);
-								};
-							},
-							element : "element",
-						},
-					},
-				}));
 			hContainer.add(Ext.create("Ext.Spacer"));
-			
-			i = i + 1;
+			vContainer.add(Ext.create("Ext.Spacer"));
+			vContainer.add(hContainer);
 		};
-		
-		for (; i < 9; i++) {
-			if (i == 0) {
-				vContainer = Ext.create("Ext.Container", {
-						layout : "vbox",
-					});
-				vContainer.add(Ext.create("Ext.Spacer"));
-				carousel.add(vContainer);
-			};
-			if (i == 0 || i == 3 || i == 6) {
-				hContainer = Ext.create("Ext.Container", {
-						layout : "hbox",
-					});
-				hContainer.add(Ext.create("Ext.Spacer"));
-				vContainer.add(hContainer);
-				vContainer.add(Ext.create("Ext.Spacer"));
-			};
-			
-			hContainer.add(Ext.create("Ext.Container", {
-					html : "<img class = categoryIcon src = resources/icons/noIcon.png >"
-					 + "<div class = categoryName ><b>　　　　<b></div>",
-				}));
-			hContainer.add(Ext.create("Ext.Spacer"));
+		vContainer.add(Ext.create("Ext.Spacer"));
+		carousel.add(vContainer);
+		if (category[k]) {
+			this.setGrid(category.slice(k), carousel);
 		};
 	},
 	launch : function () {
-		var self = this;
 		Ext.getStore("defaultCategoryStore").load({
 			callback : function (records, operation, success) {
 				if (success && records.lenght != 0) {
@@ -107,16 +60,17 @@ Ext.define("Project.controller.container.homeViewMain", {
 					for (var key in records) {
 						defaultCategory.push(records[key].getData());
 					};
-					this.loadCategory(defaultCategory, DB.homeViewMain);
+					this.setGrid(defaultCategory, DB.homeViewMain);
 				};
 			},
 			scope : this,
 		});
 		if (SQLite) {
+			var self = this;
 			SQLite.transaction(function (shell) {
-				shell.executeSql("SELECT * FROM customCategory ORDER BY categoryId", [], function (shell, results) {
-					DB.customCategory = SqlToJson(results);
-					self.loadCategory(DB.customCategory, DB.homeViewMain);
+				shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
+					DB.myApp = SqlToJson(results);
+					self.setGrid(DB.myApp, DB.homeViewMain);
 				}, errorSQL);
 			}, errorSQL);
 		};

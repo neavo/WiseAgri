@@ -1,9 +1,4 @@
 [{
-		"appId" : "001",
-		"appLocation" : "翼农",
-		"appName" : "频道",
-		"appIconUrl" : "resources/icons/08.png",
-	}, {
 		"appId" : "002",
 		"appLocation" : "恩施",
 		"appName" : "烟草通",

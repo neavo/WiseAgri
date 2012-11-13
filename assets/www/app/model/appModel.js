@@ -6,6 +6,7 @@ Ext.define("Project.model.appModel", {
 			"appLocation",
 			"appName",
 			"appIconUrl",
+			"checkIcon",
 		],
 	},
 });

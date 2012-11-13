@@ -15,19 +15,17 @@ Ext.application({
 	stores : [
 		"defaultCategoryStore",
 		"appListStore",
-		"webCategoryStore",
-		"categoryListStore",
+		"webAppStore",
 		"childCategoryStore",
 		"newsStore",
 	],
 	
 	views : [
-		"widget.backBtn", "widget.customCategoryBtn", "widget.myAccountBtn",
+		"widget.backBtn", "widget.myAccountBtn",
 		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn",
 		
 		"homeView", "container.homeViewTop", "container.homeViewMain", "container.homeViewBottom",
 		"appList", "container.appListTop", "container.appListMain", "container.appListBottom",
-		"categoryList", "container.categoryListTop", "container.categoryListMain", "container.categoryListBottom",
 		"childCategory", "container.childCategoryTop", "container.childCategoryMain", "container.childCategoryBottom",
 		"newsList", "container.newsListTop", "container.newsListMain", "container.newsListBottom",
 		"newsDetail", "container.newsDetailTop", "container.newsDetailMain", "container.newsDetailBottom",
@@ -37,12 +35,11 @@ Ext.application({
 	],
 	
 	controllers : [
-		"widget.backBtn", "widget.customCategoryBtn",
+		"widget.backBtn",
 		"widget.smallerBtn", "widget.biggerBtn", "widget.nextBtn", "widget.prevBtn",
 		
 		"homeView", "container.homeViewMain",
 		"appList", "container.appListMain",
-		"categoryList", "container.categoryListMain",
 		"childCategory", "container.childCategoryMain",
 		"newsList", "container.newsListMain",
 		"newsDetail",

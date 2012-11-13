@@ -11,33 +11,32 @@ Ext.define("Project.controller.container.appListMain", {
 		},
 	},
 	onAppListMainItemtap : function (list, index, target, record, e, eOpts) {
-		var DATA = [];
-		Ext.getStore("webCategoryStore").load({
-			callback : function (records, operation, success) {
-				if (success && records.lenght != 0) {
-					for (var KEY in records) {
-						var flag = false;
-						var data = records[KEY].getData();
-						if (data.categoryLevel != "1") {
-							continue;
-						};
-						for (var key in DB.customCategory) {
-							if (data["categoryId"] == DB.customCategory[key]["categoryId"]) {
-								flag = true;
-							};
-						};
-						if (flag) {
-							data.categoryListCheck = "resources/icons/Checked.png";
-						} else {
-							data.categoryListCheck = "resources/icons/noIcon.png";
-						};
-						DATA.push(data);
-					};
-					DB.categoryListMain.getStore().setData(DATA);
+		var data = record.getData();
+		for (var key in data) {
+			if (!data[key]) {
+				data[key] = "";
+			};
+		};
+		if (data.checkIcon == "resources/icons/noIcon.png") {
+			Ext.Msg.confirm(DB.versionInfo, "是否要订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
+				if (buttonId == "yes") {
+					DoSQL("INSERT INTO myApp"
+						 + " (appId, appLocation, appName, appIconUrl)"
+						 + " VALUES"
+						 + " (\"" + data.appId + "\" ,\"" + data.appLocation + "\" ,\"" + data.appName + "\", \"" + data.appIconUrl + "\")");
+					data.checkIcon = "resources/icons/Checked.png";
+					list.getStore().load();
 				};
-			},
-			scope : this,
-		});
-		DoSwitch("categoryList");
+			});
+		};
+		if (data.checkIcon == "resources/icons/Checked.png") {
+			Ext.Msg.confirm(DB.versionInfo, "是否取消订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
+				if (buttonId == "yes") {
+					DoSQL("DELETE FROM myApp WHERE appId = \"" + data.appId + "\"");
+					data.checkIcon = "resources/icons/noIcon.png";
+					list.getStore().load();
+				};
+			});
+		};
 	},
 });

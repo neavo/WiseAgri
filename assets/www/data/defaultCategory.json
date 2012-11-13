@@ -8,27 +8,6 @@
 		"extraParam" : "001002;001003;001004",
 	}, {
 		"appId" : "001",
-		"categoryId" : "001002",
-		"categoryName" : "农业新闻",
-		"categoryLevel" : "2",
-		"categoryIconUrl" : "resources/icons/01.png",
-		"categoryStyle" : "newsCategory",
-	}, {
-		"appId" : "001",
-		"categoryId" : "001003",
-		"categoryName" : "市场分析",
-		"categoryLevel" : "2",
-		"categoryIconUrl" : "resources/icons/01.png",
-		"categoryStyle" : "newsCategory",
-	}, {
-		"appId" : "001",
-		"categoryId" : "001004",
-		"categoryName" : "政策法规",
-		"categoryLevel" : "2",
-		"categoryIconUrl" : "resources/icons/01.png",
-		"categoryStyle" : "newsCategory",
-	}, {
-		"appId" : "001",
 		"categoryId" : "001005",
 		"categoryName" : "恩施新闻",
 		"categoryLevel" : "1",

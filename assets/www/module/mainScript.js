@@ -6,7 +6,7 @@ var Website = {
 // 本地数据库
 var DB = {
 	versionInfo : "智慧 • 农业 v1.0",
-	customCategory : "",
+	myApp : [],
 	activatedController : "",
 	activatedCategory : "",
 	activatedAlbum : "",
@@ -35,10 +35,8 @@ var SQLite = "";
 		
 		// 初始化SQLite数据库对象
 		SQLite = window.openDatabase("WiseAgri", "1.0", "WiseAgri Datebase", 1048576);
-		DoSQL("CREATE TABLE IF NOT EXISTS customCategory"
-			 + " (appId VARCHAR(128), categoryId VARCHAR(128), categoryName VARCHAR(128),"
-			 + " categoryLevel VARCHAR(128), categoryIconUrl VARCHAR(1024), categoryStyle VARCHAR(128),"
-			 + " extraParam VARCHAR(1024))");
+		DoSQL("CREATE TABLE IF NOT EXISTS myApp"
+			 + " (appId VARCHAR(128), appLocation VARCHAR(128), appName VARCHAR(128), appIconUrl VARCHAR(1024))");
 	};
 };
 
