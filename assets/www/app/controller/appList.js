@@ -41,8 +41,8 @@ Ext.define("Project.controller.appList", {
 					if (category[k]["categoryName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
 								data : category[k],
-								html : "<img class = categoryIcon src = " + category[k]["categoryIconUrl"] + " >"
-								 + "<div class = categoryName > " + category[k]["categoryName"] + "</div>",
+								html : "<img class = categoryIcon src = " + category[k]["categoryIconUrl"] + " />"
+								 + "<div class = categoryName ><b>" + category[k]["categoryName"] + "</b></div>",
 								listeners : {
 									tap : {
 										fn : function () {
@@ -61,8 +61,8 @@ Ext.define("Project.controller.appList", {
 					if (category[k]["appName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
 								data : category[k],
-								html : "<img class = categoryIcon src = " + category[k]["appIconUrl"] + " >"
-								 + "<div class = categoryName > " + category[k]["appName"] + "</div>",
+								html : "<img class = categoryIcon src = " + category[k]["appIconUrl"] + " />"
+								 + "<div class = categoryName ><b>" + category[k]["appName"] + "</b></div>",
 								listeners : {
 									tap : {
 										fn : function () {
@@ -76,7 +76,7 @@ Ext.define("Project.controller.appList", {
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {
 							html : "<img class = categoryIcon src = resources/icons/noIcon.png >"
-							 + "<div class = categoryName >　　　　</div>",
+							 + "<div class = categoryName ><b>　　　　</b></div>",
 						}));
 				};
 				k = k + 1;

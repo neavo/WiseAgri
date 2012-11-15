@@ -106,9 +106,7 @@ function setAlbumGrid(image, carousel) {
 						html : "<img class = albumImage src = " + image[k] + " />",
 						listeners : {
 							tap : {
-								fn : function () {
-									window.plugins.childBrowser.showWebPage("file:///android_asset/www/html/album.html", false);
-								},
+								fn : function () {},
 								element : "element",
 							},
 						},
