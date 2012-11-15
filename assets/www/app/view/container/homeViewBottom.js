@@ -11,7 +11,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 				listeners : {
 					tap : {
 						fn : function () {
-							Ext.getStore("webAppStore").load({
+							Ext.getStore("appListStore").load({
 								callback : function (records, operation, success) {
 									if (success && records.length != 0) {
 										var Data = [];
@@ -46,7 +46,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 				listeners : {
 					tap : {
 						fn : function () {
-							Ext.getStore("webAppStore").load({
+							Ext.getStore("appListStore").load({
 								callback : function (records, operation, success) {
 									if (success && records.length != 0) {
 										var Data = [];

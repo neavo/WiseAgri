@@ -1,5 +1,6 @@
 // 服务器数据
-var ServerUrl = ""
+var ServerUrl = "http://192.168.45.1:8080/WiseAgriAjaxR/";
+//var ServerUrl = "http://localhost:8080/WiseAgriAjaxR/";
 	
 // 本地数据库
 var DB = {
@@ -42,7 +43,7 @@ function SqlToJson(results) {
 		var item = results.rows.item(i);
 		json = json + "{";
 		for (var key in item) {
-			if (item[key] != "" && item[key] != null)
+			if (item[key])
 				json = json + "\"" + key + "\"" + " : " + "\"" + item[key] + "\"" + ",";
 		};
 		json = json + "},";

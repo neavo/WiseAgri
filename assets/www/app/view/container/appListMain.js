@@ -3,8 +3,8 @@ Ext.define("Project.view.container.appListMain", {
 	xtype : "appListMain",
 	config : {
 		cls : "BackGround",
-		store : "appListStore",
-		itemTpl : "<img class = appListIcon onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = {appIconUrl} >"
+		store : "localAppStore",
+		itemTpl : "<img class = appListIcon src = {appIconUrl} />"
 		 + "<img class = appListCheck src = {checkIcon} />"
 		 + "<div class = appListName><b>{appLocation} • {appName}</b></div>",
 	},

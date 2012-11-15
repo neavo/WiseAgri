@@ -4,6 +4,7 @@ Ext.application({
 	requires : [
 		"Ext.field.Search",
 		"Ext.MessageBox",
+		"Ext.data.proxy.JsonP",
 	],
 	
 	models : [
@@ -16,7 +17,7 @@ Ext.application({
 		"defaultAppStore",
 		"defaultCategoryStore",
 		"appListStore",
-		"webAppStore",
+		"localAppStore",
 		"categoryListStore",
 		"newsStore",
 	],
