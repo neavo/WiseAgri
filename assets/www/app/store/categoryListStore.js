@@ -1,10 +1,10 @@
-Ext.define("Project.store.childCategoryStore", {
+Ext.define("Project.store.categoryListStore", {
 	extend : "Ext.data.Store",
 	config : {
 		model : "Project.model.categoryModel",
 		proxy : {
 			type : "ajax",
-			url : "data/childCategory.json",
+			url : "data/categoryList.json",
 		},
 	}
 });

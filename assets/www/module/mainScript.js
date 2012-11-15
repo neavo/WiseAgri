@@ -1,8 +1,8 @@
 // 服务器数据
 var ServerUrl = ""
 	
-	// 本地数据库
-	var DB = {
+// 本地数据库
+var DB = {
 	versionInfo : "智慧 • 农业 v1.0",
 	myApp : [],
 	activatedController : "",

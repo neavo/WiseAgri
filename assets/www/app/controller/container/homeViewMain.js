@@ -4,10 +4,10 @@ Ext.define("Project.controller.container.homeViewMain", {
 		refs : {},
 		control : {},
 	},
-	setChildCategory : function (id, name) {
-		DB.childCategoryTop.setTitle(name);
-		DB.childCategoryMain.getStore().load();
-		DoSwitch("childCategory");
+	setCategoryList : function (id, name) {
+		DB.categoryListTop.setTitle(name);
+		DB.categoryListMain.getStore().load();
+		DoSwitch("categoryList");
 	},
 	setNewsCategory : function (id, name) {
 		DB.newsListTop.setTitle(name);
@@ -15,9 +15,9 @@ Ext.define("Project.controller.container.homeViewMain", {
 		DoSwitch("newsList");
 	},
 	setAppCategory : function (id, name) {
-		DB.childCategoryTop.setTitle(name);
-		DB.childCategoryMain.getStore().load();
-		DoSwitch("childCategory");
+		DB.categoryListTop.setTitle(name);
+		DB.categoryListMain.getStore().load();
+		DoSwitch("categoryList");
 	},
 	setGrid : function (category, carousel) {
 		var i = 0;
@@ -47,7 +47,7 @@ Ext.define("Project.controller.container.homeViewMain", {
 									tap : {
 										fn : function () {
 											if (this.config.data.categoryStyle == "parentCategory") {
-												self.setChildCategory(this.config.data.categoryId, this.config.data.categoryName);
+												self.setCategoryList(this.config.data.categoryId, this.config.data.categoryName);
 											};
 											if (this.config.data.categoryStyle == "newsCategory") {
 												self.setNewsCategory(this.config.data.categoryId, this.config.data.categoryName);

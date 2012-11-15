@@ -1,6 +1,6 @@
-Ext.define("Project.view.container.childCategoryBottom", {
+Ext.define("Project.view.container.categoryListBottom", {
 	extend : "Ext.Toolbar",
-	xtype : "childCategoryBottom",
+	xtype : "categoryListBottom",
 	config : {
 		docked : "bottom",
 		items : [{

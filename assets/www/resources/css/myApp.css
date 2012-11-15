@@ -48,7 +48,7 @@
 }
 .appListName {
 	font-size : 1.2em;
-	padding-top : 0.4em;
+	padding-top : 0.45em;
 	padding-left : 1em;
 	overflow : hidden;
 }
@@ -63,19 +63,19 @@
 /*
 	子频道列表页面样式
 */
-.childCategoryIcon {
+.categoryListIcon {
 	width : 2.5em;
 	height : 2.5em;
 	float : left;
 	margin-bottom : 0.5em;
 }
-.childCategoryName {
+.categoryListName {
 	font-size : 1.2em;
-	padding-top : 0.4em;
+	padding-top : 0.45em;
 	padding-left : 1em;
 	overflow : hidden;
 }
-.childCategoryDisclosure {
+.categoryListDisclosure {
 	float : right;
 	max-width : 1.5em;
 	max-height : 1.5em;

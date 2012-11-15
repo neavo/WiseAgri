@@ -1,4 +1,4 @@
-Ext.define("Project.controller.childCategory", {
+Ext.define("Project.controller.categoryList", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {},
