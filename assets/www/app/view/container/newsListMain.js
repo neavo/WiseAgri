@@ -2,11 +2,10 @@ Ext.define("Project.view.container.newsListMain", {
 	extend : "Ext.List",
 	xtype : "newsListMain",
 	config : {
+		cls : "BackGround",
 		store : "newsStore",
-		cls : "newsList",
 		itemTpl : "<img class = newsListIcon onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = {iconUrl} >"
 		 + "<div class = newsListTitle><b>{title}</b></div>"
-		 + "<div class = newsListDate>{dateTime}</div>"
-		 + "<div class = newsListPubliser>{publisher}</div>",
+		 + "<div class = newsListDatePubliser>{dateTime}　来源：{publisher}</div>",
 	},
 });

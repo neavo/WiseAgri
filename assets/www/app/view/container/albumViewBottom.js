@@ -6,14 +6,6 @@ Ext.define("Project.view.container.albumViewBottom", {
 		items : [{
 				xtype : "spacer",
 			}, {
-				xtype : "prevBtn",
-			}, {
-				xtype : "spacer",
-			},{
-				xtype : "nextBtn",
-			}, {
-				xtype : "spacer",
-			},{
 				xtype : "backBtn",
 			}, {
 				xtype : "spacer",

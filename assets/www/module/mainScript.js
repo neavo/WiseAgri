@@ -23,7 +23,7 @@ var SQLite = "";
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
 		// 加载完毕以后干掉启动闪屏
-		cordova.exec(null, null, "SplashScreen", "hide", []);
+		navigator.splashscreen.hide();
 		
 		// 响应返回键
 		document.addEventListener("backbutton", onBackButtonTap, false);
@@ -90,9 +90,51 @@ function DoSwitch(view) {
 };
 
 // 切换至相册页面
+function setAlbumGrid(image, carousel) {
+	var i = 0;
+	var j = 0;
+	var k = 0;
+	var vContainer = "";
+	var hContainer = "";
+	for (i = 0; i < 3; i++) {
+		if (i == 0 && j == 0) {
+			vContainer = Ext.create("Ext.Container", {
+					layout : "vbox",
+				});
+		};
+		hContainer = Ext.create("Ext.Container", {
+				layout : "hbox",
+			});
+		for (j = 0; j < 2; j++) {
+			hContainer.add(Ext.create("Ext.Spacer"));
+			if (image[k]) {
+				hContainer.add(Ext.create("Ext.Container", {
+						html : "<img class = albumImage src = " + image[k] + " >",
+						listeners : {
+							tap : {
+								fn : function () {},
+								element : "element",
+							},
+						},
+					}));
+			} else {
+				hContainer.add(Ext.create("Ext.Container", {
+						html : "<img class = albumSpacerImage src = resources/icons/noIcon.png >",
+					}));
+			};
+			k = k + 1;
+		};
+		hContainer.add(Ext.create("Ext.Spacer"));
+		vContainer.add(Ext.create("Ext.Spacer"));
+		vContainer.add(hContainer);
+	};
+	vContainer.add(Ext.create("Ext.Spacer"));
+	carousel.add(vContainer);
+	if (image[k]) {
+		setAlbumGrid(image.slice(k), carousel);
+	};
+};
 function DoShowAlbum() {
-	DB.albumPage = 1;
 	DoSwitch("albumView");
-	DB.albumViewTop.setTitle(DB.albumPage + " / " + DB.activatedAlbum.length);
-	DB.albumViewMain.setHtml("<img class = albumImage src = " + DB.activatedAlbum[DB.albumPage - 1] + ">");
+	setAlbumGrid(DB.activatedAlbum, DB.albumViewMain);
 };

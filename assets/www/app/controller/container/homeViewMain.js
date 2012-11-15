@@ -4,10 +4,26 @@ Ext.define("Project.controller.container.homeViewMain", {
 		refs : {},
 		control : {},
 	},
+	setChildCategory : function (id, name) {
+		DB.childCategoryTop.setTitle(name);
+		DB.childCategoryMain.getStore().load();
+		DoSwitch("childCategory");
+	},
+	setNewsCategory : function (id, name) {
+		DB.newsListTop.setTitle(name);
+		DB.newsListMain.getStore().load();
+		DoSwitch("newsList");	
+	},
+	setAppCategory : function (id, name) {
+		DB.childCategoryTop.setTitle(name);
+		DB.childCategoryMain.getStore().load();
+		DoSwitch("childCategory");		
+	},
 	setGrid : function (category, carousel) {
 		var i = 0;
 		var j = 0;
 		var k = 0;
+		var self = this;
 		var vContainer = "";
 		var hContainer = "";
 		for (i = 0; i < 3; i++) {
@@ -24,14 +40,37 @@ Ext.define("Project.controller.container.homeViewMain", {
 				if (category[k]) {
 					if (category[k]["categoryName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
+								data : category[k],
 								html : "<img class = categoryIcon src = " + category[k]["categoryIconUrl"] + " >"
 								 + "<div class = categoryName > " + category[k]["categoryName"] + "</div>",
+								listeners : {
+									tap : {
+										fn : function () {
+											if (this.config.data.categoryStyle == "parentCategory") {
+												self.setChildCategory(this.config.data.categoryId, this.config.data.categoryName);
+											};
+											if (this.config.data.categoryStyle == "newsCategory") {
+												self.setNewsCategory(this.config.data.categoryId, this.config.data.categoryName);
+											};
+										},
+										element : "element",
+									},
+								},
 							}));
 					};
 					if (category[k]["appName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
+								data : category[k],
 								html : "<img class = categoryIcon src = " + category[k]["appIconUrl"] + " >"
 								 + "<div class = categoryName > " + category[k]["appName"] + "</div>",
+								listeners : {
+									tap : {
+										fn : function () {
+											self.setAppCategory(this.config.data.appId, this.config.data.appName);
+										},
+										element : "element",
+									},
+								},
 							}));
 					};
 				} else {

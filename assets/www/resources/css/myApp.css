@@ -1,7 +1,7 @@
 /*
 	主容器样式
 */
-.mainContainer {
+.BackGround {
 	background : url(../images/mainBackground.png);
 }
 
@@ -48,76 +48,64 @@
 }
 .appListName {
 	font-size : 1.2em;
-	padding-top : 0.5em;
+	padding-top : 0.4em;
 	padding-left : 1em;
 	overflow : hidden;
+}
+.appListCheck {
+	float : right;
+	max-width : 1.5em;
+	max-height : 1.5em;
+	margin-right : 0.5em;
+	margin-top : 0.5em;
 }
 
 /*
-	频道列表页面样式
+	子频道列表页面样式
 */
-.categoryList .x-list-item {
-	height : 4.4em;
-}
-.categoryList .x-list-item .x-list-item-label {
-	height : 4.4em;
-}
-.categoryList .x-list-disclosure {
-	padding-bottom : 2.4em;
-	margin-right : 0.5em;
-}
-.categoryListIcon {
-	width : 3em;
-	height : 3em;
+.childCategoryIcon {
+	width : 2.5em;
+	height : 2.5em;
 	float : left;
+	margin-bottom : 0.5em;
 }
-.categoryListCheck {
-	margin-top : 0.8em;
-	margin-right : 0.1em;
-	width : 1.5em;
-	height : 1.5em;
-	float : right;
-}
-.categoryListName {
+.childCategoryName {
 	font-size : 1.2em;
-	padding-top : 0.7em;
+	padding-top : 0.4em;
 	padding-left : 1em;
 	overflow : hidden;
+}
+.childCategoryDisclosure {
+	float : right;
+	max-width : 1.5em;
+	max-height : 1.5em;
+	margin-right : 0.5em;
+	margin-top : 0.5em;
 }
 
 /*
 	信息列表样式
 */
-.newsList .x-list-item {
-	height : 5.1em;
-}
-.newsList .x-list-item .x-list-item-label {
-	height : 5.1em;
-}
 .newsListIcon {
-	width : 3.7em;
-	height : 3.7em;
 	float : left;
+	width : 3.5em;
+	height : 3.5em;
+	margin-bottom : 0.5em;
 }
 .newsListTitle {
+	text-align : left;
 	font-size : 0.9em;
-	line-height : 1.2em;
-	height : 2.4em;
+	line-height : 1.4em;
+	height : 2.8em;
 	padding-left : 0.9em;
+	margin-bottom : 0.35em;
 	overflow : hidden;
 }
-.newsListDate {
+.newsListDatePubliser {
+	text-align : left;
 	font-size : 0.6em;
-	margin-top : 0.5em;
 	color :  #808080;
-	padding-left : 1.2em;
-	overflow : hidden;
-}
-.newsListPubliser {
-	font-size : 0.6em;
-	margin-top : 0.3em;
-	color :  #808080;
-	padding-left : 1.2em;
+	padding-left : 1.35em;
 	overflow : hidden;
 }
 
@@ -188,11 +176,23 @@
 /*
 	相册视图样式
 */
-.albumContainer {
+.albumCarousel {
 	background : #262626;
 }
+.albumCarousel .x-carousel-indicator-dark span {
+	background-image: none;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.albumCarousel .x-carousel-indicator-dark span.x-carousel-indicator-active {
+	background-image: none;
+	background-color: rgba(255, 125, 0, 1);
+}
 .albumImage {
-	margin-top :130px;
-	max-width : 360px;
-	max-height : 225px;
+	width : 160px;
+ 	height : 120px;
+	border : 1px solid #FFFFFF;
+}
+.albumSpacerImage {
+	width : 160px;
+ 	height : 120px;
 }

@@ -2,10 +2,10 @@ Ext.define("Project.view.container.childCategoryMain", {
 	extend : "Ext.List",
 	xtype : "childCategoryMain",
 	config : {
-		cls : "categoryList",
+		cls : "BackGround",
 		store : "childCategoryStore",
-		onItemDisclosure : true,
-		itemTpl : "<img class = categoryListIcon src = {categoryIconUrl} />"
-		 + "<div class = categoryListName><b>{categoryName} </b></div>",
+		itemTpl : "<img class = childCategoryIcon src = {categoryIconUrl} />"
+		 + "<img class = childCategoryDisclosure src = resources/icons/disclosureIcon.png />"
+		 + "<div class = childCategoryName><b>{categoryName} </b></div>",
 	},
 });
