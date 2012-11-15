@@ -1,8 +1,8 @@
 // 服务器数据
 var ServerUrl = ""
-
-// 本地数据库
-var DB = {
+	
+	// 本地数据库
+	var DB = {
 	versionInfo : "智慧 • 农业 v1.0",
 	myApp : [],
 	activatedController : "",
@@ -19,16 +19,10 @@ var SQLite = "";
 	// 等待PhoneGap加载完毕
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
-		// 加载完毕以后干掉启动闪屏
-		navigator.splashscreen.hide();
-		
 		// 响应返回键
-		document.addEventListener("backbutton", onBackButtonTap, false);
-		
-		// 响应返回键
-		function onBackButtonTap() {
+		document.addEventListener("backbutton", function () {
 			DB.activatedController.goBack();
-		};
+		}, false);
 		
 		// 初始化SQLite数据库对象
 		SQLite = window.openDatabase("WiseAgri", "1.0", "WiseAgri Datebase", 1048576);
@@ -109,7 +103,6 @@ function setAlbumGrid(image, carousel) {
 			hContainer.add(Ext.create("Ext.Spacer"));
 			if (image[k]) {
 				hContainer.add(Ext.create("Ext.Container", {
-						imageUrl : image[k],
 						html : "<img class = albumImage src = " + image[k] + " />",
 						listeners : {
 							tap : {

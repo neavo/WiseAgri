@@ -12,12 +12,12 @@ Ext.define("Project.controller.container.homeViewMain", {
 	setNewsCategory : function (id, name) {
 		DB.newsListTop.setTitle(name);
 		DB.newsListMain.getStore().load();
-		DoSwitch("newsList");	
+		DoSwitch("newsList");
 	},
 	setAppCategory : function (id, name) {
 		DB.childCategoryTop.setTitle(name);
 		DB.childCategoryMain.getStore().load();
-		DoSwitch("childCategory");		
+		DoSwitch("childCategory");
 	},
 	setGrid : function (category, carousel) {
 		var i = 0;
@@ -109,7 +109,9 @@ Ext.define("Project.controller.container.homeViewMain", {
 			SQLite.transaction(function (shell) {
 				shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
 					DB.myApp = SqlToJson(results);
-					self.setGrid(DB.myApp, DB.homeViewMain);
+					if (DB.myApp.length != 0) {
+						self.setGrid(DB.myApp, DB.homeViewMain);
+					};
 				}, errorSQL);
 			}, errorSQL);
 		};

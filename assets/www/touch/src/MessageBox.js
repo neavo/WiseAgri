@@ -135,10 +135,10 @@ Ext.define('Ext.MessageBox', {
     },
 
     statics: {
-        OK    : {text: 'OK',     itemId: 'ok',  ui: 'action'},
-        YES   : {text: 'Yes',    itemId: 'yes', ui: 'action'},
-        NO    : {text: 'No',     itemId: 'no'},
-        CANCEL: {text: 'Cancel', itemId: 'cancel'},
+        OK    : {text: '确定',     itemId: 'ok',  ui: 'action'},
+        YES   : {text: '是',    itemId: 'yes', ui: 'action'},
+        NO    : {text: '否',     itemId: 'no'},
+        CANCEL: {text: '取消', itemId: 'cancel'},
 
         INFO    : Ext.baseCSSPrefix + 'msgbox-info',
         WARNING : Ext.baseCSSPrefix + 'msgbox-warning',
@@ -146,17 +146,17 @@ Ext.define('Ext.MessageBox', {
         ERROR   : Ext.baseCSSPrefix + 'msgbox-error',
 
         OKCANCEL: [
-            {text: 'Cancel', itemId: 'cancel'},
-            {text: 'OK',     itemId: 'ok',  ui : 'action'}
+            {text: '取消', itemId: 'cancel'},
+            {text: '确定',     itemId: 'ok',  ui : 'action'}
         ],
         YESNOCANCEL: [
-            {text: 'Cancel', itemId: 'cancel'},
-            {text: 'No',     itemId: 'no'},
-            {text: 'Yes',    itemId: 'yes', ui: 'action'}
+            {text: '取消', itemId: 'cancel'},
+            {text: '否',     itemId: 'no'},
+            {text: '是',    itemId: 'yes', ui: 'action'}
         ],
         YESNO: [
-            {text: 'No',  itemId: 'no'},
-            {text: 'Yes', itemId: 'yes', ui: 'action'}
+            {text: '是', itemId: 'yes', ui: 'action'},
+            {text: '否',  itemId: 'no'}
         ]
     },
 

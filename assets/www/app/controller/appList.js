@@ -110,7 +110,9 @@ Ext.define("Project.controller.appList", {
 			SQLite.transaction(function (shell) {
 				shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
 					DB.myApp = SqlToJson(results);
-					self.setGrid(DB.myApp, DB.homeViewMain);
+					if (DB.myApp.length != 0) {
+						self.setGrid(DB.myApp, DB.homeViewMain);
+					};
 					DoSwitch("homeView");
 					DB.homeViewMain.setActiveItem(0);
 				}, errorSQL);
