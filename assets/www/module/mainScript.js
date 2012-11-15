@@ -1,7 +1,5 @@
 // 服务器数据
-var Website = {
-	serverUrl : "http://221.235.190.14:8080/AjaxServer/",
-};
+var ServerUrl = ""
 
 // 本地数据库
 var DB = {
@@ -10,7 +8,6 @@ var DB = {
 	activatedController : "",
 	activatedCategory : "",
 	activatedAlbum : "",
-	albumPage : 1,
 	scaleFlag : 0,
 };
 
@@ -74,6 +71,9 @@ function setActivatedController(controller) {
 function setActivatedCategory(category) {
 	DB.activatedCategory = category;
 };
+function setActivatedAlbum(album) {
+	DB.activatedAlbum = album;
+};
 
 // 切换页面
 function DoSwitch(view) {
@@ -109,17 +109,20 @@ function setAlbumGrid(image, carousel) {
 			hContainer.add(Ext.create("Ext.Spacer"));
 			if (image[k]) {
 				hContainer.add(Ext.create("Ext.Container", {
-						html : "<img class = albumImage src = " + image[k] + " >",
+						imageUrl : image[k],
+						html : "<img class = albumImage src = " + image[k] + " />",
 						listeners : {
 							tap : {
-								fn : function () {},
+								fn : function () {
+									window.plugins.childBrowser.showWebPage("file:///android_asset/www/html/album.html", false);
+								},
 								element : "element",
 							},
 						},
 					}));
 			} else {
 				hContainer.add(Ext.create("Ext.Container", {
-						html : "<img class = albumSpacerImage src = resources/icons/noIcon.png >",
+						html : "<img class = albumSpacerImage src = resources/icons/noIcon.png />",
 					}));
 			};
 			k = k + 1;
@@ -136,5 +139,7 @@ function setAlbumGrid(image, carousel) {
 };
 function DoShowAlbum() {
 	DoSwitch("albumView");
+	DB.albumViewMain.removeAll(true);
 	setAlbumGrid(DB.activatedAlbum, DB.albumViewMain);
+	DB.albumViewMain.setActiveItem(0);
 };

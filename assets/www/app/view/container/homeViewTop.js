@@ -3,6 +3,5 @@ Ext.define("Project.view.container.homeViewTop", {
 	xtype : "homeViewTop",
 	config : {
 		docked : "top",
-		title : defaultApp.appLocation + " • " + defaultApp.appName,
 	},
 });

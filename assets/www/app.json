@@ -96,6 +96,7 @@
     "resources": [
 		"lib",
 		"data",
+		"html",
 		"module",
         "resources/css/",
         "resources/icons",

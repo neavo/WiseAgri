@@ -13,6 +13,7 @@ Ext.application({
 	],
 	
 	stores : [
+		"defaultAppStore",
 		"defaultCategoryStore",
 		"appListStore",
 		"webAppStore",
@@ -36,7 +37,7 @@ Ext.application({
 	controllers : [
 		"widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
 		
-		"homeView", "container.homeViewMain",
+		"homeView", "container.homeViewTop", "container.homeViewMain",
 		"appList", "container.appListMain",
 		"childCategory", "container.childCategoryMain",
 		"newsList", "container.newsListMain",

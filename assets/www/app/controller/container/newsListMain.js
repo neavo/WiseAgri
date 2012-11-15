@@ -17,7 +17,7 @@ Ext.define("Project.controller.container.newsListMain", {
 			 + "<div class = newsDetailDataTime>" + data.dateTime + "　来源：" + data.publisher + "</div>"
 			 + "<HR align = left width = 100% color = #FFFFFF size = 1 noShade>");
 		if (data.imageUrl != "" && data.imageUrl.toLowerCase() != "null") {
-			DB.activatedAlbum = data.imageUrl.split(";");
+			setActivatedAlbum(data.imageUrl.split(";"));
 			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml()
 				 + "<div>"
 				 + "<img class = newsDetailImage onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = " + data.iconUrl + ">"
