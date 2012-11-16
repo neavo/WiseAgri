@@ -8,8 +8,8 @@ Ext.define("Project.controller.container.homeViewTop", {
 		Ext.getStore("defaultAppStore").load({
 			callback : function (records, operation, success) {
 				if (success && records.lenght != 0) {
-					var data = records[0].getData()
-					DB.homeViewTop.setTitle(data.appLocation + " • " + data.appName);
+					defaultApp = records[0].getData();
+					DB.homeViewTop.setTitle(defaultApp.appLocation + " • " + defaultApp.appName);
 				};
 			},
 			scope : this,

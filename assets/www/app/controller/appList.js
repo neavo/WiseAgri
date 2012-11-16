@@ -5,19 +5,31 @@ Ext.define("Project.controller.appList", {
 		control : {},
 	},
 	setCategoryList : function (id, name) {
-		DB.categoryListTop.setTitle(name);
-		DB.categoryListMain.getStore().load();
 		DoSwitch("categoryList");
+		DB.categoryListTop.setTitle(name);
+		DB.categoryListMain.getStore().setProxy({
+			type : "jsonp",
+			url : ServerUrl + "GetCategoryList.jsp?parentId=" + id,
+		});
+		DB.categoryListMain.getStore().load();	
 	},
 	setNewsCategory : function (id, name) {
+		DoSwitch("newsList");
 		DB.newsListTop.setTitle(name);
-		DB.newsListMain.getStore().load();
-		DoSwitch("newsList");	
+		DB.newsListMain.getStore().setProxy({
+			type : "jsonp",
+			url : ServerUrl + "GetNewsList.jsp?categoryId=" + id,
+		});
+		DB.newsListMain.getStore().load();	
 	},
 	setAppCategory : function (id, name) {
+		DoSwitch("categoryList");
 		DB.categoryListTop.setTitle(name);
+		DB.categoryListMain.getStore().setProxy({
+			type : "jsonp",
+			url : ServerUrl + "GetCategoryList.jsp?appId=" + id,
+		});
 		DB.categoryListMain.getStore().load();
-		DoSwitch("categoryList");		
 	},
 	setGrid : function (category, carousel) {
 		var i = 0;
@@ -76,7 +88,7 @@ Ext.define("Project.controller.appList", {
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {
 							html : "<img class = categoryIcon src = resources/icons/noIcon.png >"
-							 + "<div class = categoryName ><b>　　　　</b></div>",
+							 + "<div class = categoryName >　　　　</div>",
 						}));
 				};
 				k = k + 1;

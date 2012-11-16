@@ -5,19 +5,31 @@ Ext.define("Project.controller.container.homeViewMain", {
 		control : {},
 	},
 	setCategoryList : function (id, name) {
-		DB.categoryListTop.setTitle(name);
-		DB.categoryListMain.getStore().load();
 		DoSwitch("categoryList");
+		DB.categoryListTop.setTitle(name);
+		DB.categoryListMain.getStore().setProxy({
+			type : "jsonp",
+			url : ServerUrl + "GetCategoryList.jsp?parentId=" + id,
+		});
+		DB.categoryListMain.getStore().load();	
 	},
 	setNewsCategory : function (id, name) {
-		DB.newsListTop.setTitle(name);
-		DB.newsListMain.getStore().load();
 		DoSwitch("newsList");
+		DB.newsListTop.setTitle(name);
+		DB.newsListMain.getStore().setProxy({
+			type : "jsonp",
+			url : ServerUrl + "GetNewsList.jsp?categoryId=" + id,
+		});
+		DB.newsListMain.getStore().load();	
 	},
 	setAppCategory : function (id, name) {
-		DB.categoryListTop.setTitle(name);
-		DB.categoryListMain.getStore().load();
 		DoSwitch("categoryList");
+		DB.categoryListTop.setTitle(name);
+		DB.categoryListMain.getStore().setProxy({
+			type : "jsonp",
+			url : ServerUrl + "GetCategoryList.jsp?appId=" + id,
+		});
+		DB.categoryListMain.getStore().load();
 	},
 	setGrid : function (category, carousel) {
 		var i = 0;

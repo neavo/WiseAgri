@@ -11,6 +11,11 @@ Ext.define("Project.view.container.homeViewBottom", {
 				listeners : {
 					tap : {
 						fn : function () {
+							DoSwitch("appList");
+							Ext.getStore("appListStore").setProxy({
+								type : "jsonp",
+								url : ServerUrl + "GetAppList.jsp?appId=" + defaultApp.appId,
+							});
 							Ext.getStore("appListStore").load({
 								callback : function (records, operation, success) {
 									if (success && records.length != 0) {
@@ -35,7 +40,6 @@ Ext.define("Project.view.container.homeViewBottom", {
 								},
 								scope : this
 							});
-							DoSwitch("appList");
 						},
 						element : "element",
 					},
@@ -46,6 +50,11 @@ Ext.define("Project.view.container.homeViewBottom", {
 				listeners : {
 					tap : {
 						fn : function () {
+							DoSwitch("appList");
+							Ext.getStore("appListStore").setProxy({
+								type : "jsonp",
+								url : ServerUrl + "GetAppList.jsp?appId=" + defaultApp.appId,
+							});
 							Ext.getStore("appListStore").load({
 								callback : function (records, operation, success) {
 									if (success && records.length != 0) {
@@ -70,7 +79,6 @@ Ext.define("Project.view.container.homeViewBottom", {
 								},
 								scope : this
 							});
-							DoSwitch("appList");
 						},
 						element : "element",
 					},

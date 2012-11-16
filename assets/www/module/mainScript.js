@@ -1,8 +1,8 @@
 // 服务器数据
-var ServerUrl = "http://192.168.45.1:8080/WiseAgriAjaxR/";
+var ServerUrl = "http://192.168.45.1:8080/WiseAgriAjax/";
 //var ServerUrl = "http://localhost:8080/WiseAgriAjaxR/";
-	
-// 本地数据库
+
+// 本地数据
 var DB = {
 	versionInfo : "智慧 • 农业 v1.0",
 	myApp : [],
@@ -11,6 +11,7 @@ var DB = {
 	activatedAlbum : "",
 	scaleFlag : 0,
 };
+var defaultApp = [];
 
 // 创建SQLite数据库对象
 var SQLite = "";
@@ -68,6 +69,11 @@ function setActivatedCategory(category) {
 };
 function setActivatedAlbum(album) {
 	DB.activatedAlbum = album;
+};
+
+// 自定义的Alert
+function DoAlert(msg) {
+	Ext.Msg.alert(DB.versionInfo, msg);
 };
 
 // 切换页面
