@@ -2,37 +2,25 @@
 	主容器样式
 */
 .BackGround {
-	background : url(../images/mainBackground.png);
+	background : url(../images/mainBackground.jpg);
 }
 
 /*
-	Toolbar图标样式
+	RightContainer样式
 */
-.toolbarBtnName {
-	color : white;
-	font-size : 0.8em;
-	margin-left : 0.5em;
-	margin-top : 0em;
-}
-.toolbarBtnIcon {
-	max-width : 1.2em;
-	max-height : 1.2em;
-	margin-bottom : 0em;
-	float : left;
+.rightContainerIcon {
+	width : 40px;
+	height : 40px;
+	display : block;
+	margin : auto;
 }
 
 /*
 	九宫格图标样式
 */
-.categoryName {
-	float : bottom;
-   	text-align : center;
-	font-size : 0.9em;
-	padding-top : 0.5em;
-}
 .categoryIcon {
-	width : 80px;
-	height : 80px;
+	width : 100%;
+	height : 100%;
 	display : block;
 	margin : auto;
 }

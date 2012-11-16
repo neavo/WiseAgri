@@ -9,7 +9,7 @@ Ext.define("Project.controller.container.homeViewTop", {
 			callback : function (records, operation, success) {
 				if (success && records.lenght != 0) {
 					defaultApp = records[0].getData();
-					DB.homeViewTop.setTitle(defaultApp.appLocation + " • " + defaultApp.appName);
+					//DB.homeViewTop.setTitle(defaultApp.appLocation + " • " + defaultApp.appName);
 				};
 			},
 			scope : this,

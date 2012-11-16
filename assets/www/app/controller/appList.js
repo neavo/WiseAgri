@@ -11,7 +11,7 @@ Ext.define("Project.controller.appList", {
 			type : "jsonp",
 			url : ServerUrl + "GetCategoryList.jsp?parentId=" + id,
 		});
-		DB.categoryListMain.getStore().load();	
+		DB.categoryListMain.getStore().load();
 	},
 	setNewsCategory : function (id, name) {
 		DoSwitch("newsList");
@@ -20,7 +20,7 @@ Ext.define("Project.controller.appList", {
 			type : "jsonp",
 			url : ServerUrl + "GetNewsList.jsp?categoryId=" + id,
 		});
-		DB.newsListMain.getStore().load();	
+		DB.newsListMain.getStore().load();
 	},
 	setAppCategory : function (id, name) {
 		DoSwitch("categoryList");
@@ -38,7 +38,7 @@ Ext.define("Project.controller.appList", {
 		var self = this;
 		var vContainer = "";
 		var hContainer = "";
-		for (i = 0; i < 3; i++) {
+		for (i = 0; i < 4; i++) {
 			if (i == 0 && j == 0) {
 				vContainer = Ext.create("Ext.Container", {
 						layout : "vbox",
@@ -47,14 +47,15 @@ Ext.define("Project.controller.appList", {
 			hContainer = Ext.create("Ext.Container", {
 					layout : "hbox",
 				});
-			for (j = 0; j < 3; j++) {
+			for (j = 0; j < 2; j++) {
 				hContainer.add(Ext.create("Ext.Spacer"));
 				if (category[k]) {
 					if (category[k]["categoryName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
 								data : category[k],
-								html : "<img class = categoryIcon src = " + category[k]["categoryIconUrl"] + " />"
-								 + "<div class = categoryName ><b>" + category[k]["categoryName"] + "</b></div>",
+								width : Ext.Viewport.getWindowWidth() * 0.3,
+								height : Ext.Viewport.getWindowWidth() * 0.3,
+								html : "<img class = categoryIcon src = " + category[k]["categoryIconUrl"] + " />",
 								listeners : {
 									tap : {
 										fn : function () {
@@ -73,8 +74,9 @@ Ext.define("Project.controller.appList", {
 					if (category[k]["appName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
 								data : category[k],
-								html : "<img class = categoryIcon src = " + category[k]["appIconUrl"] + " />"
-								 + "<div class = categoryName ><b>" + category[k]["appName"] + "</b></div>",
+								width : Ext.Viewport.getWindowWidth() * 0.3,
+								height : Ext.Viewport.getWindowWidth() * 0.3,
+								html : "<img class = categoryIcon src = " + category[k]["appIconUrl"] + " />",
 								listeners : {
 									tap : {
 										fn : function () {
@@ -87,8 +89,9 @@ Ext.define("Project.controller.appList", {
 					};
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {
-							html : "<img class = categoryIcon src = resources/icons/noIcon.png >"
-							 + "<div class = categoryName >　　　　</div>",
+							width : Ext.Viewport.getWindowWidth() * 0.3,
+							height : Ext.Viewport.getWindowWidth() * 0.3,
+							html : "<img class = categoryIcon src = resources/icons/noIcon.png >",
 						}));
 				};
 				k = k + 1;
@@ -104,7 +107,7 @@ Ext.define("Project.controller.appList", {
 		};
 	},
 	goBack : function () {
-		DB.homeViewMain.removeAll(true);
+		DB.homeViewCarousel.removeAll(true);
 		Ext.getStore("defaultCategoryStore").load({
 			callback : function (records, operation, success) {
 				if (success && records.lenght != 0) {
@@ -112,7 +115,7 @@ Ext.define("Project.controller.appList", {
 					for (var key in records) {
 						defaultCategory.push(records[key].getData());
 					};
-					this.setGrid(defaultCategory, DB.homeViewMain);
+					this.setGrid(defaultCategory, DB.homeViewCarousel);
 				};
 			},
 			scope : this,
@@ -123,10 +126,10 @@ Ext.define("Project.controller.appList", {
 				shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
 					DB.myApp = SqlToJson(results);
 					if (DB.myApp.length != 0) {
-						self.setGrid(DB.myApp, DB.homeViewMain);
+						self.setGrid(DB.myApp, DB.homeViewCarousel);
 					};
 					DoSwitch("homeView");
-					DB.homeViewMain.setActiveItem(0);
+					DB.homeViewCarousel.setActiveItem(0);
 				}, errorSQL);
 			}, errorSQL);
 		};

@@ -23,8 +23,9 @@ Ext.application({
 	
 	views : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
+		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn",
 		
-		"homeView", "container.homeViewTop", "container.homeViewMain", "container.homeViewBottom",
+		"homeView", "container.homeViewMain",
 		"appList", "container.appListTop", "container.appListMain", "container.appListBottom",
 		"categoryList", "container.categoryListTop", "container.categoryListMain", "container.categoryListBottom",
 		"newsList", "container.newsListTop", "container.newsListMain", "container.newsListBottom",
@@ -36,6 +37,7 @@ Ext.application({
 	
 	controllers : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
+		"widget.myAppBtn", "widget.aboutBtn", 
 		
 		"homeView", "container.homeViewTop", "container.homeViewMain",
 		"appList", "container.appListMain",
