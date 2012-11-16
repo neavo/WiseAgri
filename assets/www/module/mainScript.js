@@ -1,5 +1,5 @@
 // 服务器数据
-var ServerUrl = "http://192.168.45.1:8080/WiseAgriAjax/";
+var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
 //var ServerUrl = "http://localhost:8080/WiseAgriAjaxR/";
 
 // 本地数据
