@@ -93,44 +93,29 @@ function DoSwitch(view) {
 // 切换至相册页面
 function setAlbumGrid(image, carousel) {
 	var i = 0;
-	var j = 0;
 	var k = 0;
-	var vContainer = "";
-	var hContainer = "";
-	for (i = 0; i < 3; i++) {
-		if (i == 0 && j == 0) {
-			vContainer = Ext.create("Ext.Container", {
-					layout : "vbox",
-				});
+	var container = Ext.create("Ext.Container", {
+			layout : "vbox",
+		});
+	for (i = 0; i < 2; i++) {
+		container.add(Ext.create("Ext.Spacer"));
+		if (image[k]) {
+			container.add(Ext.create("Ext.Container", {
+					html : "<div class = albumImageDiv>"
+					 + "<img class = albumImage src = " + image[k] + " />"
+					 + "</div>",
+				}));
+		} else {
+			container.add(Ext.create("Ext.Container", {
+					html : "<div class = albumImageDiv>"
+					 + "<img class = albumSpacerImage src = resources/icons/noIcon.png />"
+					 + "</div>",
+				}));
 		};
-		hContainer = Ext.create("Ext.Container", {
-				layout : "hbox",
-			});
-		for (j = 0; j < 2; j++) {
-			hContainer.add(Ext.create("Ext.Spacer"));
-			if (image[k]) {
-				hContainer.add(Ext.create("Ext.Container", {
-						html : "<img class = albumImage src = " + image[k] + " />",
-						listeners : {
-							tap : {
-								fn : function () {},
-								element : "element",
-							},
-						},
-					}));
-			} else {
-				hContainer.add(Ext.create("Ext.Container", {
-						html : "<img class = albumSpacerImage src = resources/icons/noIcon.png />",
-					}));
-			};
-			k = k + 1;
-		};
-		hContainer.add(Ext.create("Ext.Spacer"));
-		vContainer.add(Ext.create("Ext.Spacer"));
-		vContainer.add(hContainer);
+		k = k + 1;
 	};
-	vContainer.add(Ext.create("Ext.Spacer"));
-	carousel.add(vContainer);
+	container.add(Ext.create("Ext.Spacer"));
+	carousel.add(container);
 	if (image[k]) {
 		setAlbumGrid(image.slice(k), carousel);
 	};

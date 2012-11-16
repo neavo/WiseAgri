@@ -21,7 +21,7 @@ Ext.define("Project.controller.container.newsListMain", {
 			setActivatedAlbum(data.imageUrl.split(";"));
 			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml()
 				 + "<div>"
-				 + "<img class = newsDetailImage onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = " + data.iconUrl + "/>"
+				 + "<img class = newsDetailImage onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = " + data.iconUrl + " />"
 				 + "<img class = newsDetailImageOverlay type = \"button\" onclick = \"DoShowAlbum();\" src = resources/images/imageOverlay.png >"
 				 + "</div>"
 				 + "<div style = \"margin-top : -2.1em;\" >" + "</div>");

@@ -2,7 +2,6 @@ Ext.application({
 	name : "Project",
 	
 	requires : [
-		"Ext.field.Search",
 		"Ext.MessageBox",
 		"Ext.data.proxy.JsonP",
 	],
@@ -23,7 +22,7 @@ Ext.application({
 	],
 	
 	views : [
-		"widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
+		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
 		
 		"homeView", "container.homeViewTop", "container.homeViewMain", "container.homeViewBottom",
 		"appList", "container.appListTop", "container.appListMain", "container.appListBottom",
@@ -36,7 +35,7 @@ Ext.application({
 	],
 	
 	controllers : [
-		"widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
+		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
 		
 		"homeView", "container.homeViewTop", "container.homeViewMain",
 		"appList", "container.appListMain",

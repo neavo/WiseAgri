@@ -22,7 +22,7 @@ Ext.define("Project.controller.container.categoryListMain", {
 			DoSwitch("categoryList");
 		} else if (data.categoryStyle == "newsCategory") {
 			DoSwitch("newsList");
-			DB.newsListTop.setTitle(name);
+			DB.newsListTop.setTitle(data.categoryName);
 			DB.newsListMain.getStore().setProxy({
 				type : "jsonp",
 				url : ServerUrl + "GetNewsList.jsp?categoryId=" + data.categoryId,

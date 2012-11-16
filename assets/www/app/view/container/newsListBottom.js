@@ -6,6 +6,10 @@ Ext.define("Project.view.container.newsListBottom", {
 		items : [{
 				xtype : "spacer",
 			}, {
+				xtype : "homeBtn",
+			}, {
+				xtype : "spacer",
+			}, {
 				xtype : "backBtn",
 			}, {
 				xtype : "spacer",

@@ -187,12 +187,20 @@
 	background-image: none;
 	background-color: rgba(255, 125, 0, 1);
 }
+.albumImageDiv {
+	width : 95%;
+ 	height : 40%;
+	display : block;
+	margin : auto;
+}
 .albumImage {
-	width : 160px;
- 	height : 120px;
+	max-width : 100%;
+ 	max-height : 100%;
 	border : 1px solid #FFFFFF;
+	display : block;
+	margin : auto;
 }
 .albumSpacerImage {
-	width : 160px;
- 	height : 120px;
+	max-width : 100%;
+ 	max-height : 100%;
 }
