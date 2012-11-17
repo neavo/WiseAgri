@@ -21,8 +21,9 @@ Ext.define("Project.view.container.homeViewMain", {
 						items : [{
 								xtype : "spacer",
 							}, {
+								id : "homeViewPageNum",
 								xtype : "container",
-								html : "<img class = rightContainerIcon src = resources/icons/Page_1.png />",
+								html : "<img class = rightContainerIcon src = resources/icons/pageNum_1.png />",
 							}, {
 								xtype : "spacer",
 							},

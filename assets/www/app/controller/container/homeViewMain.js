@@ -1,8 +1,15 @@
 Ext.define("Project.controller.container.homeViewMain", {
 	extend : "Ext.app.Controller",
 	config : {
-		refs : {},
-		control : {},
+		refs : {
+			homeViewCarousel : "#homeViewCarousel",
+			homeViewPageNum : "#homeViewPageNum",
+		},
+		control : {
+			homeViewCarousel : {
+				activeitemchange : "OnHomeViewCarouselActiveItemChange",
+			},
+		},
 	},
 	setCategoryList : function (id, name) {
 		DoSwitch("categoryList");
@@ -130,5 +137,8 @@ Ext.define("Project.controller.container.homeViewMain", {
 				}, errorSQL);
 			}, errorSQL);
 		};
+	},
+	OnHomeViewCarouselActiveItemChange : function (carousel, value, oldValue, eOpts) {
+		this.getHomeViewPageNum().setHtml("<img class = rightContainerIcon src = resources/icons/pageNum_" + (carousel.getActiveIndex()+1) + ".png />");
 	},
 });
