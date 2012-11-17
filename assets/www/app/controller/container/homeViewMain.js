@@ -103,7 +103,6 @@ Ext.define("Project.controller.container.homeViewMain", {
 				};
 				k = k + 1;
 			};
-			hContainer.add(Ext.create("Ext.Spacer"));
 			vContainer.add(Ext.create("Ext.Spacer"));
 			vContainer.add(hContainer);
 		};

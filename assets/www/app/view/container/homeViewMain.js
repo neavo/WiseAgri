@@ -9,11 +9,12 @@ Ext.define("Project.view.container.homeViewMain", {
 				xtype : "carousel",
 				indicator : false,
 				layout : "vbox",
-				width : Ext.Viewport.getWindowWidth() * 0.85,
+				width : Ext.Viewport.getWindowWidth() * 0.75,
 			}, {
 				id : "homeViewRightContainer",
 				xtype : "container",
 				layout : "vbox",
+				width : Ext.Viewport.getWindowWidth() * 0.25,
 				items : [{
 						xtype : "container",
 						height : Ext.Viewport.getWindowHeight() * 0.18,

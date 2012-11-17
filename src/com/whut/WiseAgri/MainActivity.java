@@ -1,6 +1,8 @@
 package com.whut.WiseAgri;
 
 import android.os.Bundle;
+import android.view.WindowManager;
+
 import org.apache.cordova.*;
 
 public class MainActivity extends DroidGap {

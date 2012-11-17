@@ -2,8 +2,30 @@
 <html manifest = "" lang = "en-US">
 	<head>
 		<meta charset = "UTF-8">
-		
+
 		<title>Project</title>
+		
+		<style type = "text/css">
+			html {
+				font-size : 200%;
+			}
+		</style>
+		
+		<!-- Hign DPI Hack -->
+		<script type = "text/javascript">
+			var screenHeight = window.screen.height;
+			var screenWidth = window.screen.width;
+			var meta = document.getElementsByTagName("meta");
+			var body = document.getElementsByTagName("body");
+			if (screenHeight >= 1024 && screenWidth >= 600) {
+				meta[0].name = "viewport";
+				meta[0].content = "target-densitydpi=320";
+			};
+			if (screenHeight >= 800 && screenHeight < 1024 && screenWidth >= 480 && screenWidth < 600) {
+				meta[0].name = "viewport";
+				meta[0].content = "target-densitydpi=240";
+			};
+		</script>
 		
 		<!-- PhoneGap Lib -->
 		<script type = "text/javascript" src = "lib/cordova-2.2.0.js" ></script>

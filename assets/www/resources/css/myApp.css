@@ -9,8 +9,8 @@
 	RightContainer样式
 */
 .rightContainerIcon {
-	width : 40px;
-	height : 40px;
+	max-width : 35%;
+	max-height : 35%;
 	display : block;
 	margin : auto;
 }
