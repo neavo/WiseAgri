@@ -19,10 +19,7 @@ Ext.define("Project.controller.mainController", {
 			},
 		},
 	},
-	init : function () {
-		screenHeight = document.body.clientHeight;
-		screenWidth = document.body.clientWidth;
-	},
+	init : function () {},
 	launch : function () {
 		DB.mainController = this;
 		DB.mainContainer = this.getMainContainer();
