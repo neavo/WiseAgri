@@ -3,7 +3,6 @@ Ext.define("Project.view.container.categoryListBottom", {
 	xtype : "categoryListBottom",
 	config : {
 		docked : "bottom",
-		height : Ext.Viewport.getWindowHeight() * 0.08,
 		items : [{
 				xtype : "spacer",
 			}, {

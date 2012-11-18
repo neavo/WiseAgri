@@ -3,6 +3,5 @@ Ext.define("Project.view.container.categoryListTop", {
 	xtype : "categoryListTop",
 	config : {
 		docked : "top",
-		height : Ext.Viewport.getWindowHeight() * 0.08,
 	},
 });

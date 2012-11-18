@@ -96,7 +96,6 @@ Ext.define("Project.controller.appList", {
 				};
 				k = k + 1;
 			};
-			hContainer.add(Ext.create("Ext.Spacer"));
 			vContainer.add(Ext.create("Ext.Spacer"));
 			vContainer.add(hContainer);
 		};
