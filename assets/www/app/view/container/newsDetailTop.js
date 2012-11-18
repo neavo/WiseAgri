@@ -3,6 +3,7 @@ Ext.define("Project.view.container.newsDetailTop", {
 	xtype : "newsDetailTop",
 	config : {
 		docked : "top",
+		baseCls : "TopBar",
 		title : "详细信息",
 	},
 });

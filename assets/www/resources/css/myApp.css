@@ -6,6 +6,26 @@
 }
 
 /*
+	顶部Toolbar样式
+*/
+.TopBar {
+	background :  #2BA4E6;
+	color : white;
+	border-top : 1px solid #808080;
+	border-bottom : 1px solid #808080;
+}
+
+/*
+	底部Toolbar样式
+*/
+.BottomBar {
+	background :  #2BA4E6;
+	color : white;
+	border-top : 1px solid #808080;
+	border-bottom : 1px solid #808080;
+}
+
+/*
 	RightContainer样式
 */
 .rightContainerIcon {

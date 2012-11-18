@@ -2,7 +2,7 @@ Ext.define("Project.view.widget.smallerBtn", {
 	extend : "Ext.Button",
 	xtype : "smallerBtn",
 	config : {
-		xtype : "button",
+		icon : "resources/icons/whiteIcon.png",
 		ui : "plain",
 		iconCls : "arrow_down",
 		iconMask : true,

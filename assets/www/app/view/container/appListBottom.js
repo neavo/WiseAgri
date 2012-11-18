@@ -3,16 +3,15 @@ Ext.define("Project.view.container.appListBottom", {
 	xtype : "appListBottom",
 	config : {
 		docked : "bottom",
+		baseCls : "BottomBar",
 		items : [{
 				xtype : "spacer",
 			}, {
-				xtype : "container",
-				html : "<div style = \" color : white; \"><b>翼农　</b></div>",
+				xtype : "homeBtn",
 			}, {
 				xtype : "spacer",
 			}, {
-				xtype : "container",
-				html : "<div style = \" color : white; \"><b>地方　</b></div>",
+				xtype : "backBtn",
 			}, {
 				xtype : "spacer",
 			},

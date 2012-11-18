@@ -3,5 +3,6 @@ Ext.define("Project.view.container.categoryListTop", {
 	xtype : "categoryListTop",
 	config : {
 		docked : "top",
+		baseCls : "TopBar",
 	},
 });

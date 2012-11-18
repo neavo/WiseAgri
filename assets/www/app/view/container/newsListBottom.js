@@ -3,6 +3,7 @@ Ext.define("Project.view.container.newsListBottom", {
 	xtype : "newsListBottom",
 	config : {
 		docked : "bottom",
+		baseCls : "BottomBar",
 		items : [{
 				xtype : "spacer",
 			}, {

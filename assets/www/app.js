@@ -39,7 +39,7 @@ Ext.application({
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
 		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", 
 		
-		"homeView", "container.homeViewTop", "container.homeViewMain",
+		"homeView", "container.homeViewMain",
 		"appList", "container.appListMain",
 		"categoryList", "container.categoryListMain",
 		"newsList", "container.newsListMain",

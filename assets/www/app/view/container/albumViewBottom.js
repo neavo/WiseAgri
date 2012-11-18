@@ -3,6 +3,7 @@ Ext.define("Project.view.container.albumViewBottom", {
 	xtype : "albumViewBottom",
 	config : {
 		docked : "bottom",
+		baseCls : "BottomBar",
 		items : [{
 				xtype : "spacer",
 			}, {

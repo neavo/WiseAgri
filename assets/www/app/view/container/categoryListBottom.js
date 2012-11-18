@@ -3,6 +3,7 @@ Ext.define("Project.view.container.categoryListBottom", {
 	xtype : "categoryListBottom",
 	config : {
 		docked : "bottom",
+		baseCls : "BottomBar",
 		items : [{
 				xtype : "spacer",
 			}, {

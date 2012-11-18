@@ -3,6 +3,20 @@ Ext.define("Project.view.container.appListTop", {
 	xtype : "appListTop",
 	config : {
 		docked : "top",
-		title : "订阅频道",
+		baseCls : "TopBar",
+		items : [{
+				xtype : "spacer",
+			}, {
+				xtype : "container",
+				html : "<div style = \" color : white; \"><b>翼农频道</b></div>",
+			}, {
+				xtype : "spacer",
+			}, {
+				xtype : "container",
+				html : "<div style = \" color : white; \"><b>智慧频道</b></div>",
+			}, {
+				xtype : "spacer",
+			},
+		],
 	},
 });

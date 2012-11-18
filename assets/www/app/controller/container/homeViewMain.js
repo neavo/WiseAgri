@@ -102,34 +102,38 @@ Ext.define("Project.controller.container.homeViewMain", {
 		};
 		vContainer.add(Ext.create("Ext.Spacer"));
 		carousel.add(vContainer);
-		if (category[k]) {
+		if (category[k] && carousel.getItems().length < 9) {
 			this.setGrid(category.slice(k), carousel);
 		};
 	},
 	launch : function () {
+		var defaultCategory = [];
 		Ext.getStore("defaultCategoryStore").load({
 			callback : function (records, operation, success) {
 				if (success && records.lenght != 0) {
-					var defaultCategory = [];
 					for (var key in records) {
 						defaultCategory.push(records[key].getData());
 					};
-					this.setGrid(defaultCategory, DB.homeViewCarousel);
+					if (SQLite) {
+						var self = this;
+						SQLite.transaction(function (shell) {
+							shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
+								DB.myApp = SqlToJson(results);
+								for (var key in DB.myApp) {
+									defaultCategory.push(DB.myApp[key]);
+								};
+								if (defaultCategory.length != 0) {
+									self.setGrid(defaultCategory, DB.homeViewCarousel);
+								};
+							}, errorSQL);
+						}, errorSQL);
+					} else {
+						this.setGrid(defaultCategory, DB.homeViewCarousel);
+					};
 				};
 			},
 			scope : this,
 		});
-		if (SQLite) {
-			var self = this;
-			SQLite.transaction(function (shell) {
-				shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
-					DB.myApp = SqlToJson(results);
-					if (DB.myApp.length != 0) {
-						self.setGrid(DB.myApp, DB.homeViewCarousel);
-					};
-				}, errorSQL);
-			}, errorSQL);
-		};
 	},
 	OnHomeViewCarouselActiveItemChange : function (carousel, value, oldValue, eOpts) {
 		this.getHomeViewPageNum().setHtml("<img class = rightContainerIcon src = resources/icons/pageNum_" + (carousel.getActiveIndex() + 1) + ".png />");

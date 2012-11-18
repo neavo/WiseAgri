@@ -3,6 +3,7 @@ Ext.define("Project.view.container.albumViewTop", {
 	xtype : "albumViewTop",
 	config : {
 		docked : "top",
+		baseCls : "TopBar",
 		title : "更多图片",
 	},
 });

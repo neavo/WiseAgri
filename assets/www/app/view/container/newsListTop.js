@@ -3,5 +3,6 @@ Ext.define("Project.view.container.newsListTop", {
 	xtype : "newsListTop",
 	config : {
 		docked : "top",
+		baseCls : "TopBar",
 	},
 });
