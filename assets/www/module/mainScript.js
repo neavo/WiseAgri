@@ -16,6 +16,10 @@ var defaultApp = [];
 // 创建SQLite数据库对象
 var SQLite = "";
 
+// 屏幕分辨率
+var screenHeight = 0;
+var screenWidth = 0;
+
 // PhoneGap
 {
 	// 等待PhoneGap加载完毕

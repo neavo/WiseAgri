@@ -53,8 +53,6 @@ Ext.define("Project.controller.appList", {
 					if (category[k]["categoryName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
 								data : category[k],
-								width : Ext.Viewport.getWindowWidth() * 0.3,
-								height : Ext.Viewport.getWindowWidth() * 0.3,
 								html : "<img class = categoryIcon src = " + category[k]["categoryIconUrl"] + " />",
 								listeners : {
 									tap : {
@@ -74,8 +72,6 @@ Ext.define("Project.controller.appList", {
 					if (category[k]["appName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
 								data : category[k],
-								width : Ext.Viewport.getWindowWidth() * 0.3,
-								height : Ext.Viewport.getWindowWidth() * 0.3,
 								html : "<img class = categoryIcon src = " + category[k]["appIconUrl"] + " />",
 								listeners : {
 									tap : {
@@ -89,8 +85,6 @@ Ext.define("Project.controller.appList", {
 					};
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {
-							width : Ext.Viewport.getWindowWidth() * 0.3,
-							height : Ext.Viewport.getWindowWidth() * 0.3,
 							html : "<img class = categoryIcon src = resources/icons/noIcon.png >",
 						}));
 				};

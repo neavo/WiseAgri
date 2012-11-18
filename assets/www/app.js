@@ -37,7 +37,7 @@ Ext.application({
 	
 	controllers : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAppBtn", "widget.aboutBtn", 
+		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", 
 		
 		"homeView", "container.homeViewTop", "container.homeViewMain",
 		"appList", "container.appListMain",
