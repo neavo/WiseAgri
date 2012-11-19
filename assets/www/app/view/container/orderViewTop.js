@@ -8,12 +8,36 @@ Ext.define("Project.view.container.orderViewTop", {
 				xtype : "spacer",
 			}, {
 				xtype : "container",
-				html : "<div style = \" color : white; \"><b>翼农频道</b></div>",
+				style : "background : #FFFFFF; color : #2BA4E6; border-radius : 1em;",
+				html : "<b>　翼农频道　</b>",
+				listeners : {
+					tap : {
+						fn : function () {
+							if (this.getStyle() != "background : #FFFFFF; color : #2BA4E6; border-radius : 1em;")
+							{
+								this.setStyle("background : #FFFFFF; color : #2BA4E6; border-radius : 1em;");
+							};
+						},
+						element : "element",
+					},
+				},
 			}, {
 				xtype : "spacer",
 			}, {
 				xtype : "container",
-				html : "<div style = \" color : white; \"><b>智慧频道</b></div>",
+				html : "<b>　智慧频道　</b>",
+				listeners : {
+					tap : {
+						fn : function () {
+							DoLog(this.getStyle());
+							if (this.getStyle() != "background : #FFFFFF; color : #2BA4E6; border-radius : 1em;")
+							{
+								this.setStyle("background : #FFFFFF; color : #2BA4E6; border-radius : 1em;");
+							};
+						},
+						element : "element",
+					},
+				},
 			}, {
 				xtype : "spacer",
 			},
