@@ -1,4 +1,4 @@
-Ext.define("Project.controller.appList", {
+Ext.define("Project.controller.orderView", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {},
@@ -53,7 +53,7 @@ Ext.define("Project.controller.appList", {
 					if (category[k]["categoryName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
 								data : category[k],
-								html : "<img class = categoryIcon src = " + category[k]["categoryIconUrl"] + " />",
+								html : "<img class = homeViewIcon src = " + category[k]["categoryIconUrl"] + " />",
 								listeners : {
 									tap : {
 										fn : function () {
@@ -72,7 +72,7 @@ Ext.define("Project.controller.appList", {
 					if (category[k]["appName"]) {
 						hContainer.add(Ext.create("Ext.Container", {
 								data : category[k],
-								html : "<img class = categoryIcon src = " + category[k]["appIconUrl"] + " />",
+								html : "<img class = homeViewIcon src = " + category[k]["appIconUrl"] + " />",
 								listeners : {
 									tap : {
 										fn : function () {
@@ -85,7 +85,7 @@ Ext.define("Project.controller.appList", {
 					};
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {
-							html : "<img class = categoryIcon src = resources/icons/noIcon.png >",
+							html : "<img class = homeViewIcon src = resources/icons/noIcon.png >",
 						}));
 				};
 				k = k + 1;

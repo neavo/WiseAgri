@@ -36,13 +36,31 @@
 }
 
 /*
-	九宫格图标样式
+	主页图标样式
 */
-.categoryIcon {
+.homeViewIcon {
 	width : 5.8em;
 	height : 5.8em;
 	display : block;
 	margin : auto;
+}
+
+/*
+	订购页面图标样式
+*/
+.orderViewIconContainer {
+	width : 5.8em;
+	height : 5.8em;
+}
+.orderViewIcon {
+	width : 5.8em;
+	height : 5.8em;
+}
+.orderViewIconOverlay {
+	width : 5.8em;
+	height : 5.8em;
+	position : relative;
+	top : -6em;
 }
 
 /*

@@ -16,7 +16,6 @@ Ext.application({
 		"defaultAppStore",
 		"defaultCategoryStore",
 		"appListStore",
-		"localAppStore",
 		"categoryListStore",
 		"newsStore",
 	],
@@ -26,7 +25,7 @@ Ext.application({
 		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn",
 		
 		"homeView", "container.homeViewMain",
-		"appList", "container.appListTop", "container.appListMain", "container.appListBottom",
+		"orderView", "container.orderViewTop", "container.orderViewMain", "container.orderViewBottom",
 		"categoryList", "container.categoryListTop", "container.categoryListMain", "container.categoryListBottom",
 		"newsList", "container.newsListTop", "container.newsListMain", "container.newsListBottom",
 		"newsDetail", "container.newsDetailTop", "container.newsDetailMain", "container.newsDetailBottom",
@@ -40,7 +39,7 @@ Ext.application({
 		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", 
 		
 		"homeView", "container.homeViewMain",
-		"appList", "container.appListMain",
+		"orderView",
 		"categoryList", "container.categoryListMain",
 		"newsList", "container.newsListMain",
 		"newsDetail",

@@ -5,7 +5,7 @@ Ext.define("Project.controller.mainController", {
 			mainContainer : "mainContainer",
 
 			homeView : "homeView", homeViewMain : "homeViewMain", 
-			appList : "appList", appListTop : "appListTop", appListMain : "appListMain", appListBottom : "appListBottom",
+			orderView : "orderView", orderViewTop : "orderViewTop", orderViewMain : "orderViewMain", orderViewBottom : "orderViewBottom",
 			categoryList : "categoryList", categoryListTop : "categoryListTop", categoryListMain : "categoryListMain", categoryListBottom : "categoryListBottom",
 			newsList : "newsList", newsListTop : "newsListTop", newsListMain : "newsListMain", newsListBottom : "newsListBottom",
 			newsDetail : "newsDetail", newsDetailTop : "newsDetailTop", newsDetailMain : "newsDetailMain", newsDetailBottom : "newsDetailBottom",
@@ -35,7 +35,7 @@ Ext.define("Project.controller.mainController", {
 		DB.mainContainer = this.getMainContainer();
 		
 		DB.homeView = this.getHomeView(); DB.homeViewMain = this.getHomeViewMain(); 
-		DB.appList = this.getAppList(); DB.appListTop = this.getAppListTop(); DB.appListMain = this.getAppListMain(); DB.appListBottom = this.getAppListBottom();
+		DB.orderView = this.getOrderView(); DB.orderViewTop = this.getOrderViewTop(); DB.orderViewMain = this.getOrderViewMain(); DB.orderViewBottom = this.getOrderViewBottom();
 		DB.categoryList = this.getCategoryList(); DB.categoryListTop = this.getCategoryListTop(); DB.categoryListMain = this.getCategoryListMain(); DB.categoryListBottom = this.getCategoryListBottom();
 		DB.newsList = this.getNewsList(); DB.newsListTop = this.getNewsListTop(); DB.newsListMain = this.getNewsListMain(); DB.newsListBottom = this.getNewsListBottom();
 		DB.newsDetail = this.getNewsDetail(); DB.newsDetailTop = this.getNewsDetailTop(); DB.newsDetailMain = this.getNewsDetailMain(); DB.newsDetailBottom = this.getNewsDetailBottom();

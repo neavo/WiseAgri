@@ -9,7 +9,7 @@ Ext.define("Project.view.mainContainer", {
 		items : [{
 				xtype : "homeView",
 			}, {
-				xtype : "appList",
+				xtype : "orderView",
 			}, {
 				xtype : "categoryList",
 			}, {
