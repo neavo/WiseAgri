@@ -1,5 +1,4 @@
 rd build /s /q
-rd archive /s /q
-sencha app build production
+sencha app build package
 rd resources\sass\.sass-cache /s /q
 pause
