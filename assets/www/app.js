@@ -22,7 +22,7 @@ Ext.application({
 	
 	views : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn",
+		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.YiNongBtn", "widget.ZhiHuiBtn",
 		
 		"homeView", "container.homeViewMain",
 		"orderView", "container.orderViewTop", "container.orderViewMain", "container.orderViewBottom",

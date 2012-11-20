@@ -6,26 +6,6 @@ Ext.define("Project.controller.widget.myAppBtn", {
 		},
 		control : {},
 	},
-	DoOrder : function (container, data) {
-		Ext.Msg.confirm(DB.versionInfo, "是否要订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
-			if (buttonId == "yes") {
-				DoSQL("INSERT INTO myApp"
-					 + " (appId, appLocation, appName, appIconUrl)"
-					 + " VALUES"
-					 + " (\"" + data.appId + "\" ,\"" + data.appLocation + "\" ,\"" + data.appName + "\", \"" + data.appIconUrl + "\")");
-				container.setHtml("<img class = orderViewIcon src = " + data.appIconUrl + " />"
-					 + "<img class = orderViewIconOverlay src = resources/icons/Checked.png >");
-			};
-		});
-	},
-	UnOrder : function (container, data) {
-		Ext.Msg.confirm(DB.versionInfo, "是否取消订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
-			if (buttonId == "yes") {
-				DoSQL("DELETE FROM myApp WHERE appId = \"" + data.appId + "\"");
-				container.setHtml("<img class = orderViewIcon src = " + data.appIconUrl + " />");
-			};
-		});
-	},
 	setOrderGrid : function (data, carousel) {
 		var i = 0;
 		var j = 0;
@@ -53,36 +33,49 @@ Ext.define("Project.controller.widget.myAppBtn", {
 								isOrdered = true;
 							};
 						};
+						var iconContainer = Ext.create("Ext.Container", {
+								data : data[k],
+								isOrdered : isOrdered,
+								cls : "orderViewIconContainer",
+								DoOrder : function (container, data, isOrdered) {
+									if (isOrdered) {
+										Ext.Msg.confirm(DB.versionInfo, "是否取消订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
+											if (buttonId == "yes") {
+												DoSQL("DELETE FROM myApp WHERE appId = \"" + data.appId + "\"");
+												container.setHtml("<img class = orderViewIcon src = " + data.appIconUrl + " />");
+											};
+										});
+										return false;
+									} else {
+										Ext.Msg.confirm(DB.versionInfo, "是否要订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
+											if (buttonId == "yes") {
+												DoSQL("INSERT INTO myApp"
+													 + " (appId, appLocation, appName, appIconUrl)"
+													 + " VALUES"
+													 + " (\"" + data.appId + "\" ,\"" + data.appLocation + "\" ,\"" + data.appName + "\", \"" + data.appIconUrl + "\")");
+												container.setHtml("<img class = orderViewIcon src = " + data.appIconUrl + " />"
+													 + "<img class = orderViewIconOverlay src = resources/icons/Checked.png >");
+											};
+										});
+										return true;
+									};
+								},
+								listeners : {
+									tap : {
+										fn : function () {
+											this.config.isOrdered = this.config.DoOrder(this, this.config.data, this.config.isOrdered);
+										},
+										element : "element",
+									},
+								},
+							});
 						if (isOrdered) {
-							hContainer.add(Ext.create("Ext.Container", {
-									data : data[k],
-									cls : "orderViewIconContainer",
-									html : "<img class = orderViewIcon src = " + data[k]["appIconUrl"] + " />"
-									 + "<img class = orderViewIconOverlay src = resources/icons/Checked.png >",
-									listeners : {
-										tap : {
-											fn : function () {
-												self.UnOrder(this, this.config.data);
-											},
-											element : "element",
-										},
-									},
-								}));
+							iconContainer.setHtml("<img class = orderViewIcon src = " + iconContainer.config.data.appIconUrl + " />"
+								 + "<img class = orderViewIconOverlay src = resources/icons/Checked.png >");
 						} else {
-							hContainer.add(Ext.create("Ext.Container", {
-									data : data[k],
-									cls : "orderViewIconContainer",
-									html : "<img class = orderViewIcon src = " + data[k]["appIconUrl"] + " />",
-									listeners : {
-										tap : {
-											fn : function () {
-												self.DoOrder(this, this.config.data);
-											},
-											element : "element",
-										},
-									},
-								}));
+							iconContainer.setHtml("<img class = orderViewIcon src = " + iconContainer.config.data.appIconUrl + " />");
 						};
+						hContainer.add(iconContainer);
 					};
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {

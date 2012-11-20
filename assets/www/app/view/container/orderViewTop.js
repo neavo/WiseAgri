@@ -7,37 +7,11 @@ Ext.define("Project.view.container.orderViewTop", {
 		items : [{
 				xtype : "spacer",
 			}, {
-				xtype : "container",
-				style : "background : #FFFFFF; color : #2BA4E6; border-radius : 1em;",
-				html : "<b>　翼农频道　</b>",
-				listeners : {
-					tap : {
-						fn : function () {
-							if (this.getStyle() != "background : #FFFFFF; color : #2BA4E6; border-radius : 1em;")
-							{
-								this.setStyle("background : #FFFFFF; color : #2BA4E6; border-radius : 1em;");
-							};
-						},
-						element : "element",
-					},
-				},
+				xtype : "YiNongBtn",
 			}, {
 				xtype : "spacer",
 			}, {
-				xtype : "container",
-				html : "<b>　智慧频道　</b>",
-				listeners : {
-					tap : {
-						fn : function () {
-							DoLog(this.getStyle());
-							if (this.getStyle() != "background : #FFFFFF; color : #2BA4E6; border-radius : 1em;")
-							{
-								this.setStyle("background : #FFFFFF; color : #2BA4E6; border-radius : 1em;");
-							};
-						},
-						element : "element",
-					},
-				},
+				xtype : "ZhiHuiBtn",
 			}, {
 				xtype : "spacer",
 			},
