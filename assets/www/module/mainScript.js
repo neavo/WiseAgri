@@ -20,7 +20,6 @@ function loadDefaultApp() {
 					defaultApp = records[key].getData();
 				};
 				defaultAppLoaded = true;
-				DoLog(defaultAppLoaded);
 			};
 		},
 		scope : this,
