@@ -11,7 +11,64 @@ var DB = {
 	activatedAlbum : "",
 	scaleFlag : 0,
 };
+
+// 加载默认app数据
 var defaultApp = [];
+function loadDefaultApp() {
+	Ext.getStore("defaultAppStore").load({
+		callback : function (records, operation, success) {
+			if (success && records.lenght != 0) {
+				defaultApp = [];
+				for (var key in records) {
+					defaultApp = records[key].getData();
+				};
+			};
+		},
+		scope : this,
+	});
+};
+
+// 加载默认频道数据
+var defaultCategory = [];
+function loadDefaultCategory() {
+	Ext.getStore("defaultCategoryStore").load({
+		callback : function (records, operation, success) {
+			if (success && records.lenght != 0) {
+				defaultCategory = [];
+				for (var key in records) {
+					defaultCategory.push(records[key].getData());
+				};
+			};
+		},
+		scope : this,
+	});
+};
+
+// 加载订购app数据
+var myApp = [];
+function loadMyApp() {
+	if (SQLite) {
+		SQLite.transaction(function (shell) {
+			shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
+				myApp = [];
+				myApp = SqlToJson(results);
+			}, errorSQL);
+		}, errorSQL);
+	};
+};
+
+// 加载订购app数据
+var myCategory = [];
+function loadMyCategory() {
+	if (SQLite) {
+		SQLite.transaction(function (shell) {
+			shell.executeSql("SELECT * FROM myCategory ORDER BY categoryId", [], function (shell, results) {
+				myCategory = [];
+				myCategory = SqlToJson(results);
+			}, errorSQL);
+		}, errorSQL);
+	};
+};
 
 // 创建SQLite数据库对象
 var SQLite = "";
@@ -30,6 +87,8 @@ var SQLite = "";
 		SQLite = window.openDatabase("WiseAgri", "1.0", "WiseAgri Datebase", 1048576);
 		DoSQL("CREATE TABLE IF NOT EXISTS myApp"
 			 + " (appId VARCHAR(128), appLocation VARCHAR(128), appName VARCHAR(128), appIconUrl VARCHAR(1024))");
+		DoSQL("CREATE TABLE IF NOT EXISTS myCategory"
+			 + " (categoryId VARCHAR(128), categoryStyle VARCHAR(128), categoryName VARCHAR(128), categoryIconUrl VARCHAR(1024))");
 	};
 };
 

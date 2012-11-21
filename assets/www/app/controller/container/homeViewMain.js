@@ -107,33 +107,19 @@ Ext.define("Project.controller.container.homeViewMain", {
 		};
 	},
 	launch : function () {
-		var defaultCategory = [];
-		Ext.getStore("defaultCategoryStore").load({
-			callback : function (records, operation, success) {
-				if (success && records.lenght != 0) {
-					for (var key in records) {
-						defaultCategory.push(records[key].getData());
+		var self = this;
+		var handle = setInterval(function () {
+				if (defaultCategory.length != 0) {
+					for (var key in myApp) {
+						defaultCategory.push(myApp[key]);
 					};
-					if (SQLite) {
-						var self = this;
-						SQLite.transaction(function (shell) {
-							shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
-								DB.myApp = SqlToJson(results);
-								for (var key in DB.myApp) {
-									defaultCategory.push(DB.myApp[key]);
-								};
-								if (defaultCategory.length != 0) {
-									self.setGrid(defaultCategory, DB.homeViewCarousel);
-								};
-							}, errorSQL);
-						}, errorSQL);
-					} else {
-						this.setGrid(defaultCategory, DB.homeViewCarousel);
+					for (var key in myCategory) {
+						defaultCategory.push(myCategory[key]);
 					};
+					self.setGrid(defaultCategory, DB.homeViewCarousel);
+					clearInterval(handle);
 				};
-			},
-			scope : this,
-		});
+			}, 50);
 	},
 	OnHomeViewCarouselActiveItemChange : function (carousel, value, oldValue, eOpts) {
 		this.getHomeViewPageNum().setHtml("<img class = rightContainerIcon src = resources/icons/pageNum_" + (carousel.getActiveIndex() + 1) + ".png />");

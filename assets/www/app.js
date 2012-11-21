@@ -18,6 +18,7 @@ Ext.application({
 		"appListStore",
 		"categoryListStore",
 		"newsStore",
+		"YiNongStore",
 	],
 	
 	views : [

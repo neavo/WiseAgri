@@ -20,15 +20,10 @@ Ext.define("Project.controller.mainController", {
 		},
 	},
 	init : function () {
-		// 加载默认app数据
-		Ext.getStore("defaultAppStore").load({
-			callback : function (records, operation, success) {
-				if (success && records.lenght != 0) {
-					defaultApp = records[0].getData();
-				};
-			},
-			scope : this,
-		});
+		loadDefaultApp();
+		loadDefaultCategory();
+		loadMyApp();
+		loadMyCategory();
 	},
 	launch : function () {
 		DB.mainController = this;

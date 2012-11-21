@@ -1,0 +1,17 @@
+[{
+		"categoryId" : "502",
+		"categoryName" : "农业资讯",
+		"categoryIconUrl" : "data/YiNong/01.png",
+		"categoryStyle" : "newsCategory",
+	}, {
+		"categoryId" : "503",
+		"categoryName" : "求职招聘",
+		"categoryIconUrl" : "data/YiNong/02.png",
+		"categoryStyle" : "newsCategory",
+	}, {
+		"categoryId" : "504",
+		"categoryName" : "专家答疑",
+		"categoryIconUrl" : "data/YiNong/03.png",
+		"categoryStyle" : "newsCategory",
+	},
+]

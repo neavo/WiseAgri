@@ -100,35 +100,24 @@ Ext.define("Project.controller.orderView", {
 		};
 	},
 	goBack : function () {
-		var defaultCategory = [];
-		DB.homeViewCarousel.removeAll(true);
-		Ext.getStore("defaultCategoryStore").load({
-			callback : function (records, operation, success) {
-				if (success && records.lenght != 0) {
-					for (var key in records) {
-						defaultCategory.push(records[key].getData());
+		var self = this;
+		loadDefaultCategory();
+		loadMyApp();
+		loadMyCategory();
+		var handle = setInterval(function () {
+				if (defaultCategory.length != 0) {
+					for (var key in myApp) {
+						defaultCategory.push(myApp[key]);
 					};
-					if (SQLite) {
-						var self = this;
-						SQLite.transaction(function (shell) {
-							shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
-								DB.myApp = SqlToJson(results);
-								for (var key in DB.myApp) {
-									defaultCategory.push(DB.myApp[key]);
-								};
-								if (defaultCategory.length != 0) {
-									self.setGrid(defaultCategory, DB.homeViewCarousel);
-									DoSwitch("homeView");
-									DB.homeViewCarousel.setActiveItem(0);
-								};
-							}, errorSQL);
-						}, errorSQL);
-					} else {
-						this.setGrid(defaultCategory, DB.homeViewCarousel);
+					for (var key in myCategory) {
+						defaultCategory.push(myCategory[key]);
 					};
+					DoSwitch("homeView");
+					DB.homeViewCarousel.removeAll(true);
+					self.setGrid(defaultCategory, DB.homeViewCarousel);
+					DB.homeViewCarousel.setActiveItem(0);
+					clearInterval(handle);
 				};
-			},
-			scope : this,
-		});
+			}, 50);
 	},
 });
