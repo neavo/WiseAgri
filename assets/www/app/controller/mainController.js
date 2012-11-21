@@ -20,10 +20,16 @@ Ext.define("Project.controller.mainController", {
 		},
 	},
 	init : function () {
+	
+		// 加载本地数据
 		loadDefaultApp();
 		loadDefaultCategory();
 		loadMyApp();
 		loadMyCategory();
+		
+		// 获取屏幕属性
+		screenHeight = document.body.clientHeight;
+		screenWidth = document.body.clientWidth;
 	},
 	launch : function () {
 		DB.mainController = this;

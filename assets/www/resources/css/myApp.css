@@ -49,18 +49,18 @@
 	订购页面图标样式
 */
 .orderViewIconContainer {
-	width : 5.8em;
-	height : 5.8em;
+	width : 5.2em;
+	height : 5.2em;
 }
 .orderViewIcon {
-	width : 5.8em;
-	height : 5.8em;
+	width : 5.2em;
+	height : 5.2em;
 }
 .orderViewIconOverlay {
-	width : 5.8em;
-	height : 5.8em;
+	width : 5.2em;
+	height : 5.2em;
 	position : relative;
-	top : -6em;
+	top : -5.4em;
 }
 
 /*

@@ -6,6 +6,8 @@ var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
 var DB = [];
 var scaleFlag = 0;
 var VersionInfo = "";
+var screenHeight = 0;
+var screenWidth = 0;
 
 // 加载默认app数据
 var defaultApp = [];

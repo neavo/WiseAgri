@@ -1,7 +1,7 @@
 [{
-		appId : "7",
-		appLocation : "荆州",
-		appName : "乐乡田园",
-		appIconUrl : "resources/icons/defaultIcon.png",
+		appId : "6",
+		appLocation : "恩施",
+		appName : "烟草通",
+		appIconUrl : "data/defaultApp/appIcon.png",
 	},
 ]
