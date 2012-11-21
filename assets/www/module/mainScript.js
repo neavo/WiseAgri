@@ -3,14 +3,8 @@ var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
 //var ServerUrl = "http://localhost:8080/WiseAgriAjaxR/";
 
 // 本地数据
-var DB = {
-	versionInfo : "智慧 • 农业 v1.0",
-	myApp : [],
-	activatedController : "",
-	activatedCategory : "",
-	activatedAlbum : "",
-	scaleFlag : 0,
-};
+var scaleFlag = 0;
+var VersionInfo = "";
 
 // 加载默认app数据
 var defaultApp = [];
@@ -80,7 +74,7 @@ var SQLite = "";
 	function onDeviceReady() {
 		// 响应返回键
 		document.addEventListener("backbutton", function () {
-			DB.activatedController.goBack();
+			activatedController.goBack();
 		}, false);
 		
 		// 初始化SQLite数据库对象
@@ -120,14 +114,13 @@ function DoSQL(sql) {
 };
 
 // 设置正在使用的Object
+var activatedController = "";
 function setActivatedController(controller) {
-	DB.activatedController = controller;
+	activatedController = controller;
 };
-function setActivatedCategory(category) {
-	DB.activatedCategory = category;
-};
+var activatedAlbum = "";
 function setActivatedAlbum(album) {
-	DB.activatedAlbum = album;
+	activatedAlbum = album;
 };
 
 // 自定义的Console.log
@@ -137,7 +130,7 @@ function DoLog(object) {
 
 // 自定义的Alert
 function DoAlert(msg) {
-	Ext.Msg.alert(DB.versionInfo, msg);
+	Ext.Msg.alert(VersionInfo, msg);
 };
 
 // 切换页面
@@ -187,6 +180,6 @@ function setAlbumGrid(image, carousel) {
 function DoShowAlbum() {
 	DoSwitch("albumView");
 	DB.albumViewMain.removeAll(true);
-	setAlbumGrid(DB.activatedAlbum, DB.albumViewMain);
+	setAlbumGrid(activatedAlbum, DB.albumViewMain);
 	DB.albumViewMain.setActiveItem(0);
 };

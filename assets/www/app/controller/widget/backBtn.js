@@ -11,6 +11,6 @@ Ext.define("Project.controller.widget.backBtn", {
 		},
 	},
 	onBackBtnTap : function () {
-		DB.activatedController.goBack();
+		activatedController.goBack();
 	},
 });

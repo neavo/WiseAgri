@@ -13,7 +13,7 @@ Ext.define("Project.controller.container.newsListMain", {
 	onNewsListMainItemtap : function (list, index, target, record, e, eOpts) {
 		var data = record.getData();
 		DoSwitch("newsDetail");
-		DB.scaleFlag = 0;
+		scaleFlag = 0;
 		DB.newsDetailMain.setHtml("<div class = newsDetailTitle>" + data.newsTitle + "</div>"
 			 + "<div class = newsDetailDataTime>" + data.dateTime + "　来源：" + data.newsPublisher + "</div>"
 			 + "<HR align = left width = 100% color = #FFFFFF size = 1 noShade>");

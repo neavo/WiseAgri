@@ -40,7 +40,7 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 								cls : "orderViewIconContainer",
 								DoOrder : function (container, data, isOrdered) {
 									if (isOrdered) {
-										Ext.Msg.confirm(DB.versionInfo, "是否取消订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
+										Ext.Msg.confirm(VersionInfo, "是否取消订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
 											if (buttonId == "yes") {
 												DoSQL("DELETE FROM myApp WHERE appId = \"" + data.appId + "\"");
 												container.setHtml("<img class = orderViewIcon src = " + data.appIconUrl + " />");
@@ -48,7 +48,7 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 										});
 										return false;
 									} else {
-										Ext.Msg.confirm(DB.versionInfo, "是否要订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
+										Ext.Msg.confirm(VersionInfo, "是否要订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
 											if (buttonId == "yes") {
 												DoSQL("INSERT INTO myApp"
 													 + " (appId, appLocation, appName, appIconUrl)"
@@ -91,7 +91,7 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 								cls : "orderViewIconContainer",
 								DoOrder : function (container, data, isOrdered) {
 									if (isOrdered) {
-										Ext.Msg.confirm(DB.versionInfo, "是否取消订阅“" + "翼农" + " • " + data.categoryName + "”？", function (buttonId, value, opt) {
+										Ext.Msg.confirm(VersionInfo, "是否取消订阅“" + "翼农" + " • " + data.categoryName + "”？", function (buttonId, value, opt) {
 											if (buttonId == "yes") {
 												DoSQL("DELETE FROM myCategory WHERE categoryId = \"" + data.categoryId + "\"");
 												container.setHtml("<img class = orderViewIcon src = " + data.categoryIconUrl + " />");
@@ -99,7 +99,7 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 										});
 										return false;
 									} else {
-										Ext.Msg.confirm(DB.versionInfo, "是否要订阅“" + "翼农" + " • " + data.categoryName + "”？", function (buttonId, value, opt) {
+										Ext.Msg.confirm(VersionInfo, "是否要订阅“" + "翼农" + " • " + data.categoryName + "”？", function (buttonId, value, opt) {
 											if (buttonId == "yes") {
 												DoSQL("INSERT INTO myCategory"
 													 + " (categoryId, categoryStyle, categoryName, categoryIconUrl)"
