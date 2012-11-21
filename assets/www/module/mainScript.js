@@ -3,6 +3,7 @@ var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
 //var ServerUrl = "http://localhost:8080/WiseAgriAjaxR/";
 
 // 本地数据
+var DB = [];
 var scaleFlag = 0;
 var VersionInfo = "";
 
