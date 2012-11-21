@@ -20,7 +20,10 @@ Ext.define("Project.controller.mainController", {
 		},
 	},
 	init : function () {
+		loadDefaultApp();
+		loadDefaultCategory();
 		loadMyApp();
+		loadMyCategory();
 	},
 	launch : function () {
 		DB.mainController = this;

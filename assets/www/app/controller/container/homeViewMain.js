@@ -108,11 +108,8 @@ Ext.define("Project.controller.container.homeViewMain", {
 	},
 	launch : function () {
 		var self = this;
-		loadDefaultCategory();
-		loadMyApp();
-		loadMyCategory();
 		var handle = setInterval(function () {
-				if (defaultCategory.length != 0) {
+				if (defaultCategoryLoaded && myAppLoaded && myCategoryLoaded) {
 					for (var key in myApp) {
 						defaultCategory.push(myApp[key]);
 					};

@@ -6,5 +6,5 @@ Ext.define("Project.store.YiNongStore", {
 			type : "ajax",
 			url : "data/YiNong.json",
 		},
-	}
+	},
 });

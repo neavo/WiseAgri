@@ -105,7 +105,7 @@ Ext.define("Project.controller.orderView", {
 		loadMyApp();
 		loadMyCategory();
 		var handle = setInterval(function () {
-				if (defaultCategory.length != 0) {
+				if (defaultCategoryLoaded && myAppLoaded && myCategoryLoaded) {
 					for (var key in myApp) {
 						defaultCategory.push(myApp[key]);
 					};

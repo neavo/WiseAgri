@@ -9,14 +9,18 @@ var VersionInfo = "";
 
 // 加载默认app数据
 var defaultApp = [];
+var defaultAppLoaded = false;
 function loadDefaultApp() {
+	defaultApp = [];
+	defaultAppLoaded = false;
 	Ext.getStore("defaultAppStore").load({
 		callback : function (records, operation, success) {
 			if (success && records.lenght != 0) {
-				defaultApp = [];
 				for (var key in records) {
 					defaultApp = records[key].getData();
 				};
+				defaultAppLoaded = true;
+				DoLog(defaultAppLoaded);
 			};
 		},
 		scope : this,
@@ -25,14 +29,17 @@ function loadDefaultApp() {
 
 // 加载默认频道数据
 var defaultCategory = [];
+var defaultCategoryLoaded = false;
 function loadDefaultCategory() {
+	defaultCategory = [];
+	defaultCategoryLoaded = false;
 	Ext.getStore("defaultCategoryStore").load({
 		callback : function (records, operation, success) {
 			if (success && records.lenght != 0) {
-				defaultCategory = [];
 				for (var key in records) {
 					defaultCategory.push(records[key].getData());
 				};
+				defaultCategoryLoaded = true;
 			};
 		},
 		scope : this,
@@ -41,27 +48,38 @@ function loadDefaultCategory() {
 
 // 加载订购app数据
 var myApp = [];
+var myAppLoaded = false;
 function loadMyApp() {
+	myApp = [];
+	myAppLoaded = false;
 	if (SQLite) {
 		SQLite.transaction(function (shell) {
 			shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
-				myApp = [];
 				myApp = SqlToJson(results);
+				myAppLoaded = true;
 			}, errorSQL);
 		}, errorSQL);
+	} else {
+		myAppLoaded = true;
 	};
 };
 
 // 加载订购app数据
 var myCategory = [];
+var myCategoryLoaded = false;
 function loadMyCategory() {
+	myCategory = [];
+	myCategoryLoaded = false;
 	if (SQLite) {
 		SQLite.transaction(function (shell) {
 			shell.executeSql("SELECT * FROM myCategory ORDER BY categoryId", [], function (shell, results) {
 				myCategory = [];
 				myCategory = SqlToJson(results);
+				myCategoryLoaded = true;
 			}, errorSQL);
 		}, errorSQL);
+	} else {
+		myCategoryLoaded = true;
 	};
 };
 
