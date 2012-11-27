@@ -7,7 +7,7 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 		},
 		control : {},
 	},
-	setOrderGrid : function (data, carousel) {
+	setYiNongGrid : function (data, carousel) {
 		var i = 0;
 		var j = 0;
 		var k = 0;
@@ -27,57 +27,6 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 			for (j = 0; j < 3; j++) {
 				hContainer.add(Ext.create("Ext.Spacer"));
 				if (data[k]) {
-					if (data[k]["appName"]) {
-						var isOrdered = false;
-						for (var key in myApp) {
-							if (data[k]["appId"] == myApp[key]["appId"]) {
-								isOrdered = true;
-							};
-						};
-						var iconContainer = Ext.create("Ext.Container", {
-								data : data[k],
-								isOrdered : isOrdered,
-								cls : "orderViewIconContainer",
-								DoOrder : function (container, data, isOrdered) {
-									if (isOrdered) {
-										Ext.Msg.confirm(VersionInfo, "是否取消订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
-											if (buttonId == "yes") {
-												DoSQL("DELETE FROM myApp WHERE appId = \"" + data.appId + "\"");
-												container.setHtml("<img class = orderViewIcon src = " + data.appIconUrl + " />");
-											};
-										});
-										return false;
-									} else {
-										Ext.Msg.confirm(VersionInfo, "是否要订阅“" + data.appLocation + "  • " + data.appName + "”？", function (buttonId, value, opt) {
-											if (buttonId == "yes") {
-												DoSQL("INSERT INTO myApp"
-													 + " (appId, appLocation, appName, appIconUrl)"
-													 + " VALUES"
-													 + " (\"" + data.appId + "\" ,\"" + data.appLocation + "\" ,\"" + data.appName + "\", \"" + data.appIconUrl + "\")");
-												container.setHtml("<img class = orderViewIcon src = " + data.appIconUrl + " />"
-													 + "<img class = orderViewIconOverlay src = resources/icons/Checked.png >");
-											};
-										});
-										return true;
-									};
-								},
-								listeners : {
-									tap : {
-										fn : function () {
-											this.config.isOrdered = this.config.DoOrder(this, this.config.data, this.config.isOrdered);
-										},
-										element : "element",
-									},
-								},
-							});
-						if (isOrdered) {
-							iconContainer.setHtml("<img class = orderViewIcon src = " + iconContainer.config.data.appIconUrl + " />"
-								 + "<img class = orderViewIconOverlay src = resources/icons/Checked.png >");
-						} else {
-							iconContainer.setHtml("<img class = orderViewIcon src = " + iconContainer.config.data.appIconUrl + " />");
-						};
-						hContainer.add(iconContainer);
-					};
 					if (data[k]["categoryName"]) {
 						var isOrdered = false;
 						for (var key in myCategory) {
@@ -94,18 +43,19 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 										Ext.Msg.confirm(VersionInfo, "是否取消订阅“" + "翼农" + " • " + data.categoryName + "”？", function (buttonId, value, opt) {
 											if (buttonId == "yes") {
 												DoSQL("DELETE FROM myCategory WHERE categoryId = \"" + data.categoryId + "\"");
-												container.setHtml("<img class = orderViewIcon src = " + data.categoryIconUrl + " />");
+												container.setHtml("<img class = orderViewIcon src = " + data.iconUrl + " />");
 											};
 										});
 										return false;
 									} else {
 										Ext.Msg.confirm(VersionInfo, "是否要订阅“" + "翼农" + " • " + data.categoryName + "”？", function (buttonId, value, opt) {
+											console.log(data.iconUrl);
 											if (buttonId == "yes") {
 												DoSQL("INSERT INTO myCategory"
 													 + " (categoryId, categoryStyle, categoryName, categoryIconUrl)"
 													 + " VALUES"
-													 + " (\"" + data.categoryId + "\" ,\"" + "newsCategory" + "\" ,\"" + data.categoryName + "\", \"" + data.categoryIconUrl + "\")");
-												container.setHtml("<img class = orderViewIcon src = " + data.categoryIconUrl + " />"
+													 + " (\"" + data.categoryId + "\" ,\"" + "newsCategory" + "\" ,\"" + data.categoryName + "\", \"" + data.iconUrl + "\")");
+												container.setHtml("<img class = orderViewIcon src = " + data.iconUrl + " />"
 													 + "<img class = orderViewIconOverlay src = resources/icons/Checked.png >");
 											};
 										});
@@ -122,10 +72,10 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 								},
 							});
 						if (isOrdered) {
-							iconContainer.setHtml("<img class = orderViewIcon src = " + iconContainer.config.data.categoryIconUrl + " />"
+							iconContainer.setHtml("<img class = orderViewIcon src = " + iconContainer.config.data.iconUrl + " />"
 								 + "<img class = orderViewIconOverlay src = resources/icons/Checked.png >");
 						} else {
-							iconContainer.setHtml("<img class = orderViewIcon src = " + iconContainer.config.data.categoryIconUrl + " />");
+							iconContainer.setHtml("<img class = orderViewIcon src = " + iconContainer.config.data.iconUrl + " />");
 						};
 						hContainer.add(iconContainer);
 					};
@@ -143,7 +93,7 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 		vContainer.add(Ext.create("Ext.Spacer"));
 		carousel.add(vContainer);
 		if (data[k] && carousel.getItems().length < 9) {
-			this.setGrid(data.slice(k), carousel);
+			this.setYiNongGrid(data.slice(k), carousel);
 		};
 	},
 	launch : function () {
@@ -158,18 +108,14 @@ Ext.define("Project.controller.widget.YiNongBtn", {
 						ZhiHuiBtn.setStyle("background : #2BA4E6; color : #FFFFFF;");
 						DoSwitch("orderView");
 						DB.orderViewMain.removeAll(true);
-						Ext.getStore("YiNongStore").load({
-							callback : function (records, operation, success) {
-								if (success && records.length != 0) {
-									var data = [];
-									for (var key in records) {
-										data.push(records[key].getData());
-									};
-									self.setOrderGrid(data, DB.orderViewMain);
-									DB.orderViewMain.setActiveItem(0);
-								};
-							},
-							scope : this,
+						DoWebService("GetAppList", {
+							"page" : 1,
+							"limit" : 9999,
+							"keyWord" : null,
+						}, function (response, eOpts) {
+							var data = eval("(" + eval("(" + response.responseText + ")").d + ")");
+							self.setYiNongGrid(data, DB.orderViewMain);
+							DB.orderViewMain.setActiveItem(0);
 						});
 					};
 				},

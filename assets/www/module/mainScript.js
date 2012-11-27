@@ -133,6 +133,24 @@ function DoSQL(sql) {
 	};
 };
 
+// WebService相关函数
+function DoWebService(method, param, success) {
+	Ext.Ajax.request({
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json;utf-8"
+		},
+		url : "http://www.118328.com/BlissCountryside/AppAgent.asmx/" + method,
+		jsonData : param,
+		success : function (response, eOpts) {
+			success(response, eOpts);
+		},
+		failure : function (response, eOpts) {
+			console.log(response.responseText);
+		}
+	});
+};
+
 // 设置正在使用的Object
 var activatedController = "";
 function setActivatedController(controller) {
