@@ -1,6 +1,6 @@
 // 服务器数据
-var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
-//var ServerUrl = "http://localhost:8080/WiseAgriAjaxR/";
+//var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
+var ServerUrl = "http://192.168.45.1:8080/WiseAgriAjax/";
 
 // 本地数据
 var DB = [];
@@ -19,12 +19,11 @@ function loadDefaultApp() {
 		callback : function (records, operation, success) {
 			if (success && records.lenght != 0) {
 				for (var key in records) {
-					defaultApp = records[key].getData();
-				};
-				defaultAppLoaded = true;
+					defaultApp.push(records[key].getData());
+				};	
 			};
+			defaultAppLoaded = true;
 		},
-		scope : this,
 	});
 };
 
@@ -40,47 +39,27 @@ function loadDefaultCategory() {
 				for (var key in records) {
 					defaultCategory.push(records[key].getData());
 				};
-				defaultCategoryLoaded = true;
 			};
+			defaultCategoryLoaded = true;
 		},
-		scope : this,
 	});
 };
 
-// 加载订购app数据
-var myApp = [];
-var myAppLoaded = false;
-function loadMyApp() {
-	myApp = [];
-	myAppLoaded = false;
+// 加载订购数据
+var myOrder = [];
+var myOrderLoaded = false;
+function loadMyOrder() {
+	myOrder = [];
+	myOrderLoaded = false;
 	if (SQLite) {
 		SQLite.transaction(function (shell) {
-			shell.executeSql("SELECT * FROM myApp ORDER BY appId", [], function (shell, results) {
-				myApp = SqlToJson(results);
-				myAppLoaded = true;
+			shell.executeSql("SELECT * FROM myOrder ORDER BY id", [], function (shell, results) {
+				myOrder = SqlToJson(results);
+				myOrderLoaded = true;
 			}, errorSQL);
 		}, errorSQL);
 	} else {
-		myAppLoaded = true;
-	};
-};
-
-// 加载订购app数据
-var myCategory = [];
-var myCategoryLoaded = false;
-function loadMyCategory() {
-	myCategory = [];
-	myCategoryLoaded = false;
-	if (SQLite) {
-		SQLite.transaction(function (shell) {
-			shell.executeSql("SELECT * FROM myCategory ORDER BY categoryId", [], function (shell, results) {
-				myCategory = [];
-				myCategory = SqlToJson(results);
-				myCategoryLoaded = true;
-			}, errorSQL);
-		}, errorSQL);
-	} else {
-		myCategoryLoaded = true;
+		myOrderLoaded = true;
 	};
 };
 
@@ -99,10 +78,8 @@ var SQLite = "";
 		
 		// 初始化SQLite数据库对象
 		SQLite = window.openDatabase("WiseAgri", "1.0", "WiseAgri Datebase", 1048576);
-		DoSQL("CREATE TABLE IF NOT EXISTS myApp"
-			 + " (appId VARCHAR(128), appLocation VARCHAR(128), appName VARCHAR(128), appIconUrl VARCHAR(1024))");
-		DoSQL("CREATE TABLE IF NOT EXISTS myCategory"
-			 + " (categoryId VARCHAR(128), categoryStyle VARCHAR(128), categoryName VARCHAR(128), categoryIconUrl VARCHAR(1024))");
+		DoSQL("CREATE TABLE IF NOT EXISTS myOrder"
+		+ " (type VARCHAR(128), id VARCHAR(128), name VARCHAR(128), iconUrl VARCHAR(1024), style VARCHAR(128), location VARCHAR(128))")
 	};
 };
 
@@ -133,24 +110,6 @@ function DoSQL(sql) {
 	};
 };
 
-// WebService相关函数
-function DoWebService(method, param, success) {
-	Ext.Ajax.request({
-		method : "post",
-		headers : {
-			"Content-Type" : "application/json;utf-8"
-		},
-		url : "http://www.118328.com/BlissCountryside/AppAgent.asmx/" + method,
-		jsonData : param,
-		success : function (response, eOpts) {
-			success(response, eOpts);
-		},
-		failure : function (response, eOpts) {
-			console.log(response.responseText);
-		}
-	});
-};
-
 // 设置正在使用的Object
 var activatedController = "";
 function setActivatedController(controller) {
@@ -161,14 +120,18 @@ function setActivatedAlbum(album) {
 	activatedAlbum = album;
 };
 
-// 自定义的Console.log
-function DoLog(object) {
-	console.log(object);
-};
-
 // 自定义的Alert
 function DoAlert(msg) {
 	Ext.Msg.alert(VersionInfo, msg);
+};
+
+// 自定义的Mask
+function DoMask() {
+	Ext.Msg.setStyle("background : #FFFFFF;");
+	Ext.Msg.show();
+};
+function UnMask() {
+	Ext.Msg.hide();
 };
 
 // 切换页面

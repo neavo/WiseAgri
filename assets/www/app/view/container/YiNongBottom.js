@@ -1,6 +1,6 @@
-Ext.define("Project.view.container.orderViewBottom", {
+Ext.define("Project.view.container.YiNongBottom", {
 	extend : "Ext.Toolbar",
-	xtype : "orderViewBottom",
+	xtype : "YiNongBottom",
 	config : {
 		docked : "bottom",
 		baseCls : "BottomBar",

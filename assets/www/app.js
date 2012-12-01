@@ -23,10 +23,11 @@ Ext.application({
 	
 	views : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.YiNongBtn", "widget.ZhiHuiBtn",
+		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn",
 		
 		"homeView", "container.homeViewMain",
-		"orderView", "container.orderViewTop", "container.orderViewMain", "container.orderViewBottom",
+		"YiNong", "container.YiNongTop", "container.YiNongMain", "container.YiNongBottom",
+		"ZhiHui", "container.ZhiHuiTop", "container.ZhiHuiMain", "container.ZhiHuiBottom",
 		"categoryList", "container.categoryListTop", "container.categoryListMain", "container.categoryListBottom",
 		"newsList", "container.newsListTop", "container.newsListMain", "container.newsListBottom",
 		"newsDetail", "container.newsDetailTop", "container.newsDetailMain", "container.newsDetailBottom",
@@ -37,10 +38,11 @@ Ext.application({
 	
 	controllers : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.YiNongBtn", "widget.ZhiHuiBtn",
+		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn",
 		
+		"YiNong", "container.YiNongTop",
+		"ZhiHui", "container.ZhiHuiTop",
 		"homeView", "container.homeViewMain",
-		"orderView",
 		"categoryList", "container.categoryListMain",
 		"newsList", "container.newsListMain",
 		"newsDetail",

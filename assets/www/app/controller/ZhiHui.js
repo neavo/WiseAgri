@@ -1,18 +1,13 @@
-Ext.define("Project.controller.container.homeViewMain", {
+Ext.define("Project.controller.ZhiHui", {
 	extend : "Ext.app.Controller",
 	config : {
-		refs : {
-			homeViewCarousel : "#homeViewCarousel",
-			homeViewPageNum : "#homeViewPageNum",
-		},
-		control : {
-			homeViewCarousel : {
-				activeitemchange : "OnHomeViewCarouselActiveItemChange",
-			},
-		},
+		refs : {},
+		control : {},
 	},
 	setGrid : function (category, carousel) {
-		var i = 0, j = 0, k = 0;
+		var i = 0,
+		j = 0,
+		k = 0;
 		var vContainer = "";
 		var hContainer = "";
 		for (i = 0; i < 4; i++) {
@@ -100,7 +95,13 @@ Ext.define("Project.controller.container.homeViewMain", {
 			this.setGrid(category.slice(k), carousel);
 		};
 	},
-	launch : function () {
+	loadAll : function () {
+		loadDefaultApp();
+		loadDefaultCategory();
+		loadMyOrder();
+	},
+	goBack : function () {
+		this.loadAll();
 		var self = this;
 		var handle = setInterval(function () {
 				if (defaultAppLoaded && defaultCategoryLoaded && myOrderLoaded) {
@@ -110,12 +111,12 @@ Ext.define("Project.controller.container.homeViewMain", {
 					for (var key in myOrder) {
 						defaultCategory.push(myOrder[key]);
 					};
+					DoSwitch("homeView");
+					DB.homeViewCarousel.removeAll(true);
 					self.setGrid(defaultCategory, DB.homeViewCarousel);
+					DB.homeViewCarousel.setActiveItem(0);
 					clearInterval(handle);
 				};
 			}, 50);
-	},
-	OnHomeViewCarouselActiveItemChange : function (carousel, value, oldValue, eOpts) {
-		this.getHomeViewPageNum().setHtml("<img class = rightContainerIcon src = resources/icons/pageNum_" + (carousel.getActiveIndex() + 1) + ".png />");
 	},
 });

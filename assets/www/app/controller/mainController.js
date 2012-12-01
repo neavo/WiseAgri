@@ -5,7 +5,8 @@ Ext.define("Project.controller.mainController", {
 			mainContainer : "mainContainer",
 
 			homeView : "homeView", homeViewMain : "homeViewMain", 
-			orderView : "orderView", orderViewTop : "orderViewTop", orderViewMain : "orderViewMain", orderViewBottom : "orderViewBottom",
+			YiNong : "YiNong", YiNongTop : "YiNongTop", YiNongMain : "YiNongMain", YiNongBottom : "YiNongBottom",
+			ZhiHui : "ZhiHui", ZhiHuiTop : "ZhiHuiTop", ZhiHuiMain : "ZhiHuiMain", ZhiHuiBottom : "ZhiHuiBottom",
 			categoryList : "categoryList", categoryListTop : "categoryListTop", categoryListMain : "categoryListMain", categoryListBottom : "categoryListBottom",
 			newsList : "newsList", newsListTop : "newsListTop", newsListMain : "newsListMain", newsListBottom : "newsListBottom",
 			newsDetail : "newsDetail", newsDetailTop : "newsDetailTop", newsDetailMain : "newsDetailMain", newsDetailBottom : "newsDetailBottom",
@@ -23,9 +24,7 @@ Ext.define("Project.controller.mainController", {
 		// 加载本地数据
 		loadDefaultApp();
 		loadDefaultCategory();
-		loadMyApp();
-		loadMyCategory();
-		
+		loadMyOrder();
 		// 获取屏幕分辨率
 		screenHeight = document.body.clientHeight;
 		screenWidth = document.body.clientWidth;
@@ -35,7 +34,8 @@ Ext.define("Project.controller.mainController", {
 		DB.mainContainer = this.getMainContainer();
 		
 		DB.homeView = this.getHomeView(); DB.homeViewMain = this.getHomeViewMain(); 
-		DB.orderView = this.getOrderView(); DB.orderViewTop = this.getOrderViewTop(); DB.orderViewMain = this.getOrderViewMain(); DB.orderViewBottom = this.getOrderViewBottom();
+		DB.YiNong = this.getYiNong(); DB.YiNongTop = this.getYiNongTop(); DB.YiNongMain = this.getYiNongMain(); DB.YiNongBottom = this.getYiNongBottom();
+		DB.ZhiHui = this.getZhiHui(); DB.ZhiHuiTop = this.getZhiHuiTop(); DB.ZhiHuiMain = this.getZhiHuiMain(); DB.ZhiHuiBottom = this.getZhiHuiBottom();
 		DB.categoryList = this.getCategoryList(); DB.categoryListTop = this.getCategoryListTop(); DB.categoryListMain = this.getCategoryListMain(); DB.categoryListBottom = this.getCategoryListBottom();
 		DB.newsList = this.getNewsList(); DB.newsListTop = this.getNewsListTop(); DB.newsListMain = this.getNewsListMain(); DB.newsListBottom = this.getNewsListBottom();
 		DB.newsDetail = this.getNewsDetail(); DB.newsDetailTop = this.getNewsDetailTop(); DB.newsDetailMain = this.getNewsDetailMain(); DB.newsDetailBottom = this.getNewsDetailBottom();
