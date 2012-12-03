@@ -10,7 +10,7 @@ Ext.define("Project.controller.widget.aboutBtn", {
 		this.getAboutBtn().addListener({
 			tap : {
 				fn : function () {
-					DoAlert(defaultApp.appLocation + " • " + defaultApp.appName);
+					DoAlert("咸宁" + " • " + "魅力嘉鱼");
 				},
 				element : "element",
 			},

@@ -3,6 +3,7 @@ Ext.application({
 	
 	requires : [
 		"Ext.MessageBox",
+		"Ext.plugin.ListPaging",
 		"Ext.data.proxy.JsonP",
 	],
 	

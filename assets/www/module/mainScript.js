@@ -15,15 +15,13 @@ var defaultAppLoaded = false;
 function loadDefaultApp() {
 	defaultApp = [];
 	defaultAppLoaded = false;
-	Ext.getStore("defaultAppStore").load({
-		callback : function (records, operation, success) {
-			if (success && records.lenght != 0) {
-				for (var key in records) {
-					defaultApp.push(records[key].getData());
-				};	
+	Ext.getStore("defaultAppStore").load(function (records, operation, success) {
+		if (success && records.lenght != 0) {
+			for (var key in records) {
+				defaultApp.push(records[key].getData());
 			};
-			defaultAppLoaded = true;
-		},
+		};
+		defaultAppLoaded = true;
 	});
 };
 
@@ -33,15 +31,13 @@ var defaultCategoryLoaded = false;
 function loadDefaultCategory() {
 	defaultCategory = [];
 	defaultCategoryLoaded = false;
-	Ext.getStore("defaultCategoryStore").load({
-		callback : function (records, operation, success) {
-			if (success && records.lenght != 0) {
-				for (var key in records) {
-					defaultCategory.push(records[key].getData());
-				};
+	Ext.getStore("defaultCategoryStore").load(function (records, operation, success) {
+		if (success && records.lenght != 0) {
+			for (var key in records) {
+				defaultCategory.push(records[key].getData());
 			};
-			defaultCategoryLoaded = true;
-		},
+		};
+		defaultCategoryLoaded = true;
 	});
 };
 
@@ -53,7 +49,7 @@ function loadMyOrder() {
 	myOrderLoaded = false;
 	if (SQLite) {
 		SQLite.transaction(function (shell) {
-			shell.executeSql("SELECT * FROM myOrder ORDER BY id", [], function (shell, results) {
+			shell.executeSql("SELECT * FROM myOrder ORDER BY type", [], function (shell, results) {
 				myOrder = SqlToJson(results);
 				myOrderLoaded = true;
 			}, errorSQL);
@@ -79,7 +75,7 @@ var SQLite = "";
 		// 初始化SQLite数据库对象
 		SQLite = window.openDatabase("WiseAgri", "1.0", "WiseAgri Datebase", 1048576);
 		DoSQL("CREATE TABLE IF NOT EXISTS myOrder"
-		+ " (type VARCHAR(128), id VARCHAR(128), name VARCHAR(128), iconUrl VARCHAR(1024), style VARCHAR(128), location VARCHAR(128))")
+			 + " (type VARCHAR(128), id VARCHAR(128), name VARCHAR(128), iconUrl VARCHAR(1024), style VARCHAR(128), location VARCHAR(128))")
 	};
 };
 

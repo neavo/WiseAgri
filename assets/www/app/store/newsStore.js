@@ -6,6 +6,6 @@ Ext.define("Project.store.newsStore", {
 			type : "ajax",
 			url : "data/news.json",
 		},
-		//pageSize : 5,
+		pageSize : 5,
 	},
 });

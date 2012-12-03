@@ -11,8 +11,10 @@ Ext.define("Project.controller.container.homeViewMain", {
 			},
 		},
 	},
-	setGrid : function (category, carousel) {
-		var i = 0, j = 0, k = 0;
+	setGrid : function (data, carousel) {
+		var i = 0,
+		j = 0,
+		k = 0;
 		var vContainer = "";
 		var hContainer = "";
 		for (i = 0; i < 4; i++) {
@@ -26,15 +28,24 @@ Ext.define("Project.controller.container.homeViewMain", {
 				});
 			for (j = 0; j < 2; j++) {
 				hContainer.add(Ext.create("Ext.Spacer"));
-				if (category[k]) {
+				if (data[k]) {
 					var item = Ext.create("Ext.Container", {
-							data : category[k],
+							data : data[k],
+							setAppCategory : function (id, location, name) {
+								DoSwitch("categoryList");
+								DB.categoryListTop.setTitle(location + " • " + name);
+								DB.categoryListMain.getStore().setProxy({
+									type : "jsonp",
+									url : ServerUrl + "ZhiHui/GetCategoryList.jsp?appId=" + id,
+								});
+								DB.categoryListMain.getStore().load();
+							},
 							setCategoryList : function (id, name) {
 								DoSwitch("categoryList");
 								DB.categoryListTop.setTitle(name);
 								DB.categoryListMain.getStore().setProxy({
 									type : "jsonp",
-									url : ServerUrl + "GetCategoryList.jsp?parentId=" + id,
+									url : ServerUrl + "ZhiHui/GetCategoryList.jsp?parentId=" + id,
 								});
 								DB.categoryListMain.getStore().load();
 							},
@@ -43,32 +54,23 @@ Ext.define("Project.controller.container.homeViewMain", {
 								DB.newsListTop.setTitle(name);
 								DB.newsListMain.getStore().setProxy({
 									type : "jsonp",
-									url : ServerUrl + "GetNewsList.jsp?categoryId=" + id,
+									url : ServerUrl + "ZhiHui/GetNewsList.jsp?categoryId=" + id,
 								});
-								DB.newsListMain.getStore().load();
+								DB.newsListMain.getStore().loadPage(1);
 							},
-							setAppCategory : function (id, name) {
-								DoSwitch("categoryList");
-								DB.categoryListTop.setTitle(name);
-								DB.categoryListMain.getStore().setProxy({
-									type : "jsonp",
-									url : ServerUrl + "GetCategoryList.jsp?appId=" + id,
-								});
-								DB.categoryListMain.getStore().load();
-							},
-							html : "<img class = homeViewIcon src = " + category[k]["iconUrl"] + " />",
+							html : "<img class = homeViewIcon src = " + data[k]["iconUrl"] + " />",
 						});
-					if (category[k]["type"] == "app") {
+					if (data[k]["type"] == "app") {
 						item.addListener({
 							tap : {
 								fn : function () {
-									this.setAppCategory(this.config.data.id, this.config.data.name);
+									this.setAppCategory(this.config.data.id, this.config.data.location, this.config.data.name);
 								},
 								element : "element",
 							},
 						});
 					};
-					if (category[k]["type"] == "category") {
+					if (data[k]["type"] == "category") {
 						item.addListener({
 							tap : {
 								fn : function () {
@@ -96,8 +98,8 @@ Ext.define("Project.controller.container.homeViewMain", {
 		};
 		vContainer.add(Ext.create("Ext.Spacer"));
 		carousel.add(vContainer);
-		if (category[k] && carousel.getItems().length < 9) {
-			this.setGrid(category.slice(k), carousel);
+		if (data[k] && carousel.getItems().length < 9) {
+			this.setGrid(data.slice(k), carousel);
 		};
 	},
 	launch : function () {
@@ -108,7 +110,14 @@ Ext.define("Project.controller.container.homeViewMain", {
 						defaultCategory.push(defaultApp[key]);
 					};
 					for (var key in myOrder) {
-						defaultCategory.push(myOrder[key]);
+						if (myOrder[key]["type"] == "app") {
+							defaultCategory.push(myOrder[key]);
+						};
+					};
+					for (var key in myOrder) {
+						if (myOrder[key]["type"] == "YiNong") {
+							defaultCategory.push(myOrder[key]);
+						};
 					};
 					self.setGrid(defaultCategory, DB.homeViewCarousel);
 					clearInterval(handle);

@@ -206,7 +206,7 @@ Ext.define("Project.controller.widget.myAppBtn", {
 					DB.ZhiHuiMain.removeAll(true);
 					Ext.getStore("appListStore").setProxy({
 						type : "jsonp",
-						url : ServerUrl + "GetAppList.jsp",
+						url : ServerUrl + "ZhiHui/GetAppList.jsp?appId=10;11;12;13;14",
 					});
 					Ext.getStore("appListStore").load({
 						callback : function (records, operation, success) {
@@ -217,7 +217,6 @@ Ext.define("Project.controller.widget.myAppBtn", {
 								};
 								self.setZhiHuiGrid(data, DB.ZhiHuiMain);
 								DB.ZhiHuiMain.setActiveItem(0);
-								
 							};
 						},
 					});

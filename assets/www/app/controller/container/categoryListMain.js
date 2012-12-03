@@ -16,7 +16,7 @@ Ext.define("Project.controller.container.categoryListMain", {
 			DB.categoryListTop.setTitle(data.name);
 			DB.categoryListMain.getStore().setProxy({
 				type : "jsonp",
-				url : ServerUrl + "GetCategoryList.jsp?parentId=" + data.id,
+				url : ServerUrl + "ZhiHui/GetCategoryList.jsp?parentId=" + data.id,
 			});
 			DB.categoryListMain.getStore().load();
 			DoSwitch("categoryList");
@@ -25,11 +25,11 @@ Ext.define("Project.controller.container.categoryListMain", {
 			DB.newsListTop.setTitle(data.name);
 			DB.newsListMain.getStore().setProxy({
 				type : "jsonp",
-				url : ServerUrl + "GetNewsList.jsp?categoryId=" + data.id,
+				url : ServerUrl + "ZhiHui/GetNewsList.jsp?categoryId=" + data.id,
 			});
-			DB.newsListMain.getStore().load();
+			DB.newsListMain.getStore().loadPage(1);
 		} else {
-			DoAlert("开发中 ... </br>（" + data.style + " , " + data.id+ "）");
+			DoAlert("开发中 ... </br>（" + data.style + " , " + data.id + "）");
 		};
 	},
 });

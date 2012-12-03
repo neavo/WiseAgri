@@ -1,1 +1,30 @@
-[]
+[{
+		"type" : "app",
+		"id" : "11",
+		"name" : "嘉鱼新闻",
+		"iconUrl" : "data/defaultApp/11.png",
+		"style" : "",
+		"location" : "咸宁",
+	}, {
+		"type" : "app",
+		"id" : "12",
+		"name" : "嘉鱼旅游",
+		"iconUrl" : "data/defaultApp/12.png",
+		"style" : "",
+		"location" : "咸宁",
+	}, {
+		"type" : "app",
+		"id" : "13",
+		"name" : "嘉鱼特产",
+		"iconUrl" : "data/defaultApp/13.png",
+		"style" : "",
+		"location" : "咸宁",
+	}, {
+		"type" : "app",
+		"id" : "14",
+		"name" : "嘉鱼美食",
+		"iconUrl" : "data/defaultApp/14.png",
+		"style" : "",
+		"location" : "咸宁",
+	}, 
+]
