@@ -5,9 +5,7 @@ Ext.define("Project.controller.YiNong", {
 		control : {},
 	},
 	setGrid : function (data, carousel) {
-		var i = 0,
-		j = 0,
-		k = 0;
+		var i = 0, j = 0, k = 0;
 		var vContainer = "";
 		var hContainer = "";
 		for (i = 0; i < 4; i++) {
@@ -24,40 +22,19 @@ Ext.define("Project.controller.YiNong", {
 				if (data[k]) {
 					var item = Ext.create("Ext.Container", {
 							data : data[k],
-							setAppCategory : function (id, location, name) {
-								DoSwitch("categoryList");
-								DB.categoryListTop.setTitle(location + " • " + name);
-								DB.categoryListMain.getStore().setProxy({
-									type : "jsonp",
-									url : ServerUrl + "ZhiHui/GetCategoryList.jsp?appId=" + id,
-								});
-								DB.categoryListMain.getStore().load();
-							},
-							setCategoryList : function (id, name) {
-								DoSwitch("categoryList");
-								DB.categoryListTop.setTitle(name);
-								DB.categoryListMain.getStore().setProxy({
-									type : "jsonp",
-									url : ServerUrl + "ZhiHui/GetCategoryList.jsp?parentId=" + id,
-								});
-								DB.categoryListMain.getStore().load();
-							},
-							setNewsCategory : function (id, name) {
-								DoSwitch("newsList");
-								DB.newsListTop.setTitle(name);
-								DB.newsListMain.getStore().setProxy({
-									type : "jsonp",
-									url : ServerUrl + "ZhiHui/GetNewsList.jsp?categoryId=" + id,
-								});
-								DB.newsListMain.getStore().loadPage(1);
-							},
 							html : "<img class = homeViewIcon src = " + data[k]["iconUrl"] + " />",
 						});
 					if (data[k]["type"] == "app") {
 						item.addListener({
 							tap : {
 								fn : function () {
-									this.setAppCategory(this.config.data.id, this.config.data.location, this.config.data.name);
+									DoSwitch("categoryList");
+									DB.categoryListTop.setTitle(this.config.data.location + " • " + this.config.data.name);
+									DB.categoryListMain.getStore().setProxy({
+										type : "jsonp",
+										url : ServerUrl + "ZhiHui/GetCategoryList.jsp?appId=" + this.config.data.id,
+									});
+									DB.categoryListMain.getStore().load();
 								},
 								element : "element",
 							},
@@ -68,10 +45,22 @@ Ext.define("Project.controller.YiNong", {
 							tap : {
 								fn : function () {
 									if (this.config.data.style == "parentCategory") {
-										this.setCategoryList(this.config.data.id, this.config.data.name);
+										DoSwitch("categoryList");
+										DB.categoryListTop.setTitle(this.config.data.name);
+										DB.categoryListMain.getStore().setProxy({
+											type : "jsonp",
+											url : ServerUrl + "ZhiHui/GetCategoryList.jsp?parentId=" + this.config.data.id,
+										});
+										DB.categoryListMain.getStore().load();
 									};
 									if (this.config.data.style == "newsCategory") {
-										this.setNewsCategory(this.config.data.id, this.config.data.name);
+										DoSwitch("newsList");
+										DB.newsListTop.setTitle(this.config.data.name);
+										DB.newsListMain.getStore().setProxy({
+											type : "jsonp",
+											url : ServerUrl + "ZhiHui/GetNewsList.jsp?categoryId=" + this.config.data.id,
+										});
+										DB.newsListMain.getStore().loadPage(1);
 									};
 								},
 								element : "element",
