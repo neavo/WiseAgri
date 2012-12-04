@@ -19,6 +19,12 @@ Ext.define("Project.view.mainContainer", {
 			}, {
 				xtype : "newsDetail",
 			}, {
+				xtype : "SnBList",
+			}, {
+				xtype : "SnBDetail",
+			}, {
+				xtype : "DoSnB",
+			}, {
 				xtype : "albumView",
 			},
 		],

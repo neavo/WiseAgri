@@ -11,22 +11,22 @@ Ext.define("Project.controller.widget.biggerBtn", {
 		},
 	},
 	onBiggerBtnTap : function () {
-		switch (scaleFlag) {
+		switch (ScaleFlag) {
 		case  - 2:
 			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml().replace("newsDetailContentSmaller", "newsDetailContentSmall"));
-			scaleFlag = scaleFlag + 1;
+			ScaleFlag = ScaleFlag + 1;
 			break;
 		case  - 1:
 			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml().replace("newsDetailContentSmall", "newsDetailContentNormal"));
-			scaleFlag = scaleFlag + 1;
+			ScaleFlag = ScaleFlag + 1;
 			break;
 		case 0:
 			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml().replace("newsDetailContentNormal", "newsDetailContentBig"));
-			scaleFlag = scaleFlag + 1;
+			ScaleFlag = ScaleFlag + 1;
 			break;
 		case 1:
 			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml().replace("newsDetailContentBig", "newsDetailContentBigger"));
-			scaleFlag = scaleFlag + 1;
+			ScaleFlag = ScaleFlag + 1;
 			break;
 		case 2:
 			DoAlert("当前已缩放至最大！");

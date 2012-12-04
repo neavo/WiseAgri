@@ -20,7 +20,8 @@ Ext.define("Project.controller.container.categoryListMain", {
 			});
 			DB.categoryListMain.getStore().load();
 			DoSwitch("categoryList");
-		} else if (data.style == "newsCategory") {
+		};
+		if (data.style == "newsCategory") {
 			DoSwitch("newsList");
 			DB.newsListTop.setTitle(data.name);
 			DB.newsListMain.getStore().setProxy({
@@ -28,8 +29,15 @@ Ext.define("Project.controller.container.categoryListMain", {
 				url : ServerUrl + "ZhiHui/GetNewsList.jsp?categoryId=" + data.id,
 			});
 			DB.newsListMain.getStore().loadPage(1);
-		} else {
-			DoAlert("开发中 ... </br>（" + data.style + " , " + data.id + "）");
+		};
+		if (data.style == "SnBCategory") {
+			DoSwitch("SnBList");
+			DB.SnBListTop.setTitle(data.name);
+			DB.SnBListMain.getStore().loadPage(1);
+		};
+		if (data.style == "DoSnB") {
+			DoSwitch("DoSnB");
+			DB.DoSnBTop.setTitle(data.name);
 		};
 	},
 });

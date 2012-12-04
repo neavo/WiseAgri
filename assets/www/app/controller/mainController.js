@@ -10,6 +10,9 @@ Ext.define("Project.controller.mainController", {
 			categoryList : "categoryList", categoryListTop : "categoryListTop", categoryListMain : "categoryListMain", categoryListBottom : "categoryListBottom",
 			newsList : "newsList", newsListTop : "newsListTop", newsListMain : "newsListMain", newsListBottom : "newsListBottom",
 			newsDetail : "newsDetail", newsDetailTop : "newsDetailTop", newsDetailMain : "newsDetailMain", newsDetailBottom : "newsDetailBottom",
+			SnBList : "SnBList", SnBListTop : "SnBListTop", SnBListMain : "SnBListMain", SnBListBottom : "SnBListBottom",
+			SnBDetail : "SnBDetail", SnBDetailTop : "SnBDetailTop", SnBDetailMain : "SnBDetailMain", SnBDetailBottom : "SnBDetailBottom",
+			DoSnB : "DoSnB", DoSnBTop : "DoSnBTop", DoSnBMain : "DoSnBMain", DoSnBBottom : "DoSnBBottom",
 			albumView : "albumView", albumViewTop : "albumViewTop", albumViewMain : "albumViewMain", albumViewBottom : "albumViewBottom",
 			
 			homeViewCarousel : "#homeViewCarousel",
@@ -39,6 +42,9 @@ Ext.define("Project.controller.mainController", {
 		DB.categoryList = this.getCategoryList(); DB.categoryListTop = this.getCategoryListTop(); DB.categoryListMain = this.getCategoryListMain(); DB.categoryListBottom = this.getCategoryListBottom();
 		DB.newsList = this.getNewsList(); DB.newsListTop = this.getNewsListTop(); DB.newsListMain = this.getNewsListMain(); DB.newsListBottom = this.getNewsListBottom();
 		DB.newsDetail = this.getNewsDetail(); DB.newsDetailTop = this.getNewsDetailTop(); DB.newsDetailMain = this.getNewsDetailMain(); DB.newsDetailBottom = this.getNewsDetailBottom();
+		DB.SnBList = this.getSnBList(); DB.SnBListTop = this.getSnBListTop(); DB.SnBListMain = this.getSnBListMain(); DB.SnBListBottom = this.getSnBListBottom();
+		DB.SnBDetail = this.getSnBDetail(); DB.SnBDetailTop = this.getSnBDetailTop(); DB.SnBDetailMain = this.getSnBDetailMain(); DB.SnBDetailBottom = this.getSnBDetailBottom();
+		DB.DoSnB = this.getDoSnB(); DB.DoSnBTop = this.getDoSnBTop(); DB.DoSnBMain = this.getDoSnBMain(); DB.DoSnBBottom = this.getDoSnBBottom();
 		DB.albumView = this.getAlbumView(); DB.albumViewTop = this.getAlbumViewTop(); DB.albumViewMain = this.getAlbumViewMain(); DB.albumViewBottom = this.getAlbumViewBottom();
 		
 		DB.homeViewCarousel = this.getHomeViewCarousel();

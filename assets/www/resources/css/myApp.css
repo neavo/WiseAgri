@@ -110,7 +110,7 @@
 }
 
 /*
-	信息列表样式
+	新闻列表样式
 */
 .newsListIcon {
 	float : left;
@@ -136,7 +136,7 @@
 }
 
 /*
-	信息详细视图样式
+	新闻详细视图样式
 */
 .newsDetailTitle {
 	color : #000000;
@@ -198,6 +198,65 @@
 	display : block;
 	margin : auto;
 }
+
+/*
+	供求列表样式
+*/
+.SnBListIcon {
+	float : left;
+	width : 3.5em;
+	height : 3.5em;
+	margin-bottom : 0.5em;
+}
+.SnBListTitle {
+	text-align : left;
+	font-size : 0.85em;
+	line-height : 1.1em;
+	height : 2.2em;
+	padding-left : 0.9em;
+	margin-bottom : 0.2em;
+	overflow : hidden;
+}
+.SnBListTimePubliser {
+	text-align : left;
+	font-size : 0.65em;
+	color :  #808080;
+	padding-left : 1.2em;
+	overflow : hidden;
+}
+
+/*
+	供求详细视图样式
+*/
+.SnBDetailTitle {
+	color : #000000;
+   	text-align : center;
+	padding-top : 0.5em;
+	padding-left : 1.5em;
+	padding-right : 1.5em;
+   	font-size : 1.1em;
+}
+.SnBDetailTimePubliser {
+	color : #808080;
+	margin-top : 0.5em;
+	margin-bottom : 0.5em;
+   	text-align : center;
+   	font-size : 0.6em;
+}
+.SnBDetailImage {
+	padding-top : 0.5em;
+	max-width : 16em;
+	max-height : 16em;
+	display : block;
+	margin : auto;
+}
+.SnBDetailContentNormal {
+	font-size : 0.9em;
+	width : 95%;
+	display : block;
+	margin : auto;
+}
+
 
 /*
 	相册视图样式

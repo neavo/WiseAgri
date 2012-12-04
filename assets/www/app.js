@@ -2,15 +2,17 @@ Ext.application({
 	name : "Project",
 	
 	requires : [
+		"Ext.field.Select",
 		"Ext.MessageBox",
 		"Ext.plugin.ListPaging",
-		"Ext.data.proxy.JsonP",
+		"Ext.data.proxy.JsonP",		
 	],
 	
 	models : [
 		"appModel",
 		"categoryModel",
 		"newsModel",
+		"SnBModel",
 	],
 	
 	stores : [
@@ -19,6 +21,7 @@ Ext.application({
 		"appListStore",
 		"categoryListStore",
 		"newsStore",
+		"SnBStore",
 		"YiNongStore",
 	],
 	
@@ -32,6 +35,9 @@ Ext.application({
 		"categoryList", "container.categoryListTop", "container.categoryListMain", "container.categoryListBottom",
 		"newsList", "container.newsListTop", "container.newsListMain", "container.newsListBottom",
 		"newsDetail", "container.newsDetailTop", "container.newsDetailMain", "container.newsDetailBottom",
+		"SnBList", "container.SnBListTop", "container.SnBListMain", "container.SnBListBottom",
+		"SnBDetail", "container.SnBDetailTop", "container.SnBDetailMain", "container.SnBDetailBottom",
+		"DoSnB", "container.DoSnBTop", "container.DoSnBMain", "container.DoSnBBottom",
 		"albumView", "container.albumViewTop", "container.albumViewMain", "container.albumViewBottom",
 		
 		"mainContainer",
@@ -47,6 +53,9 @@ Ext.application({
 		"categoryList", "container.categoryListMain",
 		"newsList", "container.newsListMain",
 		"newsDetail",
+		"SnBList", "container.SnBListMain",
+		"SnBDetail",
+		"DoSnB",
 		"albumView",
 		
 		"mainController",

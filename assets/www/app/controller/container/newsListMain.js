@@ -13,11 +13,10 @@ Ext.define("Project.controller.container.newsListMain", {
 	onNewsListMainItemtap : function (list, index, target, record, e, eOpts) {
 		var data = record.getData();
 		DoSwitch("newsDetail");
-		scaleFlag = 0;
+		ScaleFlag = 0;
 		DB.newsDetailMain.setHtml("<div class = newsDetailTitle>" + data.newsTitle + "</div>"
 			 + "<div class = newsDetailDataTime>" + data.dateTime + "　来源：" + data.newsPublisher + "</div>"
 			 + "<HR align = left width = 100% color = #FFFFFF size = 1 noShade>");
-			 console.log(data.imageUrl);
 		if (data.imageUrl != "") {
 			setActivatedAlbum(data.imageUrl.split(";"));
 			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml()
