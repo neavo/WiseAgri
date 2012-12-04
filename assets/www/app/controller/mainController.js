@@ -28,9 +28,6 @@ Ext.define("Project.controller.mainController", {
 		loadDefaultApp();
 		loadDefaultCategory();
 		loadMyOrder();
-		// 获取屏幕分辨率
-		screenHeight = document.body.clientHeight;
-		screenWidth = document.body.clientWidth;
 	},
 	launch : function () {
 		DB.mainController = this;

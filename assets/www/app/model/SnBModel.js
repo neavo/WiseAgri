@@ -9,7 +9,7 @@ Ext.define("Project.model.SnBModel", {
 			"SnBImage",
 			"SnBTime",
 			"SnBPhone",
-			"SnBContent"
+			"SnBContent",
 		],
 	},
 });

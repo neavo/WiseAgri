@@ -13,31 +13,26 @@ Ext.define("Project.controller.container.categoryListMain", {
 	onCategoryListMainItemtap : function (list, index, target, record, e, eOpts) {
 		var data = record.getData();
 		if (data.style == "parentCategory") {
-			DB.categoryListTop.setTitle(data.name);
-			DB.categoryListMain.getStore().setProxy({
-				type : "jsonp",
-				url : ServerUrl + "ZhiHui/GetCategoryList.jsp?parentId=" + data.id,
-			});
-			DB.categoryListMain.getStore().load();
 			DoSwitch("categoryList");
+			DB.categoryListTop.setTitle(data.name);
+			DoLoad(DB.categoryListMain.getStore(), "ZhiHui/GetCategoryList.jsp?parentId=" + data.id);
 		};
 		if (data.style == "newsCategory") {
 			DoSwitch("newsList");
 			DB.newsListTop.setTitle(data.name);
-			DB.newsListMain.getStore().setProxy({
-				type : "jsonp",
-				url : ServerUrl + "ZhiHui/GetNewsList.jsp?categoryId=" + data.id,
-			});
-			DB.newsListMain.getStore().loadPage(1);
+			DoLoad(DB.newsListMain.getStore(), "ZhiHui/GetNewsList.jsp?categoryId=" + data.id, true);
 		};
 		if (data.style == "SnBCategory") {
 			DoSwitch("SnBList");
 			DB.SnBListTop.setTitle(data.name);
-			DB.SnBListMain.getStore().loadPage(1);
+			DoLoad(DB.SnBListMain.getStore(), "ZhiHui/GetSnBList.jsp?categoryId=" + data.id, true);
+			console.log("ZhiHui/GetSnBList.jsp?categoryId=" + data.id);
 		};
 		if (data.style == "DoSnB") {
 			DoSwitch("DoSnB");
+			DB.DoSnBMain.reset();
 			DB.DoSnBTop.setTitle(data.name);
+			Ext.getCmp("SnBCID").setValue("938");
 		};
 	},
 });

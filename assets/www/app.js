@@ -4,6 +4,7 @@ Ext.application({
 	requires : [
 		"Ext.field.Select",
 		"Ext.MessageBox",
+		"Ext.field.Hidden",
 		"Ext.plugin.ListPaging",
 		"Ext.data.proxy.JsonP",		
 	],
@@ -27,7 +28,7 @@ Ext.application({
 	
 	views : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn",
+		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.DoSnBBtn",
 		
 		"homeView", "container.homeViewMain",
 		"YiNong", "container.YiNongTop", "container.YiNongMain", "container.YiNongBottom",
@@ -45,7 +46,7 @@ Ext.application({
 	
 	controllers : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn",
+		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.DoSnBBtn",
 		
 		"YiNong", "container.YiNongTop",
 		"ZhiHui", "container.ZhiHuiTop",

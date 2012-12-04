@@ -30,11 +30,7 @@ Ext.define("Project.controller.ZhiHui", {
 								fn : function () {
 									DoSwitch("categoryList");
 									DB.categoryListTop.setTitle(this.config.data.location + " • " + this.config.data.name);
-									DB.categoryListMain.getStore().setProxy({
-										type : "jsonp",
-										url : ServerUrl + "ZhiHui/GetCategoryList.jsp?appId=" + this.config.data.id,
-									});
-									DB.categoryListMain.getStore().load();
+									DoLoad(DB.categoryListMain.getStore(), "ZhiHui/GetCategoryList.jsp?appId=" + this.config.data.id);
 								},
 								element : "element",
 							},
@@ -47,20 +43,12 @@ Ext.define("Project.controller.ZhiHui", {
 									if (this.config.data.style == "parentCategory") {
 										DoSwitch("categoryList");
 										DB.categoryListTop.setTitle(this.config.data.name);
-										DB.categoryListMain.getStore().setProxy({
-											type : "jsonp",
-											url : ServerUrl + "ZhiHui/GetCategoryList.jsp?parentId=" + this.config.data.id,
-										});
-										DB.categoryListMain.getStore().load();
+										DoLoad(DB.categoryListMain.getStore(), "ZhiHui/GetCategoryList.jsp?parentId=" + this.config.data.id);
 									};
 									if (this.config.data.style == "newsCategory") {
 										DoSwitch("newsList");
 										DB.newsListTop.setTitle(this.config.data.name);
-										DB.newsListMain.getStore().setProxy({
-											type : "jsonp",
-											url : ServerUrl + "ZhiHui/GetNewsList.jsp?categoryId=" + this.config.data.id,
-										});
-										DB.newsListMain.getStore().loadPage(1);
+										DoLoad(DB.newsListMain.getStore(), "ZhiHui/GetNewsList.jsp?categoryId=" + this.config.data.id);
 									};
 								},
 								element : "element",

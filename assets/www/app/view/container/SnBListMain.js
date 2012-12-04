@@ -9,11 +9,11 @@ Ext.define("Project.view.container.SnBListMain", {
 		 + "<div class = SnBListTitle><b>[{SnBArea}] {SnBTitle}</b></div>"
 		 + "<div class = SnBListTimePubliser>时间：{SnBTime}</div>"
 		 + "<div class = SnBListTimePubliser>联系人：{SnBPublisher}</div>",
-		/*plugins : [{
+		plugins : [{
 				xclass : "Ext.plugin.ListPaging",
 				loadMoreText : "<div style = \"font-size : 0.8em; text-align : center; color : #808080; padding-top : 0.3em;\" >下滑获取更多 ...</div>",
 				autoPaging : true,
 			},
-		],*/
+		],
 	},
 });

@@ -36,7 +36,7 @@ Ext.define("Project.controller.widget.myAppBtn", {
 							cls : "orderViewIconContainer",
 							DoOrder : function (container, data, isOrdered) {
 								if (isOrdered) {
-									Ext.Msg.confirm(VersionInfo, "是否取消订阅“" + "翼农" + " • " + data.name + "”？", function (buttonId, value, opt) {
+									Ext.Msg.confirm("", "是否取消订阅“" + "翼农" + " • " + data.name + "”？", function (buttonId, value, opt) {
 										if (buttonId == "yes") {
 											DoSQL("DELETE FROM myOrder WHERE id = \"" + data.id + "\"");
 											container.setHtml("<img class = orderViewIcon src = " + data.iconUrl + " />");
@@ -44,7 +44,7 @@ Ext.define("Project.controller.widget.myAppBtn", {
 									});
 									return false;
 								} else {
-									Ext.Msg.confirm(VersionInfo, "是否要订阅“" + "翼农" + " • " + data.name + "”？", function (buttonId, value, opt) {
+									Ext.Msg.confirm("", "是否要订阅“" + "翼农" + " • " + data.name + "”？", function (buttonId, value, opt) {
 										if (buttonId == "yes") {
 											DoSQL("INSERT INTO myOrder"
 												 + " (type, id, name, iconUrl, style, location)"
@@ -122,7 +122,7 @@ Ext.define("Project.controller.widget.myAppBtn", {
 							cls : "orderViewIconContainer",
 							DoOrder : function (container, data, isOrdered) {
 								if (isOrdered) {
-									Ext.Msg.confirm(VersionInfo, "是否取消订阅“" + data.location + " • " + data.name + "”？", function (buttonId, value, opt) {
+									Ext.Msg.confirm("", "是否取消订阅“" + data.location + " • " + data.name + "”？", function (buttonId, value, opt) {
 										if (buttonId == "yes") {
 											DoSQL("DELETE FROM myOrder WHERE id = \"" + data.id + "\"");
 											container.setHtml("<img class = orderViewIcon src = " + data.iconUrl + " />");
@@ -130,7 +130,7 @@ Ext.define("Project.controller.widget.myAppBtn", {
 									});
 									return false;
 								} else {
-									Ext.Msg.confirm(VersionInfo, "是否要订阅“" + data.location + " • " + data.name + "”？", function (buttonId, value, opt) {
+									Ext.Msg.confirm("", "是否要订阅“" + data.location + " • " + data.name + "”？", function (buttonId, value, opt) {
 										if (buttonId == "yes") {
 											DoSQL("INSERT INTO myOrder"
 												 + " (type, id, name, iconUrl, style, location)"

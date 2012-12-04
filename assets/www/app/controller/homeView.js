@@ -8,7 +8,7 @@ Ext.define("Project.controller.homeView", {
 		setActivatedController(this);
 	},
 	goBack : function () {
-		Ext.Msg.confirm(VersionInfo, "确定退出？", function (buttonId, value, opt) {
+		Ext.Msg.confirm("", "确定退出？", function (buttonId, value, opt) {
 			if (buttonId == "yes") {
 				navigator.app.exitApp();
 			};

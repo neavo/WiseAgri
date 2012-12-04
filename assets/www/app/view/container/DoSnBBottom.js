@@ -7,7 +7,7 @@ Ext.define("Project.view.container.DoSnBBottom", {
 		items : [{
 				xtype : "spacer",
 			}, {
-				xtype : "homeBtn",
+				xtype : "DoSnBBtn",
 			}, {
 				xtype : "spacer",
 			}, {

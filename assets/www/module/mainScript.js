@@ -1,13 +1,10 @@
 // 服务器数据
-var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
-//var ServerUrl = "http://192.168.45.1:8080/WiseAgriAjax/";
+//var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
+var ServerUrl = "http://192.168.45.1:8080/WiseAgriAjax/";
 
 // 本地数据
 var DB = [];
 var scaleFlag = 0;
-var VersionInfo = "";
-var screenHeight = 0;
-var screenWidth = 0;
 
 // 加载默认app数据
 var defaultApp = [];
@@ -116,18 +113,41 @@ function setActivatedAlbum(album) {
 	activatedAlbum = album;
 };
 
-// 自定义的Alert
-function DoAlert(msg) {
-	Ext.Msg.alert(VersionInfo, msg);
+// 自定义的Time
+function DoTime() {
+	var eDate = new Date();
+	var time = eDate.getFullYear();
+	if (Number(eDate.getMonth()) + 1 < 10) {
+		time = time + "-" + "0" + (Number(eDate.getMonth()) + 1).toString();
+	} else {
+		time = time + "-" + (Number(eDate.getMonth()) + 1).toString();
+	};
+	if (Number(eDate.getDate()) < 10) {
+		time = time + "-" + "0" + Number(eDate.getDate()).toString();
+	} else {
+		time = time + "-" + Number(eDate.getDate()).toString();
+	};
+	time = time + " " + eDate.toLocaleTimeString();
+	return time;
 };
 
-// 自定义的Mask
-function DoMask() {
-	Ext.Msg.setStyle("background : #FFFFFF;");
-	Ext.Msg.show();
+// 自定义的Alert
+function DoAlert(msg) {
+	Ext.Msg.alert("", msg);
 };
-function UnMask() {
-	Ext.Msg.hide();
+
+// 自定义的Load
+function DoLoad(store, url, page) {
+	store.setProxy({
+		type : "jsonp",
+		url : ServerUrl + url,
+	});
+	if (page) {
+		store.loadPage(1);
+	};
+	if (!page) {
+		store.load();
+	};
 };
 
 // 切换页面
