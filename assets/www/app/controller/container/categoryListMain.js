@@ -26,7 +26,6 @@ Ext.define("Project.controller.container.categoryListMain", {
 			DoSwitch("SnBList");
 			DB.SnBListTop.setTitle(data.name);
 			DoLoad(DB.SnBListMain.getStore(), "ZhiHui/GetSnBList.jsp?categoryId=" + data.id, true);
-			console.log("ZhiHui/GetSnBList.jsp?categoryId=" + data.id);
 		};
 		if (data.style == "DoSnB") {
 			DoSwitch("DoSnB");

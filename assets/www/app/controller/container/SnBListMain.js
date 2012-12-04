@@ -21,7 +21,7 @@ Ext.define("Project.controller.container.SnBListMain", {
 			 + "<div class = SnBDetailContentNormal>" + "联系人：" + data.SnBPublisher + "</div>"
 			 + "<div class = SnBDetailContentNormal>" + "电话号码：" + "<a href = \"tel:" + data.SnBPhone + "\">" + data.SnBPhone + "</a>" + "</div>"
 			 + "<div class = SnBDetailContentNormal>" + "详细内容：</br>" + data.SnBContent + "</div>");
-		if (data.SnBImage != "" && data.SnBImage != "null") {
+		if (data.SnBImage != "") {
 			DB.SnBDetailMain.setHtml(DB.SnBDetailMain.getHtml()
 				 + "<div>"
 				 + "<img class = SnBDetailImage onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = " + data.SnBImage + " />"
