@@ -7,6 +7,7 @@ Ext.define("Project.view.container.homeViewMain", {
 		items : [{
 				id : "homeViewCarousel",
 				xtype : "carousel",
+				direction : "vertical",
 				indicator : false,
 				layout : "vbox",
 				flex : 3,
