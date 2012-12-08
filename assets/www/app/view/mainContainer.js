@@ -25,6 +25,12 @@ Ext.define("Project.view.mainContainer", {
 			}, {
 				xtype : "DoSnB",
 			}, {
+				xtype : "QnAList",
+			}, {
+				xtype : "QnADetail",
+			}, {
+				xtype : "DoQnA",
+			}, {
 				xtype : "albumView",
 			},
 		],

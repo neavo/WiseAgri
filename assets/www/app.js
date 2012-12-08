@@ -14,6 +14,7 @@ Ext.application({
 		"categoryModel",
 		"newsModel",
 		"SnBModel",
+		"QnAModel",
 	],
 	
 	stores : [
@@ -23,12 +24,14 @@ Ext.application({
 		"categoryListStore",
 		"newsStore",
 		"SnBStore",
+		"QnAStore",
 		"YiNongStore",
 	],
 	
 	views : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
 		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.DoSnBBtn",
+		"widget.DoQnABtn",
 		
 		"homeView", "container.homeViewMain",
 		"YiNong", "container.YiNongTop", "container.YiNongMain", "container.YiNongBottom",
@@ -39,6 +42,9 @@ Ext.application({
 		"SnBList", "container.SnBListTop", "container.SnBListMain", "container.SnBListBottom",
 		"SnBDetail", "container.SnBDetailTop", "container.SnBDetailMain", "container.SnBDetailBottom",
 		"DoSnB", "container.DoSnBTop", "container.DoSnBMain", "container.DoSnBBottom",
+		"QnAList", "container.QnAListTop", "container.QnAListMain", "container.QnAListBottom",
+		"QnADetail", "container.QnADetailTop", "container.QnADetailMain", "container.QnADetailBottom",
+		"DoQnA", "container.DoQnATop", "container.DoQnAMain", "container.DoQnABottom",
 		"albumView", "container.albumViewTop", "container.albumViewMain", "container.albumViewBottom",
 		
 		"mainContainer",
@@ -47,6 +53,7 @@ Ext.application({
 	controllers : [
 		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
 		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.DoSnBBtn",
+		"widget.DoQnABtn",
 		
 		"YiNong", "container.YiNongTop",
 		"ZhiHui", "container.ZhiHuiTop",
@@ -57,6 +64,9 @@ Ext.application({
 		"SnBList", "container.SnBListMain",
 		"SnBDetail",
 		"DoSnB",
+		"QnAList", "container.QnAListMain",
+		"QnADetail",
+		"DoQnA",
 		"albumView",
 		
 		"mainController",

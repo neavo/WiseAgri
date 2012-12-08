@@ -31,7 +31,18 @@ Ext.define("Project.controller.container.categoryListMain", {
 			DoSwitch("DoSnB");
 			DB.DoSnBMain.reset();
 			DB.DoSnBTop.setTitle(data.name);
-			Ext.getCmp("SnBCID").setValue("938");
+			Ext.getCmp("SnBCID").setValue(data.id);
+		};
+		if (data.style == "QnACategory") {
+			DoSwitch("QnAList");
+			DB.QnAListTop.setTitle(data.name);
+			DoLoad(DB.QnAListMain.getStore(), "ZhiHui/GetQnAList.jsp?categoryId=" + data.id, true);
+		};
+		if (data.style == "DoQnA") {
+			DoSwitch("DoQnA");
+			DB.DoQnAMain.reset();
+			DB.DoQnATop.setTitle(data.name);
+			Ext.getCmp("QnACID").setValue(data.id);
 		};
 	},
 });

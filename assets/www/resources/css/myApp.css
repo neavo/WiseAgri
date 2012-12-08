@@ -200,6 +200,48 @@
 }
 
 /*
+	问答列表样式
+*/
+.QnAListIcon {
+	float : left;
+	width : 3.5em;
+	height : 3.5em;
+	margin-bottom : 0.5em;
+}
+.QnAListTitle {
+	text-align : left;
+	font-size : 0.85em;
+	line-height : 1.1em;
+	height : 2.2em;
+	padding-left : 0.9em;
+	margin-bottom : 0.2em;
+	overflow : hidden;
+}
+.QnAListTimePubliser {
+	text-align : left;
+	font-size : 0.65em;
+	color :  #808080;
+	padding-left : 1.2em;
+	overflow : hidden;
+}
+
+/*
+	供求详细视图样式
+*/
+.QnADetailContentNormal {
+	font-size : 0.9em;
+	width : 95%;
+	display : block;
+	margin : auto;
+}
+.QnADetailImage {
+	max-width : 16em;
+	max-height : 16em;
+	display : block;
+	margin : auto;
+}
+
+/*
 	供求列表样式
 */
 .SnBListIcon {
@@ -244,7 +286,6 @@
    	font-size : 0.6em;
 }
 .SnBDetailImage {
-	padding-top : 0.5em;
 	max-width : 16em;
 	max-height : 16em;
 	display : block;
@@ -256,7 +297,6 @@
 	display : block;
 	margin : auto;
 }
-
 
 /*
 	相册视图样式
