@@ -7,17 +7,11 @@ Ext.define("Project.view.container.DoQnAMain", {
 		url : ServerUrl + "ZhiHui/DoQnA.jsp",
 		items : [{
 				xtype : "selectfield",
-				label : "信息类型",
+				name : "QnAType",
+				label : "问题类型",
 				height : "2em",
 				labelWidth : "5.5em",
-				options : [{
-						text : "类型 一",
-						value : 1,
-					}, {
-						text : "类型 二",
-						value : 2,
-					},
-				],
+				store : "QnATypeStore",
 			}, {
 				xtype : "textfield",
 				name : "QPublisher",

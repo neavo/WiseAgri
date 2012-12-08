@@ -8,7 +8,7 @@ Ext.define("Project.view.container.DoSnBMain", {
 		items : [{
 				xtype : "selectfield",
 				name : "SnBFlag",
-				label : "信息类型",
+				label : "供求选择",
 				height : "2em",
 				labelWidth : "5.5em",
 				options : [{
@@ -19,6 +19,13 @@ Ext.define("Project.view.container.DoSnBMain", {
 						value : 2,
 					},
 				],
+			}, {
+				xtype : "selectfield",
+				name : "SnBType",
+				label : "供求类型",
+				height : "2em",
+				labelWidth : "5.5em",
+				store : "SnBTypeStore",
 			}, {
 				xtype : "textfield",
 				name : "SnBTitle",

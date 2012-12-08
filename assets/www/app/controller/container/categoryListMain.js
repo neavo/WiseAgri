@@ -32,6 +32,7 @@ Ext.define("Project.controller.container.categoryListMain", {
 			DB.DoSnBMain.reset();
 			DB.DoSnBTop.setTitle(data.name);
 			Ext.getCmp("SnBCID").setValue(data.id);
+			DoLoad(Ext.getStore("SnBTypeStore"), "ZhiHui/GetSnBType.jsp?categoryId=" + data.id);
 		};
 		if (data.style == "QnACategory") {
 			DoSwitch("QnAList");
@@ -43,6 +44,7 @@ Ext.define("Project.controller.container.categoryListMain", {
 			DB.DoQnAMain.reset();
 			DB.DoQnATop.setTitle(data.name);
 			Ext.getCmp("QnACID").setValue(data.id);
+			DoLoad(Ext.getStore("QnATypeStore"), "ZhiHui/GetQnAType.jsp?categoryId=" + data.id);
 		};
 	},
 });

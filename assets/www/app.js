@@ -15,6 +15,7 @@ Ext.application({
 		"newsModel",
 		"SnBModel",
 		"QnAModel",
+		"TypeModel",
 	],
 	
 	stores : [
@@ -24,7 +25,9 @@ Ext.application({
 		"categoryListStore",
 		"newsStore",
 		"SnBStore",
+		"SnBTypeStore",
 		"QnAStore",
+		"QnATypeStore",
 		"YiNongStore",
 	],
 	
