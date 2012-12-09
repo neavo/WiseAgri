@@ -64,26 +64,21 @@
 }
 
 /*
-	客户端列表页面样式
+	意见反馈样式
 */
-.appListIcon {
-	width : 2.5em;
-	height : 2.5em;
-	float : left;
-	margin-bottom : 0.5em;
-}
-.appListName {
-	font-size : 1.2em;
-	padding-top : 0.45em;
-	padding-left : 1em;
+.FeedBackTitle {
+	text-align : left;
+	font-size : 0.75em;
+	line-height : 1.1em;
+	height : 1.1em;
 	overflow : hidden;
 }
-.appListCheck {
-	float : right;
-	max-width : 1.5em;
-	max-height : 1.5em;
-	margin-right : 0.5em;
-	margin-top : 0.5em;
+.FeedBackContent {
+	text-align : left;
+	font-size : 0.75em;
+	line-height : 1.1em;
+	height : 5.6em;
+	overflow : hidden;
 }
 
 /*
@@ -155,8 +150,7 @@
 }
 .newsDetailImage {
 	padding-top : 0.5em;
-	max-width : 18em;
-	max-height : 18em;
+	max-width : 100%;
 	display : block;
 	margin : auto;
 }
@@ -170,75 +164,18 @@
 }
 .newsDetailContentSmaller {
     font-size : 0.8em;
-	width : 95%;
-	display : block;
-	margin : auto;
 }
 .newsDetailContentSmall {
     font-size : 0.8em;
-	width : 95%;
-	display : block;
-	margin : auto;
 }
 .newsDetailContentNormal {
 	font-size : 0.9em;
-	width : 95%;
-	display : block;
-	margin : auto;
 }
 .newsDetailContentBig {
     font-size : 1.2em;
-	width : 95%;
-	display : block;
-	margin : auto;
 }
 .newsDetailContentBigger {
     font-size : 1.4em;
-	width : 95%;
-	display : block;
-	margin : auto;
-}
-
-/*
-	问答列表样式
-*/
-.QnAListIcon {
-	float : left;
-	width : 3.5em;
-	height : 3.5em;
-	margin-bottom : 0.5em;
-}
-.QnAListTitle {
-	text-align : left;
-	font-size : 0.85em;
-	line-height : 1.1em;
-	height : 2.2em;
-	padding-left : 0.9em;
-	margin-bottom : 0.2em;
-	overflow : hidden;
-}
-.QnAListTimePubliser {
-	text-align : left;
-	font-size : 0.65em;
-	color :  #808080;
-	padding-left : 1.2em;
-	overflow : hidden;
-}
-
-/*
-	供求详细视图样式
-*/
-.QnADetailContentNormal {
-	font-size : 0.9em;
-	width : 95%;
-	display : block;
-	margin : auto;
-}
-.QnADetailImage {
-	max-width : 16em;
-	max-height : 16em;
-	display : block;
-	margin : auto;
 }
 
 /*
@@ -285,17 +222,79 @@
    	text-align : center;
    	font-size : 0.6em;
 }
+.SnBDetailContentNormal {
+	font-size : 0.9em;
+}
 .SnBDetailImage {
-	max-width : 16em;
-	max-height : 16em;
+	max-width : 100%;
 	display : block;
 	margin : auto;
 }
-.SnBDetailContentNormal {
+
+/*
+	问答列表样式
+*/
+.QnAListIcon {
+	float : left;
+	width : 3.5em;
+	height : 3.5em;
+	margin-bottom : 0.5em;
+}
+.QnAListTitle {
+	text-align : left;
+	font-size : 0.85em;
+	line-height : 1.1em;
+	height : 2.2em;
+	padding-left : 0.9em;
+	margin-bottom : 0.2em;
+	overflow : hidden;
+}
+.QnAListTimePubliser {
+	text-align : left;
+	font-size : 0.65em;
+	color :  #808080;
+	padding-left : 1.2em;
+	overflow : hidden;
+}
+
+/*
+	供求详细视图样式
+*/
+.QnADetailContentNormal {
 	font-size : 0.9em;
-	width : 95%;
+}
+.QnADetailImage {
+	max-width : 100%;
 	display : block;
 	margin : auto;
+}
+
+/*
+	专家列表样式
+*/
+.ExListIcon {
+	float : left;
+	width : 5em;
+	height : 7.5em;
+	margin-bottom : 0.5em;
+}
+.ExListNamePhone {
+	font-size : 0.8em;
+	padding-left : 0.5em;
+	overflow : hidden;
+}
+.ExListInfo {
+	font-size : 0.8em;
+	padding-left : 0.5em;
+	margin-top : 0.1em;
+	overflow : hidden;
+}
+.ExListIDescription {
+	font-size : 0.8em;
+	line-height : 1.2em;
+	height : 4.8em;
+	padding-left : 0.5em;
+	overflow : hidden;
 }
 
 /*

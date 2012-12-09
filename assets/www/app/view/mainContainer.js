@@ -13,6 +13,8 @@ Ext.define("Project.view.mainContainer", {
 			}, {
 				xtype : "ZhiHui",
 			}, {
+				xtype : "FeedBack",
+			}, {
 				xtype : "categoryList",
 			}, {
 				xtype : "newsList",
@@ -30,6 +32,8 @@ Ext.define("Project.view.mainContainer", {
 				xtype : "QnADetail",
 			}, {
 				xtype : "DoQnA",
+			}, {
+				xtype : "ExList",
 			}, {
 				xtype : "albumView",
 			},

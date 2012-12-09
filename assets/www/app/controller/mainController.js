@@ -7,6 +7,7 @@ Ext.define("Project.controller.mainController", {
 			homeView : "homeView", homeViewMain : "homeViewMain", 
 			YiNong : "YiNong", YiNongTop : "YiNongTop", YiNongMain : "YiNongMain", YiNongBottom : "YiNongBottom",
 			ZhiHui : "ZhiHui", ZhiHuiTop : "ZhiHuiTop", ZhiHuiMain : "ZhiHuiMain", ZhiHuiBottom : "ZhiHuiBottom",
+			FeedBack : "FeedBack", FeedBackTop : "FeedBackTop", FeedBackMain : "FeedBackMain", FeedBackBottom : "FeedBackBottom",
 			categoryList : "categoryList", categoryListTop : "categoryListTop", categoryListMain : "categoryListMain", categoryListBottom : "categoryListBottom",
 			newsList : "newsList", newsListTop : "newsListTop", newsListMain : "newsListMain", newsListBottom : "newsListBottom",
 			newsDetail : "newsDetail", newsDetailTop : "newsDetailTop", newsDetailMain : "newsDetailMain", newsDetailBottom : "newsDetailBottom",
@@ -16,6 +17,7 @@ Ext.define("Project.controller.mainController", {
 			QnAList : "QnAList", QnAListTop : "QnAListTop", QnAListMain : "QnAListMain", QnAListBottom : "QnAListBottom",
 			QnADetail : "QnADetail", QnADetailTop : "QnADetailTop", QnADetailMain : "QnADetailMain", QnADetailBottom : "QnADetailBottom",
 			DoQnA : "DoQnA", DoQnATop : "DoQnATop", DoQnAMain : "DoQnAMain", DoQnABottom : "DoQnABottom",
+			ExList : "ExList", ExListTop : "ExListTop", ExListMain : "ExListMain", ExListBottom : "ExListBottom",
 			albumView : "albumView", albumViewTop : "albumViewTop", albumViewMain : "albumViewMain", albumViewBottom : "albumViewBottom",
 			
 			homeViewCarousel : "#homeViewCarousel",
@@ -39,6 +41,7 @@ Ext.define("Project.controller.mainController", {
 		DB.homeView = this.getHomeView(); DB.homeViewMain = this.getHomeViewMain(); 
 		DB.YiNong = this.getYiNong(); DB.YiNongTop = this.getYiNongTop(); DB.YiNongMain = this.getYiNongMain(); DB.YiNongBottom = this.getYiNongBottom();
 		DB.ZhiHui = this.getZhiHui(); DB.ZhiHuiTop = this.getZhiHuiTop(); DB.ZhiHuiMain = this.getZhiHuiMain(); DB.ZhiHuiBottom = this.getZhiHuiBottom();
+		DB.FeedBack = this.getFeedBack(); DB.FeedBackTop = this.getFeedBackTop(); DB.FeedBackMain = this.getFeedBackMain(); DB.FeedBackBottom = this.getFeedBackBottom();
 		DB.categoryList = this.getCategoryList(); DB.categoryListTop = this.getCategoryListTop(); DB.categoryListMain = this.getCategoryListMain(); DB.categoryListBottom = this.getCategoryListBottom();
 		DB.newsList = this.getNewsList(); DB.newsListTop = this.getNewsListTop(); DB.newsListMain = this.getNewsListMain(); DB.newsListBottom = this.getNewsListBottom();
 		DB.newsDetail = this.getNewsDetail(); DB.newsDetailTop = this.getNewsDetailTop(); DB.newsDetailMain = this.getNewsDetailMain(); DB.newsDetailBottom = this.getNewsDetailBottom();
@@ -48,6 +51,7 @@ Ext.define("Project.controller.mainController", {
 		DB.QnAList = this.getQnAList(); DB.QnAListTop = this.getQnAListTop(); DB.QnAListMain = this.getQnAListMain(); DB.QnAListBottom = this.getQnAListBottom();
 		DB.QnADetail = this.getQnADetail(); DB.QnADetailTop = this.getQnADetailTop(); DB.QnADetailMain = this.getQnADetailMain(); DB.QnADetailBottom = this.getQnADetailBottom();
 		DB.DoQnA = this.getDoQnA(); DB.DoQnATop = this.getDoQnATop(); DB.DoQnAMain = this.getDoQnAMain(); DB.DoQnABottom = this.getDoQnABottom();
+		DB.ExList = this.getExList(); DB.ExListTop = this.getExListTop(); DB.ExListMain = this.getExListMain(); DB.ExListBottom = this.getExListBottom();
 		DB.albumView = this.getAlbumView(); DB.albumViewTop = this.getAlbumViewTop(); DB.albumViewMain = this.getAlbumViewMain(); DB.albumViewBottom = this.getAlbumViewBottom();
 		
 		DB.homeViewCarousel = this.getHomeViewCarousel();

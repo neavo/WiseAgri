@@ -10,7 +10,7 @@ Ext.define("Project.controller.widget.myAccountBtn", {
 		this.getMyAccountBtn().addListener({
 			tap : {
 				fn : function () {
-					DoAlert("功能开发中 ... ");
+					DoAlert("咸宁" + " • " + "魅力嘉鱼");
 				},
 				element : "element",
 			},

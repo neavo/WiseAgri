@@ -1,8 +1,8 @@
-Ext.define("Project.controller.widget.myAppBtn", {
+Ext.define("Project.controller.widget.DoOrderBtn", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {
-			myAppBtn : "myAppBtn",
+			DoOrderBtn : "DoOrderBtn",
 		},
 		control : {},
 	},
@@ -180,7 +180,7 @@ Ext.define("Project.controller.widget.myAppBtn", {
 	},
 	launch : function () {
 		var self = this;
-		this.getMyAppBtn().addListener({
+		this.getDoOrderBtn().addListener({
 			tap : {
 				fn : function () {
 					// 载入翼农频道数据

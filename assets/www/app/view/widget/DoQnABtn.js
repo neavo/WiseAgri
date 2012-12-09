@@ -4,6 +4,7 @@ Ext.define("Project.view.widget.DoQnABtn", {
 	config : {
 		ui : "plain",
 		iconMask : true,
-		text : "<div style = \"color : #FFFFFF\">发布</div>",
+		style : "color : #FFFFFF; text-align : center;",
+		text : "发布",
 	},
 });

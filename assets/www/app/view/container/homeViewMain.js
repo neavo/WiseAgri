@@ -44,11 +44,11 @@ Ext.define("Project.view.container.homeViewMain", {
 							}, {
 								xtype : "spacer",
 							}, {
-								xtype : "myAppBtn",
+								xtype : "DoOrderBtn",
 							}, {
 								xtype : "spacer",
 							}, {
-								xtype : "aboutBtn",
+								xtype : "FeedBackBtn",
 							}, {
 								xtype : "spacer",
 							},

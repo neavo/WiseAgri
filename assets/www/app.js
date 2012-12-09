@@ -6,7 +6,7 @@ Ext.application({
 		"Ext.MessageBox",
 		"Ext.field.Hidden",
 		"Ext.plugin.ListPaging",
-		"Ext.data.proxy.JsonP",		
+		"Ext.data.proxy.JsonP",
 	],
 	
 	models : [
@@ -15,30 +15,31 @@ Ext.application({
 		"newsModel",
 		"SnBModel",
 		"QnAModel",
+		"ExModel",
 		"TypeModel",
 	],
 	
 	stores : [
-		"defaultAppStore",
-		"defaultCategoryStore",
+		"defaultAppStore", "defaultCategoryStore",
 		"appListStore",
 		"categoryListStore",
 		"newsStore",
-		"SnBStore",
-		"SnBTypeStore",
-		"QnAStore",
-		"QnATypeStore",
+		"SnBStore", "SnBTypeStore",
+		"QnAStore", "QnATypeStore",
+		"ExStore",
 		"YiNongStore",
 	],
 	
 	views : [
-		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.DoSnBBtn",
-		"widget.DoQnABtn",
+		"widget.homeBtn", "widget.backBtn",
+		"widget.smallerBtn", "widget.biggerBtn",
+		"widget.myAccountBtn", "widget.DoOrderBtn", "widget.FeedBackBtn",
+		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
 		"homeView", "container.homeViewMain",
 		"YiNong", "container.YiNongTop", "container.YiNongMain", "container.YiNongBottom",
 		"ZhiHui", "container.ZhiHuiTop", "container.ZhiHuiMain", "container.ZhiHuiBottom",
+		"FeedBack", "container.FeedBackTop", "container.FeedBackMain", "container.FeedBackBottom",
 		"categoryList", "container.categoryListTop", "container.categoryListMain", "container.categoryListBottom",
 		"newsList", "container.newsListTop", "container.newsListMain", "container.newsListBottom",
 		"newsDetail", "container.newsDetailTop", "container.newsDetailMain", "container.newsDetailBottom",
@@ -48,18 +49,21 @@ Ext.application({
 		"QnAList", "container.QnAListTop", "container.QnAListMain", "container.QnAListBottom",
 		"QnADetail", "container.QnADetailTop", "container.QnADetailMain", "container.QnADetailBottom",
 		"DoQnA", "container.DoQnATop", "container.DoQnAMain", "container.DoQnABottom",
+		"ExList", "container.ExListTop", "container.ExListMain", "container.ExListBottom",
 		"albumView", "container.albumViewTop", "container.albumViewMain", "container.albumViewBottom",
 		
 		"mainContainer",
 	],
 	
 	controllers : [
-		"widget.homeBtn", "widget.backBtn", "widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.myAppBtn", "widget.aboutBtn", "widget.DoSnBBtn",
-		"widget.DoQnABtn",
+		"widget.homeBtn", "widget.backBtn",
+		"widget.smallerBtn", "widget.biggerBtn",
+		"widget.myAccountBtn", "widget.DoOrderBtn", "widget.FeedBackBtn",
+		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
 		"YiNong", "container.YiNongTop",
 		"ZhiHui", "container.ZhiHuiTop",
+		"FeedBack",
 		"homeView", "container.homeViewMain",
 		"categoryList", "container.categoryListMain",
 		"newsList", "container.newsListMain",
@@ -70,6 +74,7 @@ Ext.application({
 		"QnAList", "container.QnAListMain",
 		"QnADetail",
 		"DoQnA",
+		"ExList",
 		"albumView",
 		
 		"mainController",

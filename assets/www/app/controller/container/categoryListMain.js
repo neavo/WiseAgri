@@ -46,5 +46,10 @@ Ext.define("Project.controller.container.categoryListMain", {
 			Ext.getCmp("QnACID").setValue(data.id);
 			DoLoad(Ext.getStore("QnATypeStore"), "ZhiHui/GetQnAType.jsp?categoryId=" + data.id);
 		};
+		if (data.style == "ExCategory") {
+			DoSwitch("ExList");
+			DB.ExListTop.setTitle(data.name);
+			DoLoad(DB.ExListMain.getStore(), "ZhiHui/GetExList.jsp?categoryId=" + data.id);
+		};
 	},
 });
