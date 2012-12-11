@@ -35,11 +35,11 @@ Ext.define("Project.view.container.DoQnAMain", {
 				placeHolder : "该项为必填项"
 			}, {
 				xtype : "hiddenfield",
-				name : "QnATime",
+				name : "QTime",
 			}, {
-				id : "QnACID",
+				id : "QCID",
 				xtype : "hiddenfield",
-				name : "QnACID",
+				name : "QCID",
 			},
 		],
 	},

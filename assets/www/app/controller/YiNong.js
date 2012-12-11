@@ -8,7 +8,7 @@ Ext.define("Project.controller.YiNong", {
 		var i = 0, j = 0, k = 0;
 		var vContainer = "";
 		var hContainer = "";
-		for (i = 0; i < 4; i++) {
+		for (i = 0; i < 3; i++) {
 			if (i == 0 && j == 0) {
 				vContainer = Ext.create("Ext.Container", {
 						layout : "vbox",
@@ -17,11 +17,13 @@ Ext.define("Project.controller.YiNong", {
 			hContainer = Ext.create("Ext.Container", {
 					layout : "hbox",
 				});
-			for (j = 0; j < 2; j++) {
+			for (j = 0; j < 3; j++) {
 				hContainer.add(Ext.create("Ext.Spacer"));
 				if (data[k]) {
 					var item = Ext.create("Ext.Container", {
 							data : data[k],
+							width : Ext.Viewport.getWindowWidth() * 0.28,
+							height : Ext.Viewport.getWindowWidth() * 0.28,
 							html : "<img class = homeViewIcon src = " + data[k]["iconUrl"] + " />",
 						});
 					if (data[k]["type"] == "app") {
@@ -58,11 +60,14 @@ Ext.define("Project.controller.YiNong", {
 					hContainer.add(item);
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {
-							html : "<img class = homeViewIcon src = resources/icons/noIcon.png >",
+							width : Ext.Viewport.getWindowWidth() * 0.28,
+							height : Ext.Viewport.getWindowWidth() * 0.28,
+							html : "<img class = homeViewIcon src = resources/icons/noIcon.png />",
 						}));
 				};
 				k = k + 1;
 			};
+			hContainer.add(Ext.create("Ext.Spacer"));
 			vContainer.add(Ext.create("Ext.Spacer"));
 			vContainer.add(hContainer);
 		};
@@ -96,9 +101,9 @@ Ext.define("Project.controller.YiNong", {
 						};
 					};
 					DoSwitch("homeView");
-					DB.homeViewCarousel.removeAll(true);
-					self.setGrid(defaultCategory, DB.homeViewCarousel);
-					DB.homeViewCarousel.setActiveItem(0);
+					DB.homeViewMain.removeAll(true);
+					self.setGrid(defaultCategory, DB.homeViewMain);
+					DB.homeViewMain.setActiveItem(0);
 					clearInterval(handle);
 				};
 			}, 50);

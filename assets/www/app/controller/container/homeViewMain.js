@@ -1,21 +1,14 @@
 Ext.define("Project.controller.container.homeViewMain", {
 	extend : "Ext.app.Controller",
 	config : {
-		refs : {
-			homeViewCarousel : "#homeViewCarousel",
-			homeViewPageNum : "#homeViewPageNum",
-		},
-		control : {
-			homeViewCarousel : {
-				activeitemchange : "OnHomeViewCarouselActiveItemChange",
-			},
-		},
+		refs : {},
+		control : {},
 	},
 	setGrid : function (data, carousel) {
 		var i = 0, j = 0, k = 0;
 		var vContainer = "";
 		var hContainer = "";
-		for (i = 0; i < 4; i++) {
+		for (i = 0; i < 3; i++) {
 			if (i == 0 && j == 0) {
 				vContainer = Ext.create("Ext.Container", {
 						layout : "vbox",
@@ -24,11 +17,13 @@ Ext.define("Project.controller.container.homeViewMain", {
 			hContainer = Ext.create("Ext.Container", {
 					layout : "hbox",
 				});
-			for (j = 0; j < 2; j++) {
+			for (j = 0; j < 3; j++) {
 				hContainer.add(Ext.create("Ext.Spacer"));
 				if (data[k]) {
 					var item = Ext.create("Ext.Container", {
 							data : data[k],
+							width : Ext.Viewport.getWindowWidth() * 0.28,
+							height : Ext.Viewport.getWindowWidth() * 0.28,
 							html : "<img class = homeViewIcon src = " + data[k]["iconUrl"] + " />",
 						});
 					if (data[k]["type"] == "app") {
@@ -65,11 +60,14 @@ Ext.define("Project.controller.container.homeViewMain", {
 					hContainer.add(item);
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {
-							html : "<img class = homeViewIcon src = resources/icons/noIcon.png >",
+							width : Ext.Viewport.getWindowWidth() * 0.28,
+							height : Ext.Viewport.getWindowWidth() * 0.28,
+							html : "<img class = homeViewIcon src = resources/icons/noIcon.png />",
 						}));
 				};
 				k = k + 1;
 			};
+			hContainer.add(Ext.create("Ext.Spacer"));
 			vContainer.add(Ext.create("Ext.Spacer"));
 			vContainer.add(hContainer);
 		};
@@ -96,12 +94,9 @@ Ext.define("Project.controller.container.homeViewMain", {
 							defaultCategory.push(myOrder[key]);
 						};
 					};
-					self.setGrid(defaultCategory, DB.homeViewCarousel);
+					self.setGrid(defaultCategory, DB.homeViewMain);
 					clearInterval(handle);
 				};
 			}, 50);
-	},
-	OnHomeViewCarouselActiveItemChange : function (carousel, value, oldValue, eOpts) {
-		this.getHomeViewPageNum().setHtml("<img class = rightContainerIcon src = resources/icons/pageNum_" + (carousel.getActiveIndex() + 1) + ".png />");
 	},
 });

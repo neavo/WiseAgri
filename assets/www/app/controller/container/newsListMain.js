@@ -26,7 +26,8 @@ Ext.define("Project.controller.container.newsListMain", {
 				 + "<img class = newsDetailImage onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = " + data.iconUrl + " />"
 				 + "</div>"
 				 + "<div style = \"height : 0.25em\"></div>"
-				 + "<div type = \"button\" onclick = \"DoShowAlbum();\" style = \"text-align : center; background : #CEEA99; -webkit-border-radius : 0.5em; padding : 0.25em; font-size : 0.8em;\">　点击这里浏览更多图片！　</div>");
+				 + "<div type = \"button\" onclick = \"DoShowAlbum();\" style = \"text-align : center; background : #CEEA99; -webkit-border-radius : 0.5em; padding : 0.25em; font-size : 0.8em;\">　点击这里浏览更多图片！　</div>"
+				 + "<div style = \"height : 0.25em\"></div>");
 		};
 		DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml()
 			 + "<div class = newsDetailContentNormal>" + data.newsContent + "</div>"

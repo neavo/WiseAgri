@@ -14,7 +14,7 @@ Ext.define("Project.controller.widget.DoQnABtn", {
 		var data = DB.DoQnAMain.getValues();
 		var flag = true;
 		for (var key in data) {
-			if (key == "QnATime") {
+			if (key == "QTime") {
 				data[key] = DoTime();
 			};
 			if (data[key] == "") {

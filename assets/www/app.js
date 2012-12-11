@@ -17,10 +17,11 @@ Ext.application({
 		"QnAModel",
 		"ExModel",
 		"TypeModel",
+		"FeedBackModel",
 	],
 	
 	stores : [
-		"defaultAppStore", "defaultCategoryStore",
+		"defaultBaseStore", "defaultAppStore", "defaultCategoryStore",
 		"appListStore",
 		"categoryListStore",
 		"newsStore",
@@ -28,15 +29,15 @@ Ext.application({
 		"QnAStore", "QnATypeStore",
 		"ExStore",
 		"YiNongStore",
+		"FeedBackStore",
 	],
 	
 	views : [
 		"widget.homeBtn", "widget.backBtn",
 		"widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.DoOrderBtn", "widget.FeedBackBtn",
 		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
-		"homeView", "container.homeViewMain",
+		"homeView", "container.homeViewTop", "container.homeViewMain", "container.homeViewBottom",
 		"YiNong", "container.YiNongTop", "container.YiNongMain", "container.YiNongBottom",
 		"ZhiHui", "container.ZhiHuiTop", "container.ZhiHuiMain", "container.ZhiHuiBottom",
 		"FeedBack", "container.FeedBackTop", "container.FeedBackMain", "container.FeedBackBottom",
@@ -58,13 +59,12 @@ Ext.application({
 	controllers : [
 		"widget.homeBtn", "widget.backBtn",
 		"widget.smallerBtn", "widget.biggerBtn",
-		"widget.myAccountBtn", "widget.DoOrderBtn", "widget.FeedBackBtn",
 		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
+		"homeView", "container.homeViewMain", "container.homeViewTop",
 		"YiNong", "container.YiNongTop",
 		"ZhiHui", "container.ZhiHuiTop",
 		"FeedBack",
-		"homeView", "container.homeViewMain",
 		"categoryList", "container.categoryListMain",
 		"newsList", "container.newsListMain",
 		"newsDetail",

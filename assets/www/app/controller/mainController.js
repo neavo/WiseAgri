@@ -4,7 +4,7 @@ Ext.define("Project.controller.mainController", {
 		refs : {
 			mainContainer : "mainContainer",
 
-			homeView : "homeView", homeViewMain : "homeViewMain", 
+			homeView : "homeView", homeViewTop : "homeViewTop", homeViewMain : "homeViewMain", homeViewBottom : "homeViewBottom", 
 			YiNong : "YiNong", YiNongTop : "YiNongTop", YiNongMain : "YiNongMain", YiNongBottom : "YiNongBottom",
 			ZhiHui : "ZhiHui", ZhiHuiTop : "ZhiHuiTop", ZhiHuiMain : "ZhiHuiMain", ZhiHuiBottom : "ZhiHuiBottom",
 			FeedBack : "FeedBack", FeedBackTop : "FeedBackTop", FeedBackMain : "FeedBackMain", FeedBackBottom : "FeedBackBottom",
@@ -29,7 +29,7 @@ Ext.define("Project.controller.mainController", {
 		},
 	},
 	init : function () {
-		// 加载本地数据
+		loadDefaultBase();
 		loadDefaultApp();
 		loadDefaultCategory();
 		loadMyOrder();
@@ -38,7 +38,7 @@ Ext.define("Project.controller.mainController", {
 		DB.mainController = this;
 		DB.mainContainer = this.getMainContainer();
 		
-		DB.homeView = this.getHomeView(); DB.homeViewMain = this.getHomeViewMain(); 
+		DB.homeView = this.getHomeView(); DB.homeViewTop = this.getHomeViewTop(); DB.homeViewMain = this.getHomeViewMain(); DB.homeViewBottom = this.getHomeViewBottom(); 
 		DB.YiNong = this.getYiNong(); DB.YiNongTop = this.getYiNongTop(); DB.YiNongMain = this.getYiNongMain(); DB.YiNongBottom = this.getYiNongBottom();
 		DB.ZhiHui = this.getZhiHui(); DB.ZhiHuiTop = this.getZhiHuiTop(); DB.ZhiHuiMain = this.getZhiHuiMain(); DB.ZhiHuiBottom = this.getZhiHuiBottom();
 		DB.FeedBack = this.getFeedBack(); DB.FeedBackTop = this.getFeedBackTop(); DB.FeedBackMain = this.getFeedBackMain(); DB.FeedBackBottom = this.getFeedBackBottom();
@@ -53,8 +53,6 @@ Ext.define("Project.controller.mainController", {
 		DB.DoQnA = this.getDoQnA(); DB.DoQnATop = this.getDoQnATop(); DB.DoQnAMain = this.getDoQnAMain(); DB.DoQnABottom = this.getDoQnABottom();
 		DB.ExList = this.getExList(); DB.ExListTop = this.getExListTop(); DB.ExListMain = this.getExListMain(); DB.ExListBottom = this.getExListBottom();
 		DB.albumView = this.getAlbumView(); DB.albumViewTop = this.getAlbumViewTop(); DB.albumViewMain = this.getAlbumViewMain(); DB.albumViewBottom = this.getAlbumViewBottom();
-		
-		DB.homeViewCarousel = this.getHomeViewCarousel();
 	},
 	onMainContainerShow : function (container, eOpts) {
 		// 加载完毕以后干掉启动闪屏

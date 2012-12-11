@@ -2,7 +2,7 @@ Ext.define("Project.view.container.FeedBackMain", {
 	extend : "Ext.List",
 	xtype : "FeedBackMain",
 	config : {
-		store : "QnAStore",
+		store : "FeedBackStore",
 		emptyText : "没有更多信息 ...",
 		loadingText : "正在获取信息...",
 		disableSelection : true,

@@ -20,12 +20,12 @@ Ext.define("Project.controller.container.categoryListMain", {
 		if (data.style == "newsCategory") {
 			DoSwitch("newsList");
 			DB.newsListTop.setTitle(data.name);
-			DoLoad(DB.newsListMain.getStore(), "ZhiHui/GetNewsList.jsp?categoryId=" + data.id, true);
+			DoLoad(DB.newsListMain.getStore(), "ZhiHui/GetNewsList.jsp?categoryId=" + data.id);
 		};
 		if (data.style == "SnBCategory") {
 			DoSwitch("SnBList");
 			DB.SnBListTop.setTitle(data.name);
-			DoLoad(DB.SnBListMain.getStore(), "ZhiHui/GetSnBList.jsp?categoryId=" + data.id, true);
+			DoLoad(DB.SnBListMain.getStore(), "ZhiHui/GetSnBList.jsp?categoryId=" + data.id);
 		};
 		if (data.style == "DoSnB") {
 			DoSwitch("DoSnB");
@@ -37,7 +37,7 @@ Ext.define("Project.controller.container.categoryListMain", {
 		if (data.style == "QnACategory") {
 			DoSwitch("QnAList");
 			DB.QnAListTop.setTitle(data.name);
-			DoLoad(DB.QnAListMain.getStore(), "ZhiHui/GetQnAList.jsp?categoryId=" + data.id, true);
+			DoLoad(DB.QnAListMain.getStore(), "ZhiHui/GetQnAList.jsp?categoryId=" + data.id);
 		};
 		if (data.style == "DoQnA") {
 			DoSwitch("DoQnA");

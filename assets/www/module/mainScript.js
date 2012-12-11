@@ -1,10 +1,26 @@
 // 服务器数据
-var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
-//var ServerUrl = "http://192.168.45.1:8081/WiseAgriAjax/";
+//var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
+var ServerUrl = "http://192.168.1.100:8081/WiseAgriAjax/";
 
 // 本地数据
 var DB = [];
 var scaleFlag = 0;
+
+// 加载默认基本数据
+var defaultBase = [];
+var defaultBaseLoaded = false;
+function loadDefaultBase() {
+	defaultApp = [];
+	defaultAppLoaded = false;
+	Ext.getStore("defaultBaseStore").load(function (records, operation, success) {
+		if (success && records.lenght != 0) {
+			for (var key in records) {
+				defaultBase.push(records[key].getData());
+			};
+		};
+		defaultBaseLoaded = true;
+	});
+};
 
 // 加载默认app数据
 var defaultApp = [];
@@ -56,25 +72,19 @@ function loadMyOrder() {
 	};
 };
 
-// 创建SQLite数据库对象
-var SQLite = "";
-
 // PhoneGap
-{
-	// 等待PhoneGap加载完毕
-	document.addEventListener("deviceready", onDeviceReady, false);
-	function onDeviceReady() {
-		// 响应返回键
-		document.addEventListener("backbutton", function () {
-			activatedController.goBack();
-		}, false);
-		
-		// 初始化SQLite数据库对象
-		SQLite = window.openDatabase("WiseAgri", "1.0", "WiseAgri Datebase", 1048576);
-		DoSQL("CREATE TABLE IF NOT EXISTS myOrder"
-			 + " (type VARCHAR(128), id VARCHAR(128), name VARCHAR(128), iconUrl VARCHAR(1024), style VARCHAR(128), location VARCHAR(128))")
-	};
-};
+var SQLite = "";
+document.addEventListener("deviceready", function () {
+	// 响应返回键
+	document.addEventListener("backbutton", function () {
+		activatedController.goBack();
+	}, false);
+	
+	// 初始化SQLite数据库对象
+	SQLite = window.openDatabase("WiseAgri", "1.0", "WiseAgri Datebase", 1048576);
+	DoSQL("CREATE TABLE IF NOT EXISTS myOrder"
+		 + " (type VARCHAR(128), id VARCHAR(128), name VARCHAR(128), iconUrl VARCHAR(1024), style VARCHAR(128), location VARCHAR(128))")
+}, false);
 
 // SQL相关函数
 function errorSQL(error) {
@@ -142,12 +152,7 @@ function DoLoad(store, url, page) {
 		type : "jsonp",
 		url : ServerUrl + url,
 	});
-	if (page) {
-		store.loadPage(1);
-	};
-	if (!page) {
-		store.load();
-	};
+	store.load();
 };
 
 // 切换页面
