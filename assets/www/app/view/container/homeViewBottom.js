@@ -4,12 +4,12 @@ Ext.define("Project.view.container.homeViewBottom", {
 	config : {
 		docked : "bottom",
 		baseCls : "BottomBar",
+		layout : "hbox",
 		items : [{
 				xtype : "spacer",
 			}, {
 				xtype : "container",
-				height : ScreenWidth * 0.08,
-				html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/AccountBtn.png\" />",
+				html : "<div style = \"height : 8%; width : 33.33%; \"><img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/AccountBtn.png\" /><div>",
 				listeners : {
 					tap : {
 						fn : function () {
@@ -22,8 +22,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 				xtype : "spacer",
 			}, {
 				xtype : "container",
-				height : ScreenWidth * 0.08,
-				html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/DoOrderBtn.png\" />",
+				html : "<div style = \"height : 8%; width : 33.33%; \"><img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/DoOrderBtn.png\" /><div>",
 				setYiNongGrid : function (data, carousel) {
 					var i = 0, j = 0, k = 0;
 					var vContainer = "";
@@ -209,7 +208,6 @@ Ext.define("Project.view.container.homeViewBottom", {
 											data.push(records[key].getData());
 										};
 										DB.YiNongMain.removeAll(true);
-										console.log(this);
 										this.config.setYiNongGrid(data, DB.YiNongMain);
 										DB.YiNongMain.setActiveItem(0);
 									};
@@ -250,8 +248,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 				xtype : "spacer",
 			}, {
 				xtype : "container",
-				height : ScreenHeight * 0.08,
-				html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/FeedBackBtn.png\" />",
+				html : "<div style = \"height : 8%; width : 33.33%; \"><img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/FeedBackBtn.png\" /><div>",
 				listeners : {
 					tap : {
 						fn : function () {
