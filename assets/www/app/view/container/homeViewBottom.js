@@ -8,7 +8,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 				xtype : "spacer",
 			}, {
 				xtype : "container",
-				height : Ext.Viewport.getWindowHeight() * 0.08,
+				height : ScreenWidth * 0.08,
 				html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/AccountBtn.png\" />",
 				listeners : {
 					tap : {
@@ -22,7 +22,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 				xtype : "spacer",
 			}, {
 				xtype : "container",
-				height : Ext.Viewport.getWindowHeight() * 0.08,
+				height : ScreenWidth * 0.08,
 				html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/DoOrderBtn.png\" />",
 				setYiNongGrid : function (data, carousel) {
 					var i = 0, j = 0, k = 0;
@@ -250,7 +250,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 				xtype : "spacer",
 			}, {
 				xtype : "container",
-				height : Ext.Viewport.getWindowHeight() * 0.08,
+				height : ScreenHeight * 0.08,
 				html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/FeedBackBtn.png\" />",
 				listeners : {
 					tap : {

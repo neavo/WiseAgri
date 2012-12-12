@@ -33,6 +33,8 @@ Ext.define("Project.controller.mainController", {
 		loadDefaultApp();
 		loadDefaultCategory();
 		loadMyOrder();
+		ScreenWidth = Ext.Viewport.getWindowWidth();
+		ScreenHeight = Ext.Viewport.getWindowHeight();
 	},
 	launch : function () {
 		DB.mainController = this;
