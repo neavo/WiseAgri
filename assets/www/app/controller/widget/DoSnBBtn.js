@@ -11,7 +11,7 @@ Ext.define("Project.controller.widget.DoSnBBtn", {
 		},
 	},
 	OnDoSnBBtnTap : function () {
-		var data = DB.DoSnBMain.getValues();
+		var data = Ext.getCmp("DoSnBMain").getValues();
 		var flag = true;
 		for (var key in data) {
 			if (key == "SnBTime") {
@@ -23,7 +23,7 @@ Ext.define("Project.controller.widget.DoSnBBtn", {
 			};
 		};
 		if (flag) {
-			DB.DoSnBMain.submit({
+			Ext.getCmp("DoSnBMain").submit({
 				params : data,
 				waitMsg : {
 					xtype : "loadmask",

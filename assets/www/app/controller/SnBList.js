@@ -1,8 +1,8 @@
-Ext.define("Project.controller.container.SnBListMain", {
+Ext.define("Project.controller.SnBList", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {
-			SnBListMain : "SnBListMain",
+			SnBListMain : "#SnBListMain",
 		},
 		control : {
 			SnBListMain : {
@@ -11,9 +11,10 @@ Ext.define("Project.controller.container.SnBListMain", {
 		},
 	},
 	onSnBListMainItemtap : function (list, index, target, record, e, eOpts) {
-		var data = record.getData();
 		DoNextSwitch("SnBDetail");
-		DB.SnBDetailMain.setHtml("<div style = \" height : 0.5em \" ></div>"
+		var data = record.getData();
+		var SnBDetailMain = Ext.getCmp("SnBDetailMain");
+		SnBDetailMain.setHtml("<div style = \" height : 0.5em \" ></div>"
 			 + "<div style = \"background : #FFFFFF; -webkit-border-radius : 0.5em; padding : 0.25em; width : 95%; display : block; margin : auto;\">"
 			 + "<div class = SnBDetailTitle>" + data.SnBTitle + "</div>"
 			 + "<div class = SnBDetailTimePubliser>" + data.SnBTime + "</div>"
@@ -24,13 +25,13 @@ Ext.define("Project.controller.container.SnBListMain", {
 			 + "<div class = SnBDetailContentNormal>" + "电话号码：" + "<a href = \"tel:" + data.SnBPhone + "\">" + data.SnBPhone + "</a>" + "</div>"
 			 + "<div class = SnBDetailContentNormal>" + "详细内容：" + data.SnBContent + "</div>");
 		if (data.SnBImage != "") {
-			DB.SnBDetailMain.setHtml(DB.SnBDetailMain.getHtml()
+			SnBDetailMain.setHtml(SnBDetailMain.getHtml()
 				 + "<div>"
 				 + "<img class = SnBDetailImage onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = " + data.SnBImage + " />"
 				 + "</div>"
 				 + "</div>");
 		} else {
-			DB.QnADetailMain.setHtml(DB.QnADetailMain.getHtml()
+			SnBDetailMain.setHtml(SnBDetailMain.getHtml()
 				 + "</div>");
 		};
 	},

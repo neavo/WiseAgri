@@ -7,12 +7,30 @@ Ext.define("Project.view.albumView", {
 			flex : 1,
 		},
 		items : [{
-				xtype : "albumViewTop",
+				id : "albumViewTop",
+				xtype : "toolbar",
+				docked : "top",
+				baseCls : "TopBar",
+				title : "更多图片",
 			}, {
-				xtype : "albumViewMain",
+				id : "albumViewMain",
+				xtype : "carousel",
+				scrollable : false,
+				cls : "albumCarousel",
 			}, {
-				xtype : "albumViewBottom",
-			}, 
+				id : "albumViewBottom",
+				xtype : "toolbar",
+				docked : "bottom",
+				baseCls : "BottomBar",
+				items : [{
+						xtype : "spacer",
+					}, {
+						xtype : "backBtn",
+					}, {
+						xtype : "spacer",
+					},
+				],
+			},
 		],
 	},
 });

@@ -13,19 +13,19 @@ Ext.define("Project.controller.widget.biggerBtn", {
 	onBiggerBtnTap : function () {
 		switch (ScaleFlag) {
 		case  - 2:
-			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml().replace("newsDetailContentSmaller", "newsDetailContentSmall"));
+			Ext.getCmp("newsDetailMain").setHtml(Ext.getCmp("newsDetailMain").getHtml().replace("newsDetailContentSmaller", "newsDetailContentSmall"));
 			ScaleFlag = ScaleFlag + 1;
 			break;
 		case  - 1:
-			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml().replace("newsDetailContentSmall", "newsDetailContentNormal"));
+			Ext.getCmp("newsDetailMain").setHtml(Ext.getCmp("newsDetailMain").getHtml().replace("newsDetailContentSmall", "newsDetailContentNormal"));
 			ScaleFlag = ScaleFlag + 1;
 			break;
 		case 0:
-			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml().replace("newsDetailContentNormal", "newsDetailContentBig"));
+			Ext.getCmp("newsDetailMain").setHtml(Ext.getCmp("newsDetailMain").getHtml().replace("newsDetailContentNormal", "newsDetailContentBig"));
 			ScaleFlag = ScaleFlag + 1;
 			break;
 		case 1:
-			DB.newsDetailMain.setHtml(DB.newsDetailMain.getHtml().replace("newsDetailContentBig", "newsDetailContentBigger"));
+			Ext.getCmp("newsDetailMain").setHtml(Ext.getCmp("newsDetailMain").getHtml().replace("newsDetailContentBig", "newsDetailContentBigger"));
 			ScaleFlag = ScaleFlag + 1;
 			break;
 		case 2:

@@ -7,12 +7,37 @@ Ext.define("Project.view.newsDetail", {
 			flex : 1,
 		},
 		items : [{
-				xtype : "newsDetailTop",
+				id : "newsDetailTop",
+				xtype : "toolbar",
+				docked : "top",
+				baseCls : "TopBar",
+				title : "详细信息",
 			}, {
-				xtype : "newsDetailMain",
+				id : "newsDetailMain",
+				xtype : "container",
+				scrollable : "vertical",
 			}, {
-				xtype : "newsDetailBottom",
-			}, 
+				id : "newsDetailBottom",
+				xtype : "toolbar",
+				docked : "bottom",
+				baseCls : "BottomBar",
+				items : [{
+						xtype : "spacer",
+					}, {
+						xtype : "biggerBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "smallerBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "backBtn",
+					}, {
+						xtype : "spacer",
+					},
+				],
+			},
 		],
 	},
 });

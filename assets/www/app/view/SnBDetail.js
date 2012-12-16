@@ -7,12 +7,33 @@ Ext.define("Project.view.SnBDetail", {
 			flex : 1,
 		},
 		items : [{
-				xtype : "SnBDetailTop",
+				id : "SnBDetailTop",
+				xtype : "toolbar",
+				docked : "top",
+				baseCls : "TopBar",
+				title : "详细信息",
 			}, {
-				xtype : "SnBDetailMain",
+				id : "SnBDetailMain",
+				xtype : "container",
+				scrollable : "vertical",
 			}, {
-				xtype : "SnBDetailBottom",
-			}, 
+				id : "SnBDetailBottom",
+				xtype : "toolbar",
+				docked : "bottom",
+				baseCls : "BottomBar",
+				items : [{
+						xtype : "spacer",
+					}, {
+						xtype : "homeBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "backBtn",
+					}, {
+						xtype : "spacer",
+					},
+				],
+			},
 		],
 	},
 });

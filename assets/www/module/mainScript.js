@@ -115,16 +115,6 @@ function DoSQL(sql) {
 	};
 };
 
-// 设置正在使用的Object
-var activatedController = "";
-function setActivatedController(controller) {
-	activatedController = controller;
-};
-var activatedAlbum = "";
-function setActivatedAlbum(album) {
-	activatedAlbum = album;
-};
-
 // 自定义的Time
 function DoTime() {
 	var eDate = new Date();
@@ -159,7 +149,7 @@ function DoLoad(store, url, page) {
 
 // 切换页面
 var History = [];
-function DoPrevSwitch(func) {
+function DoPrevSwitch() {
 	History.pop();
 	if (History.length == 0) {
 		Ext.Msg.confirm("", "确定退出？", function (buttonId, value, opt) {
@@ -170,33 +160,19 @@ function DoPrevSwitch(func) {
 	};
 	if (History.length != 0) {
 		var View = History[History.length - 1];
-		var items = DB[View].getItems();
-		var length = items.length;
-		for (var i = 0; i < length; i++) {
-			DB[View].getAt(i).hide();
-		};
-		DB.mainContainer.setActiveItem(DB[View]);
-		setActivatedController(DB.mainController.getApplication().getController(View));
-		for (var i = 0; i < length; i++) {
-			DB[View].getAt(i).show();
-		};
+		DB.mainContainer.setActiveItem(View);
 	};
 };
 function DoNextSwitch(View) {
 	History.push(View);
-	var items = DB[View].getItems();
-	var length = items.length;
-	for (var i = 0; i < length; i++) {
-		DB[View].getAt(i).hide();
-	};
-	DB.mainContainer.setActiveItem(DB[View]);
-	setActivatedController(DB.mainController.getApplication().getController(View));
-	for (var i = 0; i < length; i++) {
-		DB[View].getAt(i).show();
-	};
+	DB.mainContainer.setActiveItem(View);
 };
 
 // 切换至相册页面
+var activatedAlbum = "";
+function setActivatedAlbum(album) {
+	activatedAlbum = album;
+};
 function setAlbumGrid(image, carousel) {
 	var i = 0;
 	var k = 0;
@@ -228,7 +204,7 @@ function setAlbumGrid(image, carousel) {
 };
 function DoShowAlbum() {
 	DoNextSwitch("albumView");
-	DB.albumViewMain.removeAll(true);
-	setAlbumGrid(activatedAlbum, DB.albumViewMain);
-	DB.albumViewMain.setActiveItem(0);
+	Ext.getCmp("albumViewMain").removeAll(true);
+	setAlbumGrid(activatedAlbum, Ext.getCmp("albumViewMain"));
+	Ext.getCmp("albumViewMain").setActiveItem(0);
 };

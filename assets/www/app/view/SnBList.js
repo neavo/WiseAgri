@@ -7,12 +7,38 @@ Ext.define("Project.view.SnBList", {
 			flex : 1,
 		},
 		items : [{
-				xtype : "SnBListTop",
+				id : "SnBListTop",
+				xtype : "toolbar",
+				docked : "top",
+				baseCls : "TopBar",
 			}, {
-				xtype : "SnBListMain",
+				id : "SnBListMain",
+				xtype : "list",
+				store : "SnBStore",
+				emptyText : "没有更多信息 ...",
+				loadingText : "正在获取信息...",
+				itemTpl : "<img class = SnBListIcon onerror = \" this.src = 'resources/icons/defaultIcon.png' \" src = {SnBImage} />"
+				 + "<div class = SnBListTitle><b>[{SnBType}] {SnBTitle}</b></div>"
+				 + "<div class = SnBListTimePubliser>时间：{SnBTime}</div>"
+				 + "<div class = SnBListTimePubliser>联系人：{SnBPublisher}</div>",
 			}, {
-				xtype : "SnBListBottom",
-			}, 
+				id : "SnBListBottom",
+				xtype : "toolbar",
+				docked : "bottom",
+				baseCls : "BottomBar",
+				items : [{
+						xtype : "spacer",
+					}, {
+						xtype : "homeBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "backBtn",
+					}, {
+						xtype : "spacer",
+					},
+				],
+			},
 		],
 	},
 });

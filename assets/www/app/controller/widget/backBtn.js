@@ -11,7 +11,6 @@ Ext.define("Project.controller.widget.backBtn", {
 		},
 	},
 	onBackBtnTap : function () {
-		//activatedController.goBack();
 		DoPrevSwitch();
 	},
 });

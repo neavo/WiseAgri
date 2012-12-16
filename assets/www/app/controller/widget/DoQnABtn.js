@@ -11,7 +11,7 @@ Ext.define("Project.controller.widget.DoQnABtn", {
 		},
 	},
 	OnDoQnABtnTap : function () {
-		var data = DB.DoQnAMain.getValues();
+		var data = Ext.getCmp("DoQnAMain").getValues();
 		var flag = true;
 		for (var key in data) {
 			if (key == "QTime") {
@@ -23,7 +23,7 @@ Ext.define("Project.controller.widget.DoQnABtn", {
 			};
 		};
 		if (flag) {
-			DB.DoQnAMain.submit({
+			Ext.getCmp("DoQnAMain").submit({
 				params : data,
 				waitMsg : {
 					xtype : "loadmask",
