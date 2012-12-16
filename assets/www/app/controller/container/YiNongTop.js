@@ -8,7 +8,7 @@ Ext.define("Project.controller.container.YiNongTop", {
 		Ext.getCmp("ZhiHuiBtn").addListener({
 			tap : {
 				fn : function () {
-					DoSwitch("ZhiHui");
+					DoNextSwitch("ZhiHui");
 				},
 				element : "element",
 			},

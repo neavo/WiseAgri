@@ -195,7 +195,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 					tap : {
 						fn : function () {
 							// 载入翼农频道数据
-							DoSwitch("YiNong");
+							DoNextSwitch("YiNong");
 							Ext.getStore("YiNongStore").setProxy({
 								type : "jsonp",
 								url : ServerUrl + "YiNong/GetAppList.jsp",
@@ -252,7 +252,7 @@ Ext.define("Project.view.container.homeViewBottom", {
 				listeners : {
 					tap : {
 						fn : function () {
-							DoSwitch("FeedBack");
+							DoNextSwitch("FeedBack");
 							DB.FeedBackTop.setTitle("意见反馈");
 							DoLoad(DB.FeedBackMain.getStore(), "ZhiHui/GetFeedBack.jsp?appId=" + defaultBase[0]["id"]);
 						},

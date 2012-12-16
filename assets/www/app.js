@@ -62,21 +62,13 @@ Ext.application({
 		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
 		"homeView", "container.homeViewMain", "container.homeViewTop",
-		"YiNong", "container.YiNongTop",
-		"ZhiHui", "container.ZhiHuiTop",
-		"FeedBack",
-		"categoryList", "container.categoryListMain",
-		"newsList", "container.newsListMain",
-		"newsDetail",
-		"SnBList", "container.SnBListMain",
-		"SnBDetail",
-		"DoSnB",
-		"QnAList", "container.QnAListMain",
-		"QnADetail",
-		"DoQnA",
-		"ExList",
-		"albumView",
-		
+		"container.YiNongTop",
+		"container.ZhiHuiTop",
+		"container.categoryListMain",
+		"container.newsListMain",
+		"container.SnBListMain",
+		"container.QnAListMain",
+
 		"mainController",
 	],
 	

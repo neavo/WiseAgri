@@ -1,6 +1,6 @@
 // 服务器数据
-var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
-//var ServerUrl = "http://192.168.1.100:8081/WiseAgriAjax/";
+//var ServerUrl = "http://221.235.190.13:8080/WiseAgriAjax/";
+var ServerUrl = "http://192.168.1.100:8081/WiseAgriAjax/";
 
 // 本地数据
 var DB = [];
@@ -79,7 +79,7 @@ var SQLite = "";
 document.addEventListener("deviceready", function () {
 	// 响应返回键
 	document.addEventListener("backbutton", function () {
-		activatedController.goBack();
+		DoPrevSwitch();
 	}, false);
 	
 	// 初始化SQLite数据库对象
@@ -158,16 +158,41 @@ function DoLoad(store, url, page) {
 };
 
 // 切换页面
-function DoSwitch(view) {
-	var items = DB[view].getItems();
+var History = [];
+function DoPrevSwitch(func) {
+	History.pop();
+	if (History.length == 0) {
+		Ext.Msg.confirm("", "确定退出？", function (buttonId, value, opt) {
+			if (buttonId == "yes") {
+				navigator.app.exitApp();
+			};
+		});
+	};
+	if (History.length != 0) {
+		var View = History[History.length - 1];
+		var items = DB[View].getItems();
+		var length = items.length;
+		for (var i = 0; i < length; i++) {
+			DB[View].getAt(i).hide();
+		};
+		DB.mainContainer.setActiveItem(DB[View]);
+		setActivatedController(DB.mainController.getApplication().getController(View));
+		for (var i = 0; i < length; i++) {
+			DB[View].getAt(i).show();
+		};
+	};
+};
+function DoNextSwitch(View) {
+	History.push(View);
+	var items = DB[View].getItems();
 	var length = items.length;
 	for (var i = 0; i < length; i++) {
-		DB[view].getAt(i).hide();
+		DB[View].getAt(i).hide();
 	};
-	DB.mainContainer.setActiveItem(DB[view]);
-	setActivatedController(DB.mainController.getApplication().getController(view));
+	DB.mainContainer.setActiveItem(DB[View]);
+	setActivatedController(DB.mainController.getApplication().getController(View));
 	for (var i = 0; i < length; i++) {
-		DB[view].getAt(i).show();
+		DB[View].getAt(i).show();
 	};
 };
 
@@ -202,7 +227,7 @@ function setAlbumGrid(image, carousel) {
 	};
 };
 function DoShowAlbum() {
-	DoSwitch("albumView");
+	DoNextSwitch("albumView");
 	DB.albumViewMain.removeAll(true);
 	setAlbumGrid(activatedAlbum, DB.albumViewMain);
 	DB.albumViewMain.setActiveItem(0);

@@ -11,6 +11,6 @@ Ext.define("Project.controller.widget.homeBtn", {
 		},
 	},
 	onHomeBtnTap : function () {
-		DoSwitch("homeView");
+		DoNextSwitch("homeView");
 	},
 });

@@ -12,7 +12,7 @@ Ext.define("Project.controller.container.newsListMain", {
 	},
 	onNewsListMainItemtap : function (list, index, target, record, e, eOpts) {
 		var data = record.getData();
-		DoSwitch("newsDetail");
+		DoNextSwitch("newsDetail");
 		ScaleFlag = 0;
 		DB.newsDetailMain.setHtml("<div style = \" height : 0.5em \" ></div>"
 			 + "<div style = \"background : #FFFFFF; -webkit-border-radius : 0.5em; padding : 0.25em; width : 95%; display : block; margin : auto;\">"

@@ -30,7 +30,7 @@ Ext.define("Project.controller.YiNong", {
 						item.addListener({
 							tap : {
 								fn : function () {
-									DoSwitch("categoryList");
+									DoNextSwitch("categoryList");
 									DB.categoryListTop.setTitle(this.config.data.location + " • " + this.config.data.name);
 									DoLoad(DB.categoryListMain.getStore(), "ZhiHui/GetCategoryList.jsp?appId=" + this.config.data.id);
 								},
@@ -43,12 +43,12 @@ Ext.define("Project.controller.YiNong", {
 							tap : {
 								fn : function () {
 									if (this.config.data.style == "parentCategory") {
-										DoSwitch("categoryList");
+										DoNextSwitch("categoryList");
 										DB.categoryListTop.setTitle(this.config.data.name);
 										DoLoad(DB.categoryListMain.getStore(), "ZhiHui/GetCategoryList.jsp?parentId=" + this.config.data.id);
 									};
 									if (this.config.data.style == "newsCategory") {
-										DoSwitch("newsList");
+										DoNextSwitch("newsList");
 										DB.newsListTop.setTitle(this.config.data.name);
 										DoLoad(DB.newsListMain.getStore(), "ZhiHui/GetNewsList.jsp?categoryId=" + this.config.data.id);
 									};
@@ -100,7 +100,7 @@ Ext.define("Project.controller.YiNong", {
 							defaultCategory.push(myOrder[key]);
 						};
 					};
-					DoSwitch("homeView");
+					DoNextSwitch("homeView");
 					DB.homeViewMain.removeAll(true);
 					self.setGrid(defaultCategory, DB.homeViewMain);
 					DB.homeViewMain.setActiveItem(0);
