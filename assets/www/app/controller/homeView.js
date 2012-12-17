@@ -22,8 +22,8 @@ Ext.define("Project.controller.homeView", {
 				if (data[k]) {
 					var item = Ext.create("Ext.Container", {
 							data : data[k],
-							width : ScreenWidth * 0.28,
-							height : ScreenWidth * 0.28,
+							width : Ext.Viewport.getWindowWidth() * 0.28,
+							height : Ext.Viewport.getWindowWidth() * 0.28,
 							html : "<img class = homeViewIcon src = " + data[k]["iconUrl"] + " />",
 						});
 					if (data[k]["type"] == "app") {
@@ -60,8 +60,8 @@ Ext.define("Project.controller.homeView", {
 					hContainer.add(item);
 				} else {
 					hContainer.add(Ext.create("Ext.Container", {
-							width : ScreenWidth * 0.28,
-							height : ScreenWidth * 0.28,
+							width : Ext.Viewport.getWindowWidth() * 0.28,
+							height : Ext.Viewport.getWindowWidth() * 0.28,
 							html : "<img class = homeViewIcon src = resources/icons/noIcon.png />",
 						}));
 				};

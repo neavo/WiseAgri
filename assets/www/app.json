@@ -99,8 +99,7 @@
 		"module",
         "resources/css/",
         "resources/icons",
-        "resources/images",
-        "resources/news",
+        "resources/SplashScreen",
     ],
 
     /**

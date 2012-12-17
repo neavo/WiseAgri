@@ -1,15 +1,17 @@
 package com.whut.WiseAgri;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.os.Bundle;
 
-import org.apache.cordova.*;
+import org.apache.cordova. * ;
 
 public class MainActivity extends DroidGap {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-		super.setIntegerProperty("splashscreen", R.drawable.splashscreen);
-		super.loadUrl("file:///android_asset/www/index.html", 30000);
-    }
+	
+	 @ Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		super.loadUrl("file:///android_asset/www/index.html");
+	}
 }

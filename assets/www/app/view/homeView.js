@@ -26,8 +26,14 @@ Ext.define("Project.view.homeView", {
 						xtype : "spacer",
 					}, {
 						xtype : "container",
-						html : "<div style = \"height : 8%; width : 33.33%; \"><img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/AccountBtn.png\" /><div>",
+						html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/AccountBtn.png\" />",
 						listeners : {
+							initialize : {
+								fn : function (container, eOpts) {
+									container.setHeight(Ext.Viewport.getWindowHeight() * 0.08);
+								},
+								single : true,								
+							},
 							tap : {
 								fn : function () {
 									DoAlert("功能开发中 ...");
@@ -39,11 +45,9 @@ Ext.define("Project.view.homeView", {
 						xtype : "spacer",
 					}, {
 						xtype : "container",
-						html : "<div style = \"height : 8%; width : 33.33%; \"><img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/DoOrderBtn.png\" /><div>",
+						html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/DoOrderBtn.png\" />",
 						setYiNongGrid : function (data, carousel) {
-							var i = 0,
-							j = 0,
-							k = 0;
+							var i = 0, j = 0, k = 0;
 							var vContainer = "";
 							var hContainer = "";
 							for (i = 0; i < 3; i++) {
@@ -127,9 +131,7 @@ Ext.define("Project.view.homeView", {
 							};
 						},
 						setZhiHuiGrid : function (data, carousel) {
-							var i = 0,
-							j = 0,
-							k = 0;
+							var i = 0, j = 0, k = 0;
 							var vContainer = "";
 							var hContainer = "";
 							for (i = 0; i < 3; i++) {
@@ -213,6 +215,12 @@ Ext.define("Project.view.homeView", {
 							};
 						},
 						listeners : {
+							initialize : {
+								fn : function (container, eOpts) {
+									container.setHeight(Ext.Viewport.getWindowHeight() * 0.08);
+								},
+								single : true,								
+							},
 							tap : {
 								fn : function () {
 									// 载入翼农频道数据
@@ -269,8 +277,14 @@ Ext.define("Project.view.homeView", {
 						xtype : "spacer",
 					}, {
 						xtype : "container",
-						html : "<div style = \"height : 8%; width : 33.33%; \"><img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/FeedBackBtn.png\" /><div>",
+						html : "<img style = \"margin-top : 5%; height : 90%;\" src = \"resources/icons/FeedBackBtn.png\" />",
 						listeners : {
+							initialize : {
+								fn : function (container, eOpts) {
+									container.setHeight(Ext.Viewport.getWindowHeight() * 0.08);
+								},
+								single : true,								
+							},
 							tap : {
 								fn : function () {
 									DoNextSwitch("FeedBack");
