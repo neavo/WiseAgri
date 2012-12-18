@@ -24,15 +24,13 @@ Ext.define("Project.view.newsDetail", {
 				items : [{
 						xtype : "spacer",
 					}, {
-						xtype : "biggerBtn",
+						xtype : "container",
+						html : "浏览 : 18次",
 					}, {
 						xtype : "spacer",
 					}, {
-						xtype : "smallerBtn",
-					}, {
-						xtype : "spacer",
-					}, {
-						xtype : "backBtn",
+						xtype : "container",
+						html : "分享 ...",
 					}, {
 						xtype : "spacer",
 					},

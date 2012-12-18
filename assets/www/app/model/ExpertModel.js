@@ -1,4 +1,4 @@
-Ext.define("Project.model.ExModel", {
+Ext.define("Project.model.ExpertModel", {
 	extend : "Ext.data.Model",
 	config : {
 		fields : [

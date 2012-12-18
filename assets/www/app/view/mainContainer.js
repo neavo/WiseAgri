@@ -33,7 +33,7 @@ Ext.define("Project.view.mainContainer", {
 			}, {
 				xtype : "DoQnA",
 			}, {
-				xtype : "ExList",
+				xtype : "ExpertList",
 			}, {
 				xtype : "albumView",
 			},

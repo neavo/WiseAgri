@@ -1,20 +1,20 @@
-Ext.define("Project.view.ExList", {
+Ext.define("Project.view.ExpertList", {
 	extend : "Ext.Container",
-	xtype : "ExList",
+	xtype : "ExpertList",
 	config : {
 		layout : "vbox",
 		defaults : {
 			flex : 1,
 		},
 		items : [{
-				id : "ExListTop",
+				id : "ExpertListTop",
 				xtype : "toolbar",
 				docked : "top",
 				baseCls : "TopBar",
 			}, {
-				id : "ExListMain",
-				xtype : "panel",
-				store : "ExStore",
+				id : "ExpertListMain",
+				xtype : "list",
+				store : "ExpertStore",
 				emptyText : "没有更多信息 ...",
 				loadingText : "正在获取信息...",
 				disableSelection : true,
@@ -25,7 +25,7 @@ Ext.define("Project.view.ExList", {
 				 + "<div class = ExListIDescription>简介：{ExConent}</div>"
 				 + "<div class = ExListNamePhone>电话：<a href = \"tel:{ExPhone}\">{ExPhone}</a></div>",
 			}, {
-				id : "ExListBottom",
+				id : "ExpertListBottom",
 				xtype : "toolbar",
 				docked : "bottom",
 				baseCls : "BottomBar",

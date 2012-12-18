@@ -3,14 +3,14 @@
 		"id" : "923",
 		"name" : "嘉鱼新闻",
 		"iconUrl" : "data/defaultCategory/01.png",
-		"style" : "newsCategory",
+		"style" : "WebLink",
 		"location" : "",
 	}, {
 		"type" : "category",
 		"id" : "924",
 		"name" : "嘉鱼旅游",
 		"iconUrl" : "data/defaultCategory/02.png",
-		"style" : "newsCategory",
+		"style" : "WebLink",
 		"location" : "",
 	}, {
 		"type" : "category",

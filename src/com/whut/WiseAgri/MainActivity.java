@@ -1,8 +1,5 @@
 package com.whut.WiseAgri;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.os.Bundle;
 
 import org.apache.cordova. * ;

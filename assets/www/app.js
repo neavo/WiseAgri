@@ -16,9 +16,10 @@ Ext.application({
 		"newsModel",
 		"SnBModel",
 		"QnAModel",
-		"ExModel",
+		"ExpertModel",
 		"TypeModel",
 		"FeedBackModel",
+		"WebLinkModel",
 	],
 	
 	stores : [
@@ -28,9 +29,10 @@ Ext.application({
 		"newsStore",
 		"SnBStore", "SnBTypeStore",
 		"QnAStore", "QnATypeStore",
-		"ExStore",
+		"ExpertStore",
 		"YiNongStore",
 		"FeedBackStore",
+		"WebLinkStore",
 	],
 	
 	views : [
@@ -43,7 +45,7 @@ Ext.application({
 		"categoryList",
 		"newsList", "newsDetail", "albumView",
 		"SnBList", "SnBDetail", "DoSnB",
-		"QnAList", "QnADetail", "DoQnA", "ExList",
+		"QnAList", "QnADetail", "DoQnA", "ExpertList",
 		
 		"mainContainer",
 	],

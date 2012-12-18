@@ -52,6 +52,20 @@ Ext.define("Project.controller.homeView", {
 										Ext.getCmp("newsListTop").setTitle(this.config.data.name);
 										DoLoad(Ext.getCmp("newsListMain").getStore(), "ZhiHui/GetNewsList.jsp?categoryId=" + this.config.data.id);
 									};
+									if (this.config.data.style == "WebLink") {
+										Ext.getStore("WebLinkStore").setProxy({
+											type : "jsonp",
+											url : ServerUrl + "ZhiHui/GetWebLink.jsp?categoryId=" + this.config.data.id,
+										});
+										Ext.getStore("WebLinkStore").load({
+											callback : function (records, operation, success) {
+												if (success && records.lenght != 0) {
+													window.plugins.childBrowser.showWebPage(records[0].getData().WebLink);
+												};						
+											},
+											scope : this,
+										});
+									};
 								},
 								element : "element",
 							},

@@ -45,10 +45,10 @@ Ext.define("Project.controller.categoryList", {
 			Ext.getCmp("QCID").setValue(data.id);
 			DoLoad(Ext.getStore("QnATypeStore"), "ZhiHui/GetQnAType.jsp?categoryId=" + data.id);
 		};
-		if (data.style == "ExCategory") {
-			DoNextSwitch("ExList");
-			Ext.getCmp("ExListTop").setTitle(data.name);
-			DoLoad(Ext.getCmp("ExListMain").getStore(), "ZhiHui/GetExList.jsp?categoryId=" + data.id);
+		if (data.style == "ExpertCategory") {
+			DoNextSwitch("ExpertList");
+			Ext.getCmp("ExpertListTop").setTitle(data.name);
+			DoLoad(Ext.getCmp("ExpertListMain").getStore(), "ZhiHui/GetExpertList.jsp?categoryId=" + data.id);
 		};
 	},
 });
