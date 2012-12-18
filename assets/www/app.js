@@ -28,7 +28,7 @@ Ext.application({
 		"categoryListStore",
 		"newsStore",
 		"SnBStore", "SnBTypeStore",
-		"QnAStore", "QnATypeStore",
+		"QnAStore", "QnATypeStore", "QnAExpertStore",
 		"ExpertStore",
 		"YiNongStore",
 		"FeedBackStore",
@@ -41,7 +41,7 @@ Ext.application({
 		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
 		"homeView",
-		"YiNong",  "ZhiHui", "FeedBack",
+		"OrderView", "FeedBack",
 		"categoryList",
 		"newsList", "newsDetail", "albumView",
 		"SnBList", "SnBDetail", "DoSnB",
@@ -56,8 +56,7 @@ Ext.application({
 		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
 		"homeView",
-		"container.YiNongTop",
-		"container.ZhiHuiTop",
+		"OrderView",
 		"categoryList",
 		"newsList",
 		"SnBList",

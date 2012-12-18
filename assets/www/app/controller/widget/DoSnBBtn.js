@@ -31,7 +31,6 @@ Ext.define("Project.controller.widget.DoSnBBtn", {
 				},
 				success : function (form, result) {
 					DoAlert("发布成功！");
-					form.reset();
 				},
 				failure : function  (form, result) {
 					DoAlert("发布失败！");

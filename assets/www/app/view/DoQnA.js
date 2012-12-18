@@ -25,6 +25,13 @@ Ext.define("Project.view.DoQnA", {
 						labelWidth : "5.5em",
 						store : "QnATypeStore",
 					}, {
+						xtype : "selectfield",
+						name : "QnAExpert",
+						label : "回答专家",
+						height : "2em",
+						labelWidth : "5.5em",
+						store : "QnAExpertStore",
+					}, {
 						xtype : "textfield",
 						name : "QPublisher",
 						height : "2em",

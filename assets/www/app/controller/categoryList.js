@@ -44,6 +44,7 @@ Ext.define("Project.controller.categoryList", {
 			Ext.getCmp("DoQnATop").setTitle(data.name);
 			Ext.getCmp("QCID").setValue(data.id);
 			DoLoad(Ext.getStore("QnATypeStore"), "ZhiHui/GetQnAType.jsp?categoryId=" + data.id);
+			DoLoad(Ext.getStore("QnAExpertStore"), "ZhiHui/GetQnAExpert.jsp?categoryId=" + data.id);
 		};
 		if (data.style == "ExpertCategory") {
 			DoNextSwitch("ExpertList");

@@ -6,12 +6,6 @@ Ext.define("Project.controller.mainController", {
 		},
 		control : {},
 	},
-	init : function () {
-		loadDefaultBase();
-		loadDefaultApp();
-		loadDefaultCategory();
-		loadMyOrder();
-	},
 	launch : function () {
 		DB.mainController = this;
 		DB.mainContainer = this.getMainContainer();	
