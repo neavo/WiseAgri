@@ -154,6 +154,9 @@ function DoPrevSwitch() {
 			if (buttonId == "yes") {
 				navigator.app.exitApp();
 			};
+			if (buttonId == "no") {
+				History.push("homeView");
+			};
 		});
 	};
 	if (History.length != 0) {
