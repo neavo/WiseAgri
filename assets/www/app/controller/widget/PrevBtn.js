@@ -11,11 +11,10 @@ Ext.define("Project.controller.widget.PrevBtn", {
 		},
 	},
 	onPrevBtnTap : function () {
-		if (activatedStore.currentPage > 1){
-			activatedStore.previousPage();
-		};
-		if (activatedStore.currentPage == 1){
+		if (activatedStore.currentPage == 1) {
 			DoAlert("当前已是第一页！");
+		} else if (activatedStore.currentPage > 1) {
+			activatedStore.previousPage();
 		};
 	},
 });
