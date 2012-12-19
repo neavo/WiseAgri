@@ -29,7 +29,11 @@ Ext.define("Project.view.QnAList", {
 				items : [{
 						xtype : "spacer",
 					}, {
-						xtype : "homeBtn",
+						xtype : "PrevBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "NextBtn",
 					}, {
 						xtype : "spacer",
 					}, {

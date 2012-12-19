@@ -49,6 +49,7 @@ Ext.define("Project.controller.homeView", {
 									};
 									if (this.config.data.style == "newsCategory") {
 										DoNextSwitch("newsList");
+										setActivatedStore(Ext.getCmp("newsListMain").getStore());
 										Ext.getCmp("newsListTop").setTitle(this.config.data.name);
 										DoLoad(Ext.getCmp("newsListMain").getStore(), "ZhiHui/GetNewsList.jsp?categoryId=" + this.config.data.id);
 									};

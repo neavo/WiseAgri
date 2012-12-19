@@ -1,10 +1,10 @@
-Ext.define("Project.view.widget.biggerBtn", {
+Ext.define("Project.view.widget.PrevBtn", {
 	extend : "Ext.Button",
-	xtype : "biggerBtn",
+	xtype : "PrevBtn",
 	config : {
 		icon : "resources/icons/whiteIcon.png",
 		ui : "plain",
-		iconCls : "arrow_up",
+		iconCls : "arrow_left",
 		iconMask : true,
 	},
 });

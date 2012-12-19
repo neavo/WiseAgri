@@ -37,7 +37,7 @@ Ext.application({
 	
 	views : [
 		"widget.homeBtn", "widget.backBtn",
-		"widget.smallerBtn", "widget.biggerBtn",
+		"widget.NextBtn", "widget.PrevBtn",
 		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
 		"homeView",
@@ -52,7 +52,7 @@ Ext.application({
 	
 	controllers : [
 		"widget.homeBtn", "widget.backBtn",
-		"widget.smallerBtn", "widget.biggerBtn",
+		"widget.NextBtn", "widget.PrevBtn",
 		"widget.DoSnBBtn", "widget.DoQnABtn",
 		
 		"homeView",

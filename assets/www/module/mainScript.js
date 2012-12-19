@@ -142,7 +142,13 @@ function DoLoad(store, url, page) {
 		type : "jsonp",
 		url : ServerUrl + url,
 	});
-	store.load();
+	store.loadPage(1, {
+		callback : function (records, operation, success) {
+			if (records.length == 0 || !success) {
+				store.removeAll(true);
+			};
+		},
+	});
 };
 
 // 切换页面
@@ -169,6 +175,12 @@ function DoNextSwitch(View) {
 	DB.mainContainer.setActiveItem(View);
 };
 
+// 列表分页相关
+var activatedStore = "";
+function setActivatedStore(Store) {
+	activatedStore = Store;
+};
+
 // 视频播放相关
 var activatedVideo = "";
 function setActivatedVideo(Video){
@@ -178,8 +190,7 @@ function DoVideoPlayer() {
 	window.plugins.videoPlayer.play(activatedVideo);
 }
 
-
-// 相册播放相关
+// 显示相册相关
 var activatedAlbum = "";
 function setActivatedAlbum(album) {
 	activatedAlbum = album;

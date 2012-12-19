@@ -29,7 +29,11 @@ Ext.define("Project.view.SnBList", {
 				items : [{
 						xtype : "spacer",
 					}, {
-						xtype : "homeBtn",
+						xtype : "PrevBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "NextBtn",
 					}, {
 						xtype : "spacer",
 					}, {
