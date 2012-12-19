@@ -6,8 +6,13 @@ var SplashScreenImageSrc = [
 	"resources/SplashScreen/SplashScreen_05.jpg",
 ];
 
+function HideSplashScreen() {
+	document.getElementById("SplashScreen").style.display = "none";
+};
+
 document.write("<div id = SplashScreen >"
 	 + " <img id = SplashScreenImage src = " + SplashScreenImageSrc[0] + " style = \" height : 100%; width : 100%; \" />"
+	 + " <img id onclick = \"HideSplashScreen()\" src = resources/icons/SkipSplashScreen.png style = \" width : 5em; height : 5em; position : fixed; right : 0.5em; bottom : 0.5em; \"  />"
 	 + " <div>");
 
 var key = 2;
@@ -20,4 +25,4 @@ var handle = setInterval(function () {
 			document.getElementById("SplashScreen").style.display = "none";
 			clearInterval(handle);
 		};
-	}, 1500);
+	}, 3000);

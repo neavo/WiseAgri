@@ -60,7 +60,7 @@ Ext.define("Project.controller.homeView", {
 										Ext.getStore("WebLinkStore").load({
 											callback : function (records, operation, success) {
 												if (success && records.lenght != 0) {
-													window.plugins.childBrowser.showWebPage(records[0].getData().WebLink);
+													window.plugins.childBrowser.openExternal(records[0].getData().WebLink);
 												};
 											},
 											scope : this,

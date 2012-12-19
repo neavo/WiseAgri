@@ -169,7 +169,17 @@ function DoNextSwitch(View) {
 	DB.mainContainer.setActiveItem(View);
 };
 
-// 切换至相册页面
+// 视频播放相关
+var activatedVideo = "";
+function setActivatedVideo(Video){
+	activatedVideo = Video;
+};
+function DoVideoPlayer() {
+	window.plugins.videoPlayer.play(activatedVideo);
+}
+
+
+// 相册播放相关
 var activatedAlbum = "";
 function setActivatedAlbum(album) {
 	activatedAlbum = album;

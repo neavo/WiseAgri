@@ -19,6 +19,13 @@ Ext.define("Project.controller.newsList", {
 			 + "<div class = newsDetailTitle>" + data.newsTitle + "</div>"
 			 + "<div class = newsDetailDataTime>" + data.dateTime + "　来源：" + data.newsPublisher + "</div>"
 			 + "<HR align = left width = 100% color = #FFFFFF size = 1 noShade>");
+		if (data.videoUrl != "") {
+			setActivatedVideo(data.videoUrl);
+			Ext.getCmp("newsDetailMain").setHtml(Ext.getCmp("newsDetailMain").getHtml()
+				 + "<div>"
+				 + "<img class = newsDetailImage onclick = \"DoVideoPlayer();\" src = resources/icons/VideoPlayer.png />"
+				 + "</div>");
+		};
 		if (data.imageUrl != "") {
 			setActivatedAlbum(data.imageUrl.split(";"));
 			Ext.getCmp("newsDetailMain").setHtml(Ext.getCmp("newsDetailMain").getHtml()

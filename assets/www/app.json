@@ -99,7 +99,6 @@
 		"module",
         "resources/css/",
         "resources/icons",
-		"resources/ChildBrowser",
         "resources/SplashScreen",   
     ],
 
