@@ -5,9 +5,7 @@ Ext.define("Project.controller.OrderView", {
 		control : {},
 	},
 	SetYiNongGrid : function (d, l) {
-		var e = 0,
-		c = 0,
-		b = 0;
+		var e = 0, c = 0, b = 0;
 		var f = "";
 		var a = "";
 		for (e = 0; e < 3; e++) {
@@ -85,9 +83,7 @@ Ext.define("Project.controller.OrderView", {
 		}
 	},
 	SetZhiHuiGrid : function (d, l) {
-		var e = 0,
-		c = 0,
-		b = 0;
+		var e = 0, c = 0, b = 0;
 		var f = "";
 		var a = "";
 		for (e = 0; e < 3; e++) {
@@ -161,20 +157,20 @@ Ext.define("Project.controller.OrderView", {
 		f.add(Ext.create("Ext.Spacer"));
 		l.add(f);
 		if (d[b] && l.getItems().length < 9) {
-			this.setZhiHuiGrid(d.slice(b), l)
+			this.SetZhiHuiGrid(d.slice(b), l)
 		}
 	},
 	launch : function () {
-		var c = Ext.getCmp("ZhiHuiBtn");
-		var a = Ext.getCmp("YiNongBtn");
-		var d = "background : #FFFFFF; color : #2BA4E6; -webkit-border-radius : 1em; padding-top : 0.2em; padding-bottom : 0.2em;";
-		var b = "background : #2BA4E6; color : #FFFFFF; -webkit-border-radius : 1em; padding-top : 0.2em; padding-bottom : 0.2em;";
-		a.addListener({
+		var ZhiHuiBtn = Ext.getCmp("ZhiHuiBtn");
+		var YiNongBtn = Ext.getCmp("YiNongBtn");
+		var CheckedStyle = "background : #FFFFFF; color : #2BA4E6; -webkit-border-radius : 1em; padding-top : 0.2em; padding-bottom : 0.2em;";
+		var UnCheckedStyle = "background : #2BA4E6; color : #FFFFFF; -webkit-border-radius : 1em; padding-top : 0.2em; padding-bottom : 0.2em;";
+		YiNongBtn.addListener({
 			tap : {
 				fn : function () {
-					if (a.getStyle() != d) {
-						a.setStyle(d);
-						c.setStyle(b);
+					if (YiNongBtn.getStyle() != CheckedStyle) {
+						YiNongBtn.setStyle(CheckedStyle);
+						ZhiHuiBtn.setStyle(UnCheckedStyle);
 						Ext.getStore("YiNongStore").setProxy({
 							type : "jsonp",
 							url : ServerUrl + "YiNong/GetAppList.jsp",
@@ -199,12 +195,12 @@ Ext.define("Project.controller.OrderView", {
 				scope : this,
 			},
 		});
-		c.addListener({
+		ZhiHuiBtn.addListener({
 			tap : {
 				fn : function () {
-					if (c.getStyle() != d) {
-						c.setStyle(d);
-						a.setStyle(b);
+					if (ZhiHuiBtn.getStyle() != CheckedStyle) {
+						ZhiHuiBtn.setStyle(CheckedStyle);
+						YiNongBtn.setStyle(UnCheckedStyle);
 						var e = ServerUrl + "ZhiHui/GetAppList.jsp?appId=";
 						for (var f in defaultBase) {
 							e = e + defaultBase[f]["id"] + ";"
@@ -225,7 +221,7 @@ Ext.define("Project.controller.OrderView", {
 									}
 									Ext.getCmp("OrderViewMain").removeAll(true);
 									this.SetZhiHuiGrid(j, Ext.getCmp("OrderViewMain"));
-									Ext.getCmp("OrderViewMain").setActiveItem(0)
+									Ext.getCmp("OrderViewMain").setActiveItem(0);
 								}
 							},
 							scope : this,

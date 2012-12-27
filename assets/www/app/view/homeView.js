@@ -70,9 +70,6 @@ Ext.define("Project.view.homeView", {
 							tap : {
 								fn : function () {
 									DoNextSwitch("FeedBack");
-									setActivatedPage(1);
-									setActivatedAID(defaultBase[0]["id"]);
-									Ext.getCmp("FeedBackTop").setTitle("意见反馈");
 									DoLoad(Ext.getCmp("FeedBackMain").getStore(), "ZhiHui/GetFeedBack.jsp?appId=" + defaultBase[0]["id"]);
 								},
 								element : "element",

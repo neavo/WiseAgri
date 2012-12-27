@@ -9,6 +9,7 @@ Ext.define("Project.view.FeedBack", {
 		items : [{
 				id : "FeedBackTop",
 				xtype : "toolbar",
+				title : "意见反馈",
 				docked : "top",
 				baseCls : "TopBar",
 			}, {
