@@ -55,5 +55,18 @@ Ext.define("Project.controller.categoryList", {
 			Ext.getCmp("ExpertListTop").setTitle(data.name);
 			DoLoad(Ext.getCmp("ExpertListMain").getStore(), "ZhiHui/GetExpertList.jsp?categoryId=" + data.id);
 		};
+		if (data.style == "WebLink") {
+			Ext.getStore("WebLinkStore").setProxy({
+				type : "jsonp",
+				url : ServerUrl + "ZhiHui/GetWebLink.jsp?categoryId=" + data.id,
+			});
+			Ext.getStore("WebLinkStore").load({
+				callback : function (records, operation, success) {
+					if (success && records.lenght != 0) {
+						window.plugins.childBrowser.openExternal(records[0].getData().WebLink);
+					};
+				},
+			});
+		};
 	},
 });

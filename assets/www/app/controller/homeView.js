@@ -64,7 +64,6 @@ Ext.define("Project.controller.homeView", {
 													window.plugins.childBrowser.openExternal(records[0].getData().WebLink);
 												};
 											},
-											scope : this,
 										});
 									};
 								},
