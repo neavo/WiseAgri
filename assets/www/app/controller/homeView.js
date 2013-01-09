@@ -61,7 +61,7 @@ Ext.define("Project.controller.homeView", {
 										Ext.getStore("WebLinkStore").load({
 											callback : function (records, operation, success) {
 												if (success && records.lenght != 0) {
-													window.plugins.childBrowser.openExternal(records[0].getData().WebLink);
+													window.open(records[0].getData().WebLink, "_system", "location=no");
 												};
 											},
 										});
