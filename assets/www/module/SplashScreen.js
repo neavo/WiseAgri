@@ -9,8 +9,7 @@ function HideSplashScreen() {
 };
 
 document.write("<div id = SplashScreen >"
-	 + " <img id = SplashScreenImage src = " + SplashScreenImageSrc[0] + " style = \" height : 100%; width : 100%; \" />"
-	 + " <img id = SplashScreenImageSkipBtn onclick = \"HideSplashScreen()\" src = resources/icons/SkipSplashScreen.png style = \" width : 5em; height : 5em; position : fixed; right : 0.5em; bottom : 0.5em; \"  />"
+	 + " <img id = SplashScreenImage onclick = \"HideSplashScreen()\" src = " + SplashScreenImageSrc[0] + " style = \" height : 100%; width : 100%; \" />"
 	 + " <div>");
 
 var key = 2;
