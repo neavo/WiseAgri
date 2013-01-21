@@ -1,33 +1,24 @@
-/*
- * PhoneGap is available under *either* the terms of the modified BSD license *or* the
- * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
- *
- * Copyright (c) 2005-2010, Nitobi Software Inc.
- * Copyright (c) 2011, IBM Corporation
- */
+cordova.define("cordova/plugin/videoplayer",
+  function(require, exports, module) {
+    var exec = require("cordova/exec");
+    var VideoPlayer = function () {};
 
-/**
- * Constructor
- */
-function VideoPlayer() {
-};
+    /**
+     * Starts the video player intent
+     *
+     * @param url           The url to play
+     */
+    VideoPlayer.prototype.play = function(url) {
+        exec(null, null, "VideoPlayer", "playVideo", [url]);
+    };
 
-/**
- * Starts the video player intent
- *
- * @param url           The url to play
- */
-VideoPlayer.prototype.play = function(url) {
-    cordova.exec(null, null, "VideoPlayer", "playVideo", [url]);
-};
+    var videoPlayer = new VideoPlayer();
+    module.exports = videoPlayer;
+});
 
-/**
- * Load VideoPlayer
- */
-
-if(!window.plugins) {
+if (!window.plugins) {
     window.plugins = {};
 }
 if (!window.plugins.videoPlayer) {
-    window.plugins.videoPlayer = new VideoPlayer();
+    window.plugins.videoPlayer = cordova.require("cordova/plugin/videoplayer");
 }

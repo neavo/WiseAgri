@@ -54,5 +54,12 @@
 		"iconUrl" : "data/defaultCategory/08.png",
 		"style" : "parentCategory",
 		"location" : "",
+	}, {
+		"type" : "category",
+		"id" : "1056",
+		"name" : "种植技术",
+		"iconUrl" : "http://221.235.190.13:8080/opencms801/upLoad/image/default/defaultIcon.png",
+		"style" : "newsCategory",
+		"location" : "",
 	},
 ]

@@ -10,9 +10,19 @@ Ext.define("Project.controller.newsList", {
 			},
 		},
 	},
+	UpdateNewsSkimNum : function (newsId) {
+		Ext.Ajax.request({
+			url : ServerUrl + "ZhiHui/UpdateNewsSkimNum.jsp",
+			params : {
+				newsId : newsId,
+			},
+		});
+	},
 	onNewsListMainItemtap : function (list, index, target, record, e, eOpts) {
 		var data = record.getData();
 		DoNextSwitch("newsDetail");
+		this.UpdateNewsSkimNum(data.newsId);
+		Ext.getCmp("NewsSkimNum").setHtml("浏览 : " + (parseInt(data.skimNum)+1) + " 次");
 		Ext.getCmp("newsDetailMain").setHtml("<div style = \" height : 0.5em \" ></div>"
 			 + "<div style = \"background : #FFFFFF; -webkit-border-radius : 0.5em; padding : 0.25em; width : 95%; display : block; margin : auto;\">"
 			 + "<div class = newsDetailTitle>" + data.newsTitle + "</div>"

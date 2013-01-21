@@ -24,8 +24,8 @@ Ext.define("Project.view.newsDetail", {
 				items : [{
 						xtype : "spacer",
 					}, {
+						id : "NewsSkimNum",
 						xtype : "container",
-						html : "浏览 : 18次",
 					}, {
 						xtype : "spacer",
 					}, {
