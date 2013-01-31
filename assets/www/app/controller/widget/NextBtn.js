@@ -3,6 +3,7 @@ Ext.define("Project.controller.widget.NextBtn", {
 	config : {
 		refs : {
 			NextBtn : "NextBtn",
+			SwitchBtn : "SwitchBtn",
 		},
 		control : {
 			NextBtn : {
@@ -12,11 +13,14 @@ Ext.define("Project.controller.widget.NextBtn", {
 	},
 	onNextBtnTap : function () {
 		activatedStore.nextPage({
-			callback: function(records, operation, success) {
-				if (records.length == 0 || !success) {
+			callback : function (records, operation, success) {
+				if (records.length != 0 && success) {
+					this.getSwitchBtn().setText("第 " + activatedStore.currentPage + " 页");
+				} else {
 					activatedStore.previousPage();
 				};
 			},
+			scope : this,
 		});
 	},
 });

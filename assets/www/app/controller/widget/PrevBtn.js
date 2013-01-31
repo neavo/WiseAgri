@@ -3,6 +3,7 @@ Ext.define("Project.controller.widget.PrevBtn", {
 	config : {
 		refs : {
 			PrevBtn : "PrevBtn",
+			SwitchBtn : "SwitchBtn",
 		},
 		control : {
 			PrevBtn : {
@@ -13,8 +14,9 @@ Ext.define("Project.controller.widget.PrevBtn", {
 	onPrevBtnTap : function () {
 		if (activatedStore.currentPage == 1) {
 			DoAlert("当前已是第一页！");
-		} else if (activatedStore.currentPage > 1) {
+		} else {
 			activatedStore.previousPage();
+			this.getSwitchBtn().setText("第 " + activatedStore.currentPage + " 页");
 		};
 	},
 });

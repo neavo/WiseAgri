@@ -149,6 +149,7 @@ function DoLoad(store, url, page) {
 			};
 		},
 	});
+	Ext.getCmp("SwitchBtn").setText("第 1 页");
 };
 
 // 切换页面

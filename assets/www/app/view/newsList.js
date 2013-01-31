@@ -33,11 +33,12 @@ Ext.define("Project.view.newsList", {
 					}, {
 						xtype : "spacer",
 					}, {
-						xtype : "NextBtn",
+						id : "SwitchBtn",
+						xtype : "SwitchBtn",
 					}, {
 						xtype : "spacer",
 					}, {
-						xtype : "backBtn",
+						xtype : "NextBtn",
 					}, {
 						xtype : "spacer",
 					},
