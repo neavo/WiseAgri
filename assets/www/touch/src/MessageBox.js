@@ -28,7 +28,7 @@ Ext.define('Ext.MessageBox', {
          * @cfg
          * @inheritdoc
          */
-        ui: 'dark',
+        ui: (Ext.os.is.BlackBerry && Ext.os.version.getMajor() === 10) ? 'plain' : 'dark',
 
         /**
          * @cfg
@@ -135,10 +135,10 @@ Ext.define('Ext.MessageBox', {
     },
 
     statics: {
-        OK    : {text: '确定',     itemId: 'ok',  ui: 'action'},
-        YES   : {text: '是',    itemId: 'yes', ui: 'action'},
-        NO    : {text: '否',     itemId: 'no'},
-        CANCEL: {text: '取消', itemId: 'cancel'},
+        OK    : {text: 'OK',     itemId: 'ok',  ui: 'action'},
+        YES   : {text: 'Yes',    itemId: 'yes', ui: 'action'},
+        NO    : {text: 'No',     itemId: 'no'},
+        CANCEL: {text: 'Cancel', itemId: 'cancel'},
 
         INFO    : Ext.baseCSSPrefix + 'msgbox-info',
         WARNING : Ext.baseCSSPrefix + 'msgbox-warning',
@@ -146,17 +146,17 @@ Ext.define('Ext.MessageBox', {
         ERROR   : Ext.baseCSSPrefix + 'msgbox-error',
 
         OKCANCEL: [
-            {text: '取消', itemId: 'cancel'},
-            {text: '确定',     itemId: 'ok',  ui : 'action'}
+            {text: 'Cancel', itemId: 'cancel'},
+            {text: 'OK',     itemId: 'ok',  ui : 'action'}
         ],
         YESNOCANCEL: [
-            {text: '取消', itemId: 'cancel'},
-            {text: '否',     itemId: 'no'},
-            {text: '是',    itemId: 'yes', ui: 'action'}
+            {text: 'Cancel', itemId: 'cancel'},
+            {text: 'No',     itemId: 'no'},
+            {text: 'Yes',    itemId: 'yes', ui: 'action'}
         ],
         YESNO: [
-            {text: '是', itemId: 'yes', ui: 'action'},
-            {text: '否',  itemId: 'no'}
+            {text: 'No',  itemId: 'no'},
+            {text: 'Yes', itemId: 'yes', ui: 'action'}
         ]
     },
 
@@ -211,7 +211,7 @@ Ext.define('Ext.MessageBox', {
 
         Ext.applyIf(config, {
             docked: 'top',
-            minHeight: '1.3em',
+            minHeight: (Ext.os.is.BlackBerry && Ext.os.version.getMajor() === 10) ? '2.1em' : '1.3em',
             cls   : this.getBaseCls() + '-title'
         });
 
@@ -235,8 +235,13 @@ Ext.define('Ext.MessageBox', {
     updateButtons: function(newButtons) {
         var me = this;
 
+        // If there are no new buttons or it is an empty array, set newButtons
+        // to false
+        newButtons = (!newButtons || newButtons.length === 0) ? false : newButtons;
+
         if (newButtons) {
             if (me.buttonsToolbar) {
+                me.buttonsToolbar.show();
                 me.buttonsToolbar.removeAll();
                 me.buttonsToolbar.setItems(newButtons);
             } else {
@@ -254,6 +259,8 @@ Ext.define('Ext.MessageBox', {
 
                 me.add(me.buttonsToolbar);
             }
+        } else if (me.buttonsToolbar) {
+            me.buttonsToolbar.hide();
         }
     },
 
