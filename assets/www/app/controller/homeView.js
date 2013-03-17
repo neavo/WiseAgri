@@ -5,7 +5,9 @@ Ext.define("Project.controller.homeView", {
 		control : {},
 	},
 	setGrid : function (data, carousel) {
-		var i = 0, j = 0, k = 0;
+		var i = 0,
+		j = 0,
+		k = 0;
 		var vContainer = "";
 		var hContainer = "";
 		for (i = 0; i < 3; i++) {
@@ -92,7 +94,9 @@ Ext.define("Project.controller.homeView", {
 		};
 	},
 	SetYiNongGrid : function (data, carousel) {
-		var i = 0, j = 0, k = 0;
+		var i = 0,
+		j = 0,
+		k = 0;
 		var vContainer = "";
 		var hContainer = "";
 		for (i = 0; i < 3; i++) {
@@ -177,7 +181,7 @@ Ext.define("Project.controller.homeView", {
 	},
 	launch : function () {
 		History.push("homeView");
-		
+
 		Ext.getCmp("homeViewMain").addListener({
 			painted : {
 				fn : function (container, eOpts) {
@@ -212,7 +216,7 @@ Ext.define("Project.controller.homeView", {
 				scope : this,
 			},
 		});
-		
+
 		Ext.getCmp("DoOrderBtn").addListener({
 			tap : {
 				fn : function () {
